@@ -1,8 +1,10 @@
+import { Singin } from "../Login-logout/login";
+
 export default function LogIn() {
 
   return (
     <div>
-      <h1>Log in</h1>
+      <Singin/>
     </div>
   )
 }
