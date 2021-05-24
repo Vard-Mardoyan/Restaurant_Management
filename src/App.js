@@ -8,9 +8,9 @@ export default function App() {
       <div>
         <Nav />
         <Switch>
-          {Routes.map(({route, component: Component}) => (
-            <Route exact  path={route}>
-              <Component / >
+          {Routes.map(({route, component: Component}, index) => (
+            <Route exact  path={route} key={index} >
+              <Component />
             </Route>
           ))}
           <Route path='*'>
