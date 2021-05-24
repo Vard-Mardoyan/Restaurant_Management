@@ -2,6 +2,15 @@ import React, { useState } from "react";
 import { CreatingNewUser } from "./createNewUser";
 
 export function Singin() {
+
+  
+  if(localStorage.getItem('usersArray') === null){
+    localStorage.setItem('usersArray', JSON.stringify([]) )
+  }
+
+  
+  
+  
   const [login, setLogin] = useState("");
   const [generalError, setGeneralError] = useState("");
   const [user, setUser] = useState({
@@ -9,10 +18,7 @@ export function Singin() {
     password: "",
   });
   
-  if(JSON.parse(localStorage.getItem('usersAarray'))){
-    localStorage.setItem('usersArray', JSON.stringify([]))
-  }
-
+  
   
 
   const onInputchange = (event) => {
