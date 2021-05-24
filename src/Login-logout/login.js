@@ -9,7 +9,7 @@ export function Singin() {
     password: "",
   });
   
-  if(!JSON.parse(localStorage.getItem('usersAarray'))){
+  if(JSON.parse(localStorage.getItem('usersAarray'))){
     localStorage.setItem('usersArray', JSON.stringify([]))
   }
 
