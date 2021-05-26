@@ -1,0 +1,6 @@
+.title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #c48f8f;
+}
