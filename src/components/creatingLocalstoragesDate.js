@@ -8,6 +8,10 @@ export function LocalStoragesDates() {
     if(localStorage.getItem('id') === null){
         localStorage.setItem('id', 1)
     }
+  
+    if(localStorage.getItem('loginStatus') === null){
+      localStorage.setItem('loginStatus', 'tologin')
+  }
     
   return ''
 }

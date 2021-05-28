@@ -3,7 +3,7 @@ import { CreatingNewUser } from "./createNewUser";
 import { RezervationFunction } from "../RezervFolder/rezervation"
 
 export function Singin() {
-  
+  const [loginStatus, setLoginStatus] = useState(localStorage.getItem('loginStatus'))
   const [login, setLogin] = useState("");
   const [generalError, setGeneralError] = useState("");
   const [user, setUser] = useState({
@@ -36,6 +36,8 @@ export function Singin() {
         user.password.trim().toLowerCase() === element.password
       ) {
         {
+          localStorage.setItem('loginStatus', 'logind')
+          setLoginStatus(localStorage.getItem('loginStatus'))
           setLogin("logind");
           setUser({
             name: "",
@@ -46,7 +48,7 @@ export function Singin() {
     });
   };
 
-  if (!login) {
+  if (!login && loginStatus === 'tologin') {
     return (
       <div>
         <button onClick={() => setLogin("toLogin")}>Log in</button>
@@ -82,11 +84,12 @@ export function Singin() {
       </div>
     );
   } else if (login === "createAccaunt") {
+    
     return <CreatingNewUser />;
-  } else if (login === "logind") {
+  } else if (loginStatus === 'logind') {
     return (
       <div>
-        <button onClick={() => setLogin("")}>Logout</button>
+        <button onClick={() => {setLogin(""); localStorage.setItem('loginStatus', 'tologin'); setLoginStatus(localStorage.getItem('loginStatus'))}}>Logout</button>
         <RezervationFunction/>
       </div>
     );
