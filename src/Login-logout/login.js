@@ -1,15 +1,8 @@
 import React, { useState } from "react";
 import { CreatingNewUser } from "./createNewUser";
+import { RezervationFunction } from "../RezervFolder/rezervation"
 
 export function Singin() {
-
-  
-  if(localStorage.getItem('usersArray') === null){
-    localStorage.setItem('usersArray', JSON.stringify([]) )
-  }
-
-  
-  
   
   const [login, setLogin] = useState("");
   const [generalError, setGeneralError] = useState("");
@@ -93,8 +86,8 @@ export function Singin() {
   } else if (login === "logind") {
     return (
       <div>
-        <h1>Welcome</h1>
         <button onClick={() => setLogin("")}>Logout</button>
+        <RezervationFunction/>
       </div>
     );
   }

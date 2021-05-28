@@ -4,11 +4,10 @@ import Contact from "../pages/Contact";
 import Drink from "../pages/Drink";
 import Food from "../pages/Food";
 import Home from "../pages/Home";
-import LogIn from "../pages/LogIn";
 import Sweets from "../pages/Sweets";
 import StaffData from "../pages/Staff/Staff";
 
-import { RezervationFunction } from "../RezervFolder/rezervation";
+
 
 export const Routes = [
 	{
@@ -21,11 +20,7 @@ export const Routes = [
 		component: About,
 		title: "About",
 	},
-	{
-		route: "/logIn",
-		component: LogIn,
-		title: "Log In",
-	},
+	
 	{
 		route: "/contact",
 		component: Contact,
@@ -52,11 +47,7 @@ export const Routes = [
 		component: Beer,
 		title: "Beer",
 	},
-	{
-		route: "/rezerv",
-		component: RezervationFunction,
-		title: "Rezerv",
-	},
+	
 	{
 		route: "/staffData",
 		component: StaffData,
