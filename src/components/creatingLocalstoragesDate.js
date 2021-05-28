@@ -5,8 +5,8 @@ export function LocalStoragesDates() {
         localStorage.setItem('usersArray', JSON.stringify([]) )
       }
     
-    if(localStorage.getItem('id') === null){
-        localStorage.setItem('id', 1)
+      if(localStorage.getItem('rezervStatus') === null){
+        localStorage.setItem('rezervStatus', 'notRezerved')
     }
   
     if(localStorage.getItem('loginStatus') === null){
