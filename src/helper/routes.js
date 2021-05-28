@@ -6,6 +6,7 @@ import Food from "../pages/Food";
 import Home from "../pages/Home";
 import LogIn from "../pages/LogIn";
 import Sweets from "../pages/Sweets";
+import { RezervationFunction } from "../RezervFolder/rezervation"
 
 export const Routes = [
   {
@@ -49,6 +50,10 @@ export const Routes = [
     component: Beer,
     title: 'Beer'
   },
-
+  {
+    route: "/rezerv",
+    component: RezervationFunction,
+    title: 'Rezerv'
+  }
  
 ];
