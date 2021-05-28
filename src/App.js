@@ -3,12 +3,16 @@ import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 import Nav from "./components/Nav";
 import { Routes } from "./helper/routes";
+import { Singin } from "./Login-logout/login"
+import { LocalStoragesDates } from "./components/creatingLocalstoragesDate"
 
 export default function App() {
 	return (
 		<Router>
+			<LocalStoragesDates/>
 			<div>
 				<Header />
+				<Singin/>
 				<Nav />
 				<Switch>
 					{Routes.map(({ route, component: Component }, index) => (

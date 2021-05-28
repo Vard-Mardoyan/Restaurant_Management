@@ -3,9 +3,9 @@ import React, { useEffect, useState } from "react";
 
 
 export function RezervationFunction () {
-    if(localStorage.getItem('id') === null){
-        localStorage.setItem('id', 1)
-       }
+    // if(localStorage.getItem('id') === null){
+    //     localStorage.setItem('id', 1)
+    //    }
 
 
     
