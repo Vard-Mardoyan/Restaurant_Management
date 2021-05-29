@@ -36,6 +36,8 @@ export default function Drink() {
 
   //console.log(data, "data");
 
+  handleOnItemClick = () => {};
+ 
   return (
     <>
       <h1 className="title">Drink</h1>
