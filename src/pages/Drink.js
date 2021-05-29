@@ -36,7 +36,7 @@ export default function Drink() {
 
   //console.log(data, "data");
 
-  handleOnItemClick = () => {};
+  //handleOnItemClick = () => {};
  
   return (
     <>
