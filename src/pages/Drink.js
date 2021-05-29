@@ -34,9 +34,7 @@ export default function Drink() {
     return <p className="error">{error}</p>
   }
 
-  //console.log(data, "data");
-
-  //handleOnItemClick = () => {};
+ 
  
   return (
     <>
