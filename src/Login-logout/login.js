@@ -6,6 +6,7 @@ export function Singin() {
   const [loginStatus, setLoginStatus] = useState(localStorage.getItem('loginStatus'))
   const [login, setLogin] = useState("");
   const [generalError, setGeneralError] = useState("");
+  const [rezervepage, setRezervepage] = useState(false) 
   const [user, setUser] = useState({
     name: "",
     password: "",
@@ -90,7 +91,8 @@ export function Singin() {
     return (
       <div>
         <button onClick={() => {setLogin(""); localStorage.setItem('loginStatus', 'tologin'); setLoginStatus(localStorage.getItem('loginStatus'))}}>Logout</button>
-        <RezervationFunction/>
+        <button onClick = {() => setRezervepage(true)}>Rezerv Table</button>
+        {rezervepage && <RezervationFunction/>}
       </div>
     );
   }
