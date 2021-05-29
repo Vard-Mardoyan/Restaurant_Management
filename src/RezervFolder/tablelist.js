@@ -8,10 +8,10 @@ export function Tablelist(props) {
     localStorage.getItem("rezervStatus2")
   );
   const [tablestatus3, setTablestatus3] = useState(
-    localStorage.getItem("rezervStatus2")
+    localStorage.getItem("rezervStatus4")
   );
   const [tablestatus4, setTablestatus4] = useState(
-    localStorage.getItem("rezervStatus2")
+    localStorage.getItem("rezervStatus4")
   );
 
   const a = <h3>free</h3>;
