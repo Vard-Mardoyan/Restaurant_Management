@@ -6,13 +6,14 @@ export function Singin() {
   const [loginStatus, setLoginStatus] = useState(localStorage.getItem('loginStatus'))
   const [login, setLogin] = useState("");
   const [generalError, setGeneralError] = useState("");
+  
   const [rezervepage, setRezervepage] = useState(false) 
   const [user, setUser] = useState({
     name: "",
     password: "",
   });
   
-  
+  let a = false
   
 
   const onInputchange = (event) => {
@@ -37,6 +38,7 @@ export function Singin() {
         user.password.trim().toLowerCase() === element.password
       ) {
         {
+          localStorage.setItem('logindUser', JSON.stringify(element)) 
           localStorage.setItem('loginStatus', 'logind')
           setLoginStatus(localStorage.getItem('loginStatus'))
           setLogin("logind");
@@ -48,6 +50,12 @@ export function Singin() {
       }
     });
   };
+
+  
+  
+
+   
+
 
   if (!login && loginStatus === 'tologin') {
     return (
@@ -90,9 +98,12 @@ export function Singin() {
   } else if (loginStatus === 'logind') {
     return (
       <div>
-        <button onClick={() => {setLogin(""); localStorage.setItem('loginStatus', 'tologin'); setLoginStatus(localStorage.getItem('loginStatus'))}}>Logout</button>
+        <h4>{JSON.parse(localStorage.getItem('logindUser')).name}</h4>
+        <button onClick={() => {setLogin(""); localStorage.removeItem('logindUser'); localStorage.setItem('loginStatus', 'tologin'); setLoginStatus(localStorage.getItem('loginStatus'))}}>Logout</button>
         <button onClick = {() => setRezervepage(true)}>Rezerv Table</button>
+        
         {rezervepage && <RezervationFunction/>}
+        
       </div>
     );
   }
