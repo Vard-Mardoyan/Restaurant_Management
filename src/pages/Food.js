@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import GetListOfFood from "../components/GetListOfFood";
+import { FOODS_DATA } from "../service/data";
 import './FoodStyle.css';
 
 export default function Food() {
-  const [data, setData] = useState([]);
+  //const [data, setData] = useState(FOODS_DATA);
 
   useEffect(() => {
 
@@ -40,4 +41,3 @@ export default function Food() {
     </div>
   );
 }
-

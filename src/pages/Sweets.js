@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import GetListOfSweets from "../components/GetListOfSweets";
+import Pagination from "../components/Pagination";
+import { SWEERTS_DATA } from "../service/data";
 import './SweetsStyle.css';
 
 export default function Sweets() {
 
-  const [data, setData] = useState({});
+  const [data, setData] = useState(SWEERTS_DATA);
 
   // useEffect(() => {
   //   fetch("https://foodish-api.herokuapp.com/api/")
@@ -19,10 +21,10 @@ export default function Sweets() {
   //console.log(data, "data::::");// single  random data // random food pictures as placeholders.
 
   return (
-    <div>
+    <>
       <h1 className="title">Sweets </h1>
-      <GetListOfSweets />
-    </div>
+      <Pagination totalData={data} />
+    </>
   );
 
 
