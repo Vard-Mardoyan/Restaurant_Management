@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { CreatingNewUser } from "./createNewUser";
-import { RezervationFunction } from "../RezervFolder/rezervation"
+import { Tablelist } from "../RezervFolder/tablelist"
+
 
 export function Singin() {
   const [loginStatus, setLoginStatus] = useState(localStorage.getItem('loginStatus'))
@@ -102,7 +103,7 @@ export function Singin() {
         <button onClick={() => {setLogin(""); localStorage.removeItem('logindUser'); localStorage.setItem('loginStatus', 'tologin'); setLoginStatus(localStorage.getItem('loginStatus'))}}>Logout</button>
         <button onClick = {() => setRezervepage(true)}>Rezerv Table</button>
         
-        {rezervepage && <RezervationFunction/>}
+        {rezervepage && <Tablelist/>}
         
       </div>
     );
