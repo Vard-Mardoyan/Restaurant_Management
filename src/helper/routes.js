@@ -1,5 +1,4 @@
 import About from "../pages/About";
-import Beer from "../pages/Beer";
 import Contact from "../pages/Contact";
 import Drink from "../pages/Drink";
 import Food from "../pages/Food";
@@ -42,12 +41,6 @@ export const Routes = [
 		component: Drink,
 		title: "Drink",
 	},
-	{
-		route: "/beer",
-		component: Beer,
-		title: "Beer",
-	},
-	
 	{
 		route: "/staffData",
 		component: StaffData,

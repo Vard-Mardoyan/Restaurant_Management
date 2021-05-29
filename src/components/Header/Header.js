@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import slide1 from "./1.jpg";
-import slide2 from "./11.jpg";
-import slide3 from "./12.jpg";
+import slide1 from "./food-styling.jpg";
+import slide2 from  "./oranges.jpg"; 
+import slide3 from "./pasta.jpg";
+import slide4 from "./strawberry_style.jpg";
 
 import "./Header.css";
 
@@ -9,6 +10,7 @@ const img = [
 	<img key={slide1} src={slide1} alt="slide1" />,
 	<img key={slide2} src={slide2} alt="slide2" />,
 	<img key={slide3} src={slide3} alt="slide3" />,
+	<img key={slide4} src={slide4} alt="slide3" />,
 ];
 export const Header = () => {
 	const [activeIndex, setActiveIndex] = useState(0);

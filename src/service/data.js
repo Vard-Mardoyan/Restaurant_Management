@@ -412,15 +412,15 @@ export const DRINK_DATA = [
   },
   {
     id: '7',
-    name: 'Raspberry Buttermilk Shake',
-    image: 'https://www.finedininglovers.com/sites/g/files/xknfdk626/files/styles/recipe_full_desktop/public/Original_15567_raspberry-buttermilk-shake.jpg?itok=MoroIpJC',
-    description: 'Serve it with some mint and it will be even tastier!',
+    name: 'Jam margarita',
+    image: 'https://img.jamieoliver.com/jamieoliver/recipe-database/121941379.jpg?tr=w-800,h-1066',
+    description: 'A STORE-CUPBOARD COCKTAIL',
   },
   {
     id: '8',
-    name: 'Strawberry Lemonade with Basil',
-    image: 'https://www.finedininglovers.com/sites/g/files/xknfdk626/files/styles/recipe_full_desktop/public/Original_14685_strawberry-lemonade-basil.jpg?itok=dT_JBvtd',
-    description: 'Try this easy strawberry lemonade with basil leaves',
+    name: 'Jam daiquiri',
+    image: 'https://img.jamieoliver.com/jamieoliver/recipe-database/105758811.jpg?tr=w-800,h-1066',
+    description: 'A STORE-CUPBOARD COCKTAIL',
   },
   {
     id: '9',
@@ -512,4 +512,4 @@ export const DRINK_DATA = [
     image: 'https://img.jamieoliver.com/jamieoliver/recipe-database/46264247.jpg?tr=w-800,h-1066',
     description: '“Not too sweet, this delicious juice is incredibly easy to make, provided you have a juicer. ”',
   },
-]
+];
