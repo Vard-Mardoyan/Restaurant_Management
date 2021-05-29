@@ -1,8 +1,8 @@
 import { Button, Card, CardActions, CardContent, Typography } from "@material-ui/core";
-import { SWEERTS_DATA } from "../service/data";
+//import { SWEERTS_DATA } from "../service/data";
 import './ListStyle.css';
 
-export default function GetListOfSweets(onItemClick) {
+export default function GetListOfSweets(SWEERTS_DATA, onItemClick) {
   return (
     <div>
       <ul className="list">
@@ -38,3 +38,4 @@ export default function GetListOfSweets(onItemClick) {
     </div>
   );
 }
+
