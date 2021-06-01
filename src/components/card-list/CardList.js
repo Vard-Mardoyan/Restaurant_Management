@@ -38,3 +38,9 @@ export default function CardList({onItemClick, dataType}) {
   );
 
 }
+
+
+
+
+
+
