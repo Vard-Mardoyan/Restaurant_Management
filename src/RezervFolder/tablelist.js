@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export function Tablelist(props) {
+export function Tablelist() {
   const [tablestatus1, setTablestatus1] = useState(
     localStorage.getItem("rezervStatus1")
   );
