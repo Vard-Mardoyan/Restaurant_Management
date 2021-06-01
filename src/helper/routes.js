@@ -1,10 +1,11 @@
-import About from "../pages/About";
-import Contact from "../pages/Contact";
-import Drink from "../pages/Drink";
-import Food from "../pages/Food";
-import Home from "../pages/Home";
-import Sweets from "../pages/Sweets";
+import About from "../pages/about/About";
+import Home from "../pages/home/Home";
+import Contact from  "../pages/contact/Contact";
+import Food from "../pages/food/Food";
+import Sweets from "../pages/sweet/Sweets";
+import Drink from "../pages/drink/Drink";
 import StaffData from "../pages/Staff/Staff";
+
 
 
 

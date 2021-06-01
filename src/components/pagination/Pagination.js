@@ -1,7 +1,5 @@
 import { CircularProgress } from "@material-ui/core";
-import { useState } from "react";
-// import GetListOfFood from "./GetListOfFood";
-import GetListOfSweets from "./GetListOfSweets";
+import { useEffect, useState } from "react";
 import './PaginationStyle.css';
 
 
@@ -10,6 +8,10 @@ export default function Pagination({totalData}) {
   const [currentPage, setCurrentPage] = useState(1);
   const [perPageData, setPerPageData] = useState(8);
   const [isLoading, setIsLoading] = useState(false); 
+
+  useEffect(() => {
+    // Define last page
+  }, [totalData])
 
 
   let pages = [];
@@ -58,7 +60,6 @@ export default function Pagination({totalData}) {
   }
   return (
     <>
-      {GetListOfSweets(currentData)}
       <ul className="pagination">{renderPageNumber}</ul>
       <div className="btn">
         <button onClick={handlePreviousPage} className="prev-button">Prev</button>
