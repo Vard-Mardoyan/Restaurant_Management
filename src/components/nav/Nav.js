@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Routes } from "../helper/routes";
+import { Routes } from "../../helper/routes";
 import "./Nav.css";
 
 

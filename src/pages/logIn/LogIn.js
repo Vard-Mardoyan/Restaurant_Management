@@ -1,4 +1,4 @@
-import { Singin } from "../Login-logout/login";
+import { Singin } from "../../Login-logout/login";
 
 export default function LogIn() {
 

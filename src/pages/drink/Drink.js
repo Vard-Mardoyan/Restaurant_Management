@@ -1,7 +1,8 @@
 import {CircularProgress} from "@material-ui/core";
 import { useEffect, useState } from "react";
-import GetListOfBeer from "../components/GetListOfBeer";
-import GetListOfDrink from "../components/GetListOfDrink";
+import CardList from "../../components/card-list/CardList";
+import { getBeersData } from "../../service/data";
+import CardListBeer from "../../components/card-list/CardListBeer";
 import "./DrinkStyle.css";
 
 export default function Drink() {
@@ -12,8 +13,7 @@ export default function Drink() {
   useEffect(() => {
     setLoading(true);
 
-    fetch(`https://api.punkapi.com/v2/beers`)
-      .then((response) => response.json())
+    getBeersData()
       .then((info) => {
         //console.log(info, "infoDrink:::");
 
@@ -40,9 +40,9 @@ export default function Drink() {
  
   return (
     <>
-      <h1 className="title">Drink</h1>
-      <GetListOfDrink />
-      <GetListOfBeer items={data} />
+      <h1 className="title">Drinks</h1>
+      <CardList dataType='DRINK_DATA' />
+      <CardListBeer items={data} />
     </>
   );
 }

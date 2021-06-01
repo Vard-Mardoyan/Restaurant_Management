@@ -1,3 +1,5 @@
+import { BASE_URL } from "./config";
+
 export const SWEERTS_DATA = [
   {
     id: '1',
@@ -513,3 +515,33 @@ export const DRINK_DATA = [
     description: '“Not too sweet, this delicious juice is incredibly easy to make, provided you have a juicer. ”',
   },
 ];
+
+export const LANGUAGE = [
+  {
+    language: 'Armenian',
+    language_code: 'hy',
+    image: 'https://restcountries.eu/data/arm.svg'
+  },
+  {
+    language: 'English',
+    language_code: 'en',
+    image: 'https://restcountries.eu/data/gbr.svg'
+  },
+  {
+    language: 'French',
+    language_code: 'fr',
+    image: 'https://restcountries.eu/data/fra.svg'
+  },
+  {
+    language: 'Russian',
+    language_code: 'ru',
+    image: 'https://restcountries.eu/data/rus.svg'
+  }
+];
+
+export const getBeersData = () => {
+
+  return fetch(BASE_URL).then((response) => response.json());
+};
+
+export const DATA ={SWEERTS_DATA, FOODS_DATA, DRINK_DATA};

@@ -19,7 +19,7 @@
 	overflow: hidden;
 }
 
-.slider-img {
+.slider-img > img {
 	position: absolute;
 	width: 100%;
 	height: 600px;

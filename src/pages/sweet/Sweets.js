@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import GetListOfSweets from "../components/GetListOfSweets";
-import Pagination from "../components/Pagination";
-import { SWEERTS_DATA } from "../service/data";
+import CardList from "../../components/card-list/CardList";
+import Pagination from "../../components/pagination/Pagination";
+import { SWEERTS_DATA } from "../../service/data";
 import './SweetsStyle.css';
 
 export default function Sweets() {
@@ -23,6 +23,7 @@ export default function Sweets() {
   return (
     <>
       <h1 className="title">Sweets </h1>
+      <CardList dataType='SWEERTS_DATA' />
       <Pagination totalData={data} />
     </>
   );
@@ -30,14 +31,7 @@ export default function Sweets() {
 
 }
 
-// {Object.entries(data).map(([key, value], index) => {
 
-//   return (
-//     <div key={index}>
-//       <img src={value} alt={key} width="200" />
-//     </div>
-//   )
-// })}
 
 //https://rapidapi.com/ru/category/Food
 //https://the-api-collective.com/category/food-and-drink
