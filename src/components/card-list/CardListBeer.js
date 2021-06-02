@@ -7,10 +7,10 @@ export default function CardListBeer({onItemClick, items}) {
   return (
     <div>
       <ul className="list">
-      {items.map(({ id, name, description, image_url, volume}) => {
+      {items.map(({ id, name, description, image_url, volume, price}) => {
         return (
           <>
-            <CardBeerComponent {...{id, name, description, image_url, volume}} onItemClick={onItemClick}/>
+            <CardBeerComponent {...{id, name, description, image_url, volume, price}} onItemClick={onItemClick}/>
           </>
         );
       })}
