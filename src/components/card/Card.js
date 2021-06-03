@@ -1,11 +1,11 @@
 import React from "react";
 // import { useContext } from "react";
 import {
-	Button,
-	Card,
-	CardActions,
-	CardContent,
-	Typography,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  Typography,
 } from "@material-ui/core";
 import "./CardStyle.css";
 import formatCurrency from "format-currency";
@@ -73,4 +73,5 @@ export default function CardComponent({
 			{/* )} */}
 		</Card>
 	);
+
 }

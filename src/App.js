@@ -4,11 +4,11 @@ import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 import { Routes } from "./helper/routes";
 import { Singin } from "./Login-logout/login";
-import { LocalStoragesDates } from "./components/creatingLocalstoragesDate";
 import { useState } from "react";
 import AdminButton from "./adminFolder/admin";
 import ShoppingCart from "./components/ShoppingCart";
 import CartProvider from "./context/cart/CartState";
+import LocalStoragesDates from "./components/creatingLocalstoragesDate";
 
 export default function App() {
 	const [adminStatus, setAdminstatus] = useState(true);
