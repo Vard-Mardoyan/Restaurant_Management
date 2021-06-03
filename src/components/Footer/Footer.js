@@ -76,7 +76,6 @@ export class Footer extends Component {
 				/>
 				); */}
 				{/* <Marker onClick={this.onMarkerClick} name={"Current location"} />
-
 				<InfoWindow onClose={this.onInfoWindowClose}></InfoWindow> */}
 				{/* </Map> */}
 				{/* <FaMapMarkerAlt /> The Company Name Inc. 9870 St */}

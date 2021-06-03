@@ -1,5 +1,10 @@
 import { BASE_URL } from "./config";
 
+import photo from "../assets/image/restaurant_interior_partly.jpg";
+import photo_interior from "../assets/image/restaurant_interior.jpg";
+import image_rice from "../assets/image/rice_art.jpg";
+import image_bread from "../assets/image/bread_style.jpg";
+
 export const SWEETS_DATA = [
 	{
 		id: "1",
@@ -729,3 +734,23 @@ export const getBeersData = () => {
 
 
 export const DATA = { SWEETS_DATA, FOODS_DATA, DRINK_DATA };
+
+
+
+export const STORY_DATA = [
+  {
+    text: "A restaurant or an eatery, is a business that prepares and serves food and drinks to customers.Meals are generally served and eaten on the premises, but many restaurants also offer take-out and food delivery services. Restaurants vary greatly in appearance and offerings, including a wide variety of cuisines and service models ranging from inexpensive fast food restaurants and cafeterias, to mid-priced family restaurants, to high-priced luxury establishments.In Western countries, most mid-to high-range restaurants serve alcoholic beverages such as beer and wine. Some restaurants serve all the major meals, such as breakfast, lunch, and dinner (e.g., major fast food chains, diners, hotel restaurants, and airport restaurants). Other restaurants may serve only a single meal (for example, a pancake house may only serve breakfast) or they may serve two meals (e.g., lunch and dinner).",
+    image: photo,
+    image_main: photo_interior,
+  },
+];
+
+
+export const PHILOSOPHY_OF_COOKING_DATA = [
+  {
+    article: 'The tastes of each family are different, but the feelings of a creator who want everyone to be happy are the same.That is why I think it is kind, nostalgic, and makes me want to eat every day.Home cooking is a dish that is made with the other person happy.Every day, I think of everyone who can come and finish the cooking with the ingredients that arrive every day.Aiming for home cooking that makes you smile.',
+    author: 'Shopkeeper Yu Hasegawa',
+    image: image_rice,
+    image_other: image_bread, 
+  }
+];
