@@ -289,7 +289,8 @@ export const FOODS_DATA = [
 		name: "Vegan Chinese noodles",
 		image:
 			"https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1426_1_1436958953.jpg?tr=w-800,h-1066",
-		kitchen: "Chinese        ,price: 22.78",
+		kitchen: "Chinese",
+		price: 21.75,
 	},
 	{
 		id: "7",
@@ -320,7 +321,8 @@ export const FOODS_DATA = [
 		name: "Chicken paella",
 		image:
 			"https://img.jamieoliver.com/jamieoliver/recipe-database/46261594.jpg?tr=w-800,h-1066",
-		kitchen: "Spanish,        price: 22.78",
+		kitchen: "Spanish",        
+		price: 21.77,
 	},
 	{
 		id: "11",
@@ -360,7 +362,7 @@ export const FOODS_DATA = [
 		image:
 			"https://img.jamieoliver.com/jamieoliver/recipe-database/46259027.jpg?tr=w-800,h-1066",
 		kitchen: "Asian",
-		price: 30.0,
+		price: 30.1,
 	},
 	{
 		id: "16",
