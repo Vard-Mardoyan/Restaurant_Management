@@ -1,7 +1,7 @@
 
 import { useScrollTrigger } from "@material-ui/core"
 import { useState } from "react"
-import { SWEERTS_DATA } from "../service/data"
+import { SWEETS_DATA } from "../service/data"
 
 export default function Controlmenu () {
     const [newname, setNewname] = useState('')
@@ -12,6 +12,6 @@ export default function Controlmenu () {
       
     }
 
-    const sweetnames = SWEERTS_DATA.map(({name, id}) =>  <li key = {id.toString()}>{name},    <button>Change name</button>    <input onChange = {takeInputValue}/> </li>)
+    const sweetnames = SWEETS_DATA.map(({name, id}) =>  <li key = {id.toString()}>{name},    <button>Change name</button>    <input onChange = {takeInputValue}/> </li>)
     return sweetnames
 }
