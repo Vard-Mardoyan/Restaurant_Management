@@ -1,5 +1,5 @@
 import React from "react";
-import { useContext } from "react";
+// import { useContext } from "react";
 import {
 	Button,
 	Card,
@@ -9,7 +9,7 @@ import {
 } from "@material-ui/core";
 import "./CardStyle.css";
 import formatCurrency from "format-currency";
-import CartContext from "../../context/cart/CartContext";
+import { useCartContext } from "../../context/cart/CartState";
 
 export default function CardComponent({
 	id,
@@ -19,7 +19,7 @@ export default function CardComponent({
 	description,
 	price,
 }) {
-	const { addToCart } = useContext(CartContext);
+	const { addToCart } = useCartContext();
 	let opts = { format: "%s%v", symbol: "$" };
 	return (
 		<Card className="card" key={id}>
@@ -43,7 +43,7 @@ export default function CardComponent({
 			</CardContent>
 			<CardActions>
 				<Button
-					onClick={() => addToCart(name)}
+					onClick={() => addToCart({id, name, image, kitchen, price})}
 					variant="contained"
 					color="primary"
 					size="medium"

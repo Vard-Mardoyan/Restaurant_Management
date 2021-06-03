@@ -1,12 +1,13 @@
 import { useContext } from "react";
 import "./ShoppingCart.css";
-import CartContext from "../context/cart/CartContext";
+// import CartContext from "../context/cart/CartContext";
 import CartItem from "./CartItem";
 import { FaRegTimesCircle } from "react-icons/fa";
 import formatCurrency from "format-currency";
+import { useCartContext } from "../context/cart/CartState";
 
 const Cart = () => {
-	const { showCart, cartItems, showHideCart } = useContext(CartContext);
+	const { showCart, cartItems, showHideCart } = useCartContext();
 	let opts = { format: "%s%v", symbol: "€" };
 
 	return (

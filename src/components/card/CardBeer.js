@@ -28,7 +28,7 @@ export default function CardBeerComponent({id, name, description, image_url, vol
       </CardContent>
       <CardActions>
         <Button
-          onClick={() => onItemClick(name)}
+          onClick={() => (name)}
           variant="contained"
           color="primary"
           size="medium"

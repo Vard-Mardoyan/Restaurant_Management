@@ -1,8 +1,11 @@
+import { useCartContext } from "../../context/cart/CartState";
 import { DATA } from "../../service/data";
 import CardComponent from "../card/Card";
 import "./CardListStyle.css";
 
-export default function CardList({ onItemClick, dataType }) {
+export default function CardList({ dataType }) {
+	const { addToCart } = useCartContext();
+
 	console.log(dataType, "dataType");
 
 	if (DATA[dataType] === "SWEERTS_DATA" || DATA[dataType] === "FOODS_DATA") {
@@ -14,7 +17,7 @@ export default function CardList({ onItemClick, dataType }) {
 							<>
 								<CardComponent
 									{...{ id, name, image, kitchen, price }}
-									onItemClick={onItemClick}
+									addToCart={addToCart}
 								/>
 							</>
 						);
@@ -33,7 +36,7 @@ export default function CardList({ onItemClick, dataType }) {
 							<>
 								<CardComponent
 									{...{ id, name, image, kitchen, description, price }}
-									onItemClick={onItemClick}
+									addToCart={addToCart}
 								/>
 							</>
 						);
@@ -43,9 +46,3 @@ export default function CardList({ onItemClick, dataType }) {
 		</div>
 	);
 }
-
-
-
-
-
-
