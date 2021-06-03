@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import CardList from "../../components/card-list/CardList";
 import Pagination from "../../components/pagination/Pagination";
-import { SWEERTS_DATA } from "../../service/data";
+import { SWEETS_DATA } from "../../service/data";
 import './SweetsStyle.css';
 
 export default function Sweets() {
 
-  const [data, setData] = useState(SWEERTS_DATA);
+  const [data, setData] = useState(SWEETS_DATA);
 
   // useEffect(() => {
   //   fetch("https://foodish-api.herokuapp.com/api/")
@@ -23,7 +23,7 @@ export default function Sweets() {
   return (
     <>
       <h1 className="title">Sweets </h1>
-      <CardList dataType='SWEERTS_DATA' />
+      <CardList dataType='SWEETS_DATA' />
       <Pagination totalData={data} />
     </>
   );

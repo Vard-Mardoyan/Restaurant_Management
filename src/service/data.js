@@ -1,6 +1,6 @@
 import { BASE_URL } from "./config";
 
-export const SWEERTS_DATA = [
+export const SWEETS_DATA = [
   {
     id: '1',
     name: 'Flourless chocolate cake',
@@ -544,4 +544,4 @@ export const getBeersData = () => {
   return fetch(BASE_URL).then((response) => response.json());
 };
 
-export const DATA ={SWEERTS_DATA, FOODS_DATA, DRINK_DATA};
+export const DATA ={SWEETS_DATA, FOODS_DATA, DRINK_DATA};

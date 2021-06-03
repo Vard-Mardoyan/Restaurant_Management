@@ -6,7 +6,7 @@ export default function CardList({onItemClick, dataType}) {
 
   console.log(dataType, 'dataType');
 
-  if(DATA[dataType] === 'SWEERTS_DATA' ||  DATA[dataType] === 'FOODS_DATA' ) {
+  if(DATA[dataType] === 'SWEETS_DATA' ||  DATA[dataType] === 'FOODS_DATA' ) {
 
     return (
       <div>
