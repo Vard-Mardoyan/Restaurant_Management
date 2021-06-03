@@ -1,17 +1,69 @@
+import { useState } from "react";
+import Sweetcontrol from "./components";
 
-import { useScrollTrigger } from "@material-ui/core"
-import { useState } from "react"
-import { SWEETS_DATA } from "../service/data"
+const sweet_data_log = JSON.parse(localStorage.getItem("SWEETS_DATA_loc"));
+const foods_data_loc = JSON.parse(localStorage.getItem("FOODS_DATA_loc"));
+const drink_data_loc = JSON.parse(localStorage.getItem("DRINK_DATA_loc"));
 
-export default function Controlmenu () {
-    const [newname, setNewname] = useState('')
-      
-    const takeInputValue = (ev) => {
-      setNewname(ev.target.value)
-      console.log(newname)
-      
-    }
+export default function Menucontrol() {
+  const [sweet, setSweet] = useState(false);
+  const [foods, setFoods] = useState(false);
+  const [drink, setDrink] = useState(false);
 
-    const sweetnames = SWEETS_DATA.map(({name, id}) =>  <li key = {id.toString()}>{name},    <button>Change name</button>    <input onChange = {takeInputValue}/> </li>)
-    return sweetnames
+  const elements = (
+    <div>
+      <button
+        onClick={() => {
+          setSweet(true);
+          setFoods(false);
+          setDrink(false);
+        }}
+      >
+        SWEETS
+      </button>
+      <button
+        onClick={() => {
+          setSweet(false);
+          setFoods(true);
+          setDrink(false);
+        }}
+      >
+        FOODS
+      </button>
+      <button
+        onClick={() => {
+          setSweet(false);
+          setFoods(false);
+          setDrink(true);
+        }}
+      >
+        DRINK
+      </button>
+    </div>
+  );
+
+  if (!sweet && !foods && !drink) {
+    return elements;
+  } else if (sweet && !foods && !drink) {
+    return (
+      <div>
+        {elements}
+        <Sweetcontrol/>
+      </div>
+    );
+  } else if (!sweet && foods && !drink) {
+    return (
+      <div>
+        {elements}
+        <p>foods</p>
+      </div>
+    );
+  } else if (!sweet && !foods && drink) {
+    return (
+      <div>
+        {elements}
+        <p>drink</p>
+      </div>
+    );
+  }
 }
