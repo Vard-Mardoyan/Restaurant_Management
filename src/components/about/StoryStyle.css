@@ -7,19 +7,47 @@
 }
 
 
-.main-photo {
+/* .main-photo {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   margin: 30px;
 
+} */
+.title {
+  color: #c48f8f;
+}
+.container {
+  display: flex;
+  height: 1200px;;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.image-card {
+  width: 500px;
+  padding: 10px;
+  margin: 10px;
+
+  background-color:  hsla(23, 40%, 50%, 0.1);
+  border-radius: 10px;
+}
+.main-photo{
+  width: 460px;
+  padding: 10px;
+  margin: 10px;
+
+  background-color: hsla(23, 40%, 50%, 0.1);
+  border-radius: 10px;
 }
 
 .photo-second {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-  margin: 30px;
+  width: 460px;
+  padding: 10px;
+  margin: 10px;
+
+  background-color: hsla(23, 40%, 50%, 0.1);
+  border-radius: 10px;
 }
