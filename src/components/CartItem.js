@@ -1,5 +1,4 @@
-
-import React from 'react'
+import React from "react";
 import {
 	Avatar,
 	Button,
@@ -15,10 +14,10 @@ import {
 } from "@material-ui/core";
 import { red } from "@material-ui/core/colors";
 import { makeStyles } from "@material-ui/core/styles";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import ShareIcon from "@material-ui/icons/Share";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import DeleteOutlinedIcon from "@material-ui/icons/DeleteOutlined";
+import RemoveCircleOutlineIcon from "@material-ui/icons/RemoveCircleOutline";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
+import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import clsx from "clsx";
 
 import formatCurrency from "format-currency";
@@ -30,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	media: {
 		height: 0,
-		paddingTop: "56.25%", // 16:9
+		paddingTop: "56.25%", 
 	},
 	expand: {
 		transform: "rotate(0deg)",
@@ -47,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 const CartItem = ({ item }) => {
-	const { removeItem } = useCartContext();
+	const { removeItem, increase, decrease } = useCartContext();
 	let opts = { format: "%s%v", symbol: "€" };
 	const classes = useStyles();
 	const [expanded, setExpanded] = React.useState(false);
@@ -84,41 +83,33 @@ const CartItem = ({ item }) => {
 				<Typography variant="body2" color="textSecondary" component="p">
 					{formatCurrency(`${item.price}`, opts)}
 				</Typography>
-				<ButtonBase onClick={() => removeItem(item.id)}>Remove</ButtonBase>
 			</CardContent>
+
+			<Typography>Qty: {item.quantity}</Typography>
+
 			<CardActions disableSpacing>
-				<IconButton aria-label="add to favorites">
-					<FavoriteIcon />
+				<IconButton>
+					<AddCircleOutlineIcon onClick={() => increase(item)} />
 				</IconButton>
-				<IconButton aria-label="share">
-					<ShareIcon />
-				</IconButton>
-				<IconButton
-					className={clsx(classes.expand, {
-						[classes.expandOpen]: expanded,
-					})}
-					onClick={handleExpandClick}
-					aria-expanded={expanded}
-					aria-label="show more"
-				>
-					<ExpandMoreIcon />
-				</IconButton>
+
+				{item.quantity > 1 && (
+					<IconButton aria-label="share">
+						<RemoveCircleOutlineIcon onClick={() => decrease(item)} />
+					</IconButton>
+				)}
+					<IconButton
+						className={clsx(classes.expand, {
+							[classes.expandOpen]: expanded,
+						})}
+					>
+						<DeleteOutlinedIcon
+							onClick={() => removeItem(item)}
+							aria-expanded={expanded}
+							aria-label="show more"
+						/>
+					</IconButton>
 			</CardActions>
-			{/* <Collapse in={expanded} timeout="auto" unmountOnExit> */}
-			<CardContent>
-	
-			</CardContent>
-			{/* </Collapse> */}
 		</Card>
-		// <li className="CartItem__item">
-		// 	<img className="cart_image" src={item.image} alt="item.image" />
-		// 	<div>
-		// 		{item.name} {formatCurrency(`${item.price}`, opts)}
-		// 	</div>
-		// 	<button className="CartItem__button" onClick={() => removeItem(item.id)}>
-		// 		Remove
-		// 	</button>
-		// </li>
 	);
 };
 

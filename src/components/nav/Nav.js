@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Routes } from "../../helper/routes";
 import "./Nav.css";
-import {useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { useCartContext } from "../../context/cart/CartState";
 
