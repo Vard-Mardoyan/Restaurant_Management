@@ -1,5 +1,6 @@
 import { useState } from "react";
-import Sweetcontrol from "./components";
+import Menuitemscontrol from "./components";
+
 
 const sweet_data_log = JSON.parse(localStorage.getItem("SWEETS_DATA_loc"));
 const foods_data_loc = JSON.parse(localStorage.getItem("FOODS_DATA_loc"));
@@ -48,21 +49,21 @@ export default function Menucontrol() {
     return (
       <div>
         {elements}
-        <Sweetcontrol/>
+        <Menuitemscontrol data = {sweet_data_log} data1 = 'SWEETS_DATA_loc'/>
       </div>
     );
   } else if (!sweet && foods && !drink) {
     return (
       <div>
         {elements}
-        <p>foods</p>
+        <Menuitemscontrol data = {foods_data_loc} data1 = 'FOODS_DATA_loc'/>
       </div>
     );
   } else if (!sweet && !foods && drink) {
     return (
       <div>
         {elements}
-        <p>drink</p>
+        <Menuitemscontrol data = {drink_data_loc} data1 = 'DRINK_DATA_loc'/>
       </div>
     );
   }
