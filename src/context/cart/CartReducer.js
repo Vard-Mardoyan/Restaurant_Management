@@ -1,6 +1,6 @@
-import { SHOW_HIDE_CART, ADD_TO_CART, REMOVE_ITEM } from "../Types";
+import { ADD_TO_CART, REMOVE_ITEM, SHOW_HIDE_CART } from "../Types";
 
-const CartReducer = (state, action) => {
+export const cartReducer = (state, action) => {
 	switch (action.type) {
 		case SHOW_HIDE_CART: {
 			return {
@@ -17,9 +17,9 @@ const CartReducer = (state, action) => {
 		case REMOVE_ITEM: {
 			return {
 				...state,
-				cartItems: state.cartItems.filter(
-					(item) => item._id !== action.payload
-				),
+				cartItems: [
+					...state.cartItems.filter((item) => item.id !== action.payload),
+				],
 			};
 		}
 
@@ -28,4 +28,4 @@ const CartReducer = (state, action) => {
 	}
 };
 
-export default CartReducer;
+export default cartReducer;

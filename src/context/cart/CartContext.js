@@ -1,4 +1,11 @@
 import { createContext } from "react";
 
-const CartContext = createContext();
-export default CartContext;
+export const initialState = {
+	showCart: false,
+	cartItems: [],
+};
+
+export const CartState = createContext({
+	initialState,
+	dispatch: () => null,
+});

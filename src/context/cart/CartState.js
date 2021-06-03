@@ -1,15 +1,12 @@
-import { useReducer } from "react";
-import CartContext from "./CartContext";
-import CartReducer from "./CartReducer";
+import { useContext, useReducer } from "react";
 import { SHOW_HIDE_CART, ADD_TO_CART, REMOVE_ITEM } from "../Types";
+import { cartReducer } from "./CartReducer";
+import { CartState, initialState } from "./CartContext";
 
-const CartState = ({ children }) => {
-	const initalState = {
-		showCart: false,
-		cartItems: [],
-	};
+export const useCartContext = () => useContext(CartState);
 
-	const [state, dispatch] = useReducer(CartReducer, initalState);
+const CartProvider = ({ children }) => {
+	const [cartState, dispatch] = useReducer(cartReducer, initialState);
 
 	const addToCart = (item) => {
 		dispatch({ type: ADD_TO_CART, payload: item });
@@ -24,18 +21,14 @@ const CartState = ({ children }) => {
 	};
 
 	return (
-		<CartContext.Provider
+		<CartState.Provider
 			value={{
-				showCart: state.showCart,
-				cartItems: state.cartItems,
-				addToCart,
-				showHideCart,
-				removeItem,
+				...{ ...cartState, addToCart, showHideCart, removeItem, dispatch },
 			}}
 		>
 			{children}
-		</CartContext.Provider>
+		</CartState.Provider>
 	);
 };
 
-export default CartState;
+export default CartProvider;

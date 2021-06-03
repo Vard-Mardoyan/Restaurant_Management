@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 import { Routes } from "../../helper/routes";
 import "./Nav.css";
-import { useContext, useState, useEffect } from "react";
-import CartContext from "../../context/cart/CartContext";
-
+import {useContext, useState, useEffect } from "react";
 import { FaShoppingCart } from "react-icons/fa";
+import { useCartContext } from "../../context/cart/CartState";
 
 export default function Nav() {
-	const { cartItems, showHideCart } = useContext(CartContext);
+	const { cartItems, showHideCart } = useCartContext();
 	const [show, setShow] = useState(true);
 	const controlNavbar = () => {
 		if (window.scrollY > 100) {
