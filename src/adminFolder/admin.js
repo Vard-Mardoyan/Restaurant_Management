@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import Userscontrol from "./usercontrol"
 import { Tablelist } from "../RezervFolder/tablelist"
-import Controlmenu from "./controlmenu"
+import Menucontrol from "./controlmenu"
 
 
 
@@ -42,7 +42,7 @@ export default function AdminButton(){
          return (
              <div>
                  {buttonselement}
-                 <Controlmenu/>
+                 <Menucontrol/>
              </div>
          )
      }
