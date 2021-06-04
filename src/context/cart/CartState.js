@@ -1,9 +1,18 @@
 import { useContext, useReducer } from "react";
-import { SHOW_HIDE_CART, ADD_TO_CART, REMOVE_ITEM } from "../Types";
+import {
+	SHOW_HIDE_CART,
+	ADD_TO_CART,
+	REMOVE_ITEM,
+	INCREASE,
+	DECREASE,
+	CLEAR,
+} from "../Types";
 import { cartReducer } from "./CartReducer";
 import { CartState, initialState } from "./CartContext";
 
 export const useCartContext = () => useContext(CartState);
+// const storage = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
+// const initialState = { cartItems: storage, ...sumItems(storage), checkout: false };
 
 const CartProvider = ({ children }) => {
 	const [cartState, dispatch] = useReducer(cartReducer, initialState);
@@ -20,10 +29,29 @@ const CartProvider = ({ children }) => {
 		dispatch({ type: REMOVE_ITEM, payload: id });
 	};
 
+	const increase = (payload) => {
+		dispatch({ type: INCREASE, payload });
+	};
+
+	const decrease = (payload) => {
+		dispatch({ type: DECREASE, payload });
+	};
+	const clearCart = () => {
+		dispatch({ type: CLEAR });
+	};
 	return (
 		<CartState.Provider
 			value={{
-				...{ ...cartState, addToCart, showHideCart, removeItem, dispatch },
+				...{
+					...cartState,
+					addToCart,
+					showHideCart,
+					removeItem,
+					dispatch,
+					increase,
+					decrease,
+					clearCart,
+				},
 			}}
 		>
 			{children}

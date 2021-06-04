@@ -7,7 +7,8 @@ import formatCurrency from "format-currency";
 import { useCartContext } from "../context/cart/CartState";
 
 const Cart = () => {
-	const { showCart, cartItems, showHideCart } = useCartContext();
+	const { showCart, cartItems, showHideCart, total, clearCart } =
+		useCartContext();
 	let opts = { format: "%s%v", symbol: "€" };
 
 	return (
@@ -37,11 +38,14 @@ const Cart = () => {
 						<div>Cart Total</div>
 						<div></div>
 						<div style={{ marginLeft: 5 }}>
-							{formatCurrency(
+							{formatCurrency(total, opts)}
+
+							{/* {formatCurrency(
 								cartItems.reduce((amount, item) => item.price + amount, 0),
 								opts
-							)}
+							)} */}
 						</div>
+						<button onClick={clearCart}>Clear All</button>
 					</div>
 				</div>
 			)}

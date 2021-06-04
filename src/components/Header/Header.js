@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import slide1 from "../../assets/image-header/food-styling.jpg";
-import slide2 from  "../../assets/image-header/oranges.jpg"; 
+import slide2 from "../../assets/image-header/oranges.jpg";
 import slide3 from "../../assets/image-header/pasta.jpg";
 import slide4 from "../../assets/image/restaurant_interior.jpg";
 
