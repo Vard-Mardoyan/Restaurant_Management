@@ -14,9 +14,9 @@ export const loadState = (key) => {
   }
 };
 
-export const SWEETS_DATA_FROM_LOCAL_STORAGE = JSON.parse(localStorage.getItem("SWEETS_DATA_LOCAL_STORAGE"));
-export const FOODS_DATA_FROM_LOCAL_STORAGE = JSON.parse(localStorage.getItem("FOODS_DATA_LOCAL_STORAGE"));
-export const DRINKS_DATA_FROM_LOCAL_STORAGE = JSON.parse(localStorage.getItem("DRINKS_DATA_LOCAL_STORAGE"));
+export const SWEETS_DATA_FROM_LOCAL_STORAGE = JSON.parse(localStorage.getItem('SWEETS_DATA_loc'));
+export const FOODS_DATA_FROM_LOCAL_STORAGE = JSON.parse(localStorage.getItem('FOODS_DATA_loc'));
+export const DRINKS_DATA_FROM_LOCAL_STORAGE = JSON.parse(localStorage.getItem('DRINK_DATA_loc'));
 
 
 console.log(SWEETS_DATA_FROM_LOCAL_STORAGE, "SWEETS_DATA_FROM_LOCAL_STORAGE:::");
