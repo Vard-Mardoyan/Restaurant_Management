@@ -3,10 +3,6 @@ import Menuitemscontrol from "./components";
 import { SWEETS_DATA_FROM_LOCAL_STORAGE, FOODS_DATA_FROM_LOCAL_STORAGE, DRINKS_DATA_FROM_LOCAL_STORAGE} from "../helper/local-storage";
 
 
-// const sweet_data_log = JSON.parse(localStorage.getItem("SWEETS_DATA_loc"));
-// const foods_data_loc = JSON.parse(localStorage.getItem("FOODS_DATA_loc"));
-// const drink_data_loc = JSON.parse(localStorage.getItem("DRINK_DATA_loc"));
-
 
 
 
