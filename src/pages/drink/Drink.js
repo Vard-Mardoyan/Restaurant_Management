@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import CardList from "../../components/card-list/CardList";
 import { getBeersData } from "../../service/data";
 import CardListBeer from "../../components/card-list/CardListBeer";
+import { DRINKS_DATA_FROM_LOCAL_STORAGE } from "../../helper/local-storage"; 
 import "./DrinkStyle.css";
 
 export default function Drink() {
@@ -41,7 +42,7 @@ export default function Drink() {
   return (
     <>
       <h1 className="title">Drinks</h1>
-      <CardList dataType='DRINK_DATA' />
+      <CardList dataType='DRINKS_DATA_FROM_LOCAL_STORAGE' />
       <CardListBeer items={data} />
     </>
   );

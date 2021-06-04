@@ -733,7 +733,7 @@ export const getBeersData = () => {
 };
 
 
-export const DATA = { SWEETS_DATA, FOODS_DATA, DRINK_DATA };
+// export const DATA = { SWEETS_DATA, FOODS_DATA, DRINK_DATA };
 
 
 export const STORY_DATA = [

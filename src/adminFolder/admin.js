@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import Userscontrol from "./usercontrol"
 import { Tablelist } from "../RezervFolder/tablelist"
 import Menucontrol from "./controlmenu"
-import { sweet_data_log } from "./components"
+// import { sweet_data_log } from "./components"
 
 
 export default function AdminButton(){
