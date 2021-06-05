@@ -1,14 +1,13 @@
 body {
- background-color: #fff;
+	/* background-color: red; */
 }
+
 .text {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  color: #6e4b4b;
-
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	color: #6e4b4b;
 }
-
 
 /* .main-photo {
   display: flex;
@@ -19,38 +18,39 @@ body {
 
 } */
 .title {
-  color: #c48f8f;
+	color: #c48f8f;
 }
 .container {
-  display: flex;
-  height: 1200px;;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
+	display: flex;
+	height: 1200px;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	background-color: rgba(173, 216, 230, 0.493);
 }
 .image-card {
-  width: 500px;
-  padding: 10px;
-  margin: 10px;
+	width: 500px;
+	padding: 10px;
+	margin: 10px;
 
-  background-color:  hsla(23, 40%, 50%, 0.1);
-  border-radius: 10px;
+	background-color: hsla(23, 40%, 50%, 0.1);
+	border-radius: 10px;
 }
-.main-photo{
-  width: 460px;
-  padding: 10px;
-  margin: 10px;
+.main-photo {
+	width: 460px;
+	padding: 10px;
+	margin: 10px;
 
-  background-color: hsla(23, 40%, 50%, 0.1);
-  border-radius: 10px;
+	background-color: hsla(23, 40%, 50%, 0.1);
+	border-radius: 10px;
 }
 
 .photo-second {
-  width: 460px;
-  padding: 10px;
-  margin: 10px;
+	width: 460px;
+	padding: 10px;
+	margin: 10px;
 
-  background-color: hsla(23, 40%, 50%, 0.1);
-  border-radius: 10px;
+	background-color: hsla(23, 40%, 50%, 0.1);
+	border-radius: 10px;
 }

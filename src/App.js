@@ -9,7 +9,8 @@ import AdminButton from "./adminFolder/admin";
 import ShoppingCart from "./components/ShoppingCart";
 import CartProvider from "./context/cart/CartState";
 import LocalStoragesDates from "./components/creatingLocalstoragesDate";
-
+import background from "./assets/image/2.jpg";
+import "./App.css";
 export default function App() {
 	const [adminStatus, setAdminstatus] = useState(true);
 
@@ -19,30 +20,41 @@ export default function App() {
 
 	if (adminStatus) {
 		return (
-			<CartProvider>
-				<Router>
-					<LocalStoragesDates />
-					<div>
-						<Header />
-						<Singin />
-						<Admin />
-						<Nav />
-						<Switch>
-							{Routes.map(({ route, component: Component }, index) => (
-								<Route exact path={route} key={index}>
-									<Component />
+			<div
+				// style={{
+				// 	backgroundImage: `url(${background})`,
+				// 	// backgroundSize: "cover",
+				// 	backgroundRepeat: "no-repeat",
+				// 	backgroundPosition: "center",
+				// 	backgroundAttachment: 'fixed',
+				// 	height: "8000px",
+				// }}
+			>
+				<CartProvider>
+					<Router>
+						<LocalStoragesDates />
+						<div>
+							<Header />
+							<Singin />
+							<Admin />
+							<Nav />
+							<Switch>
+								{Routes.map(({ route, component: Component }, index) => (
+									<Route exact path={route} key={index}>
+										<Component />
+									</Route>
+								))}
+								<Route path="*">
+									<h2>Not Found</h2>
 								</Route>
-							))}
-							<Route path="*">
-								<h2>Not Found</h2>
-							</Route>
-						</Switch>
-						<ShoppingCart />
+							</Switch>
+							<ShoppingCart />
 
-						<Footer />
-					</div>
-				</Router>
-			</CartProvider>
+							<Footer />
+						</div>
+					</Router>
+				</CartProvider>
+			</div>
 		);
 	}
 	return <AdminButton />;
