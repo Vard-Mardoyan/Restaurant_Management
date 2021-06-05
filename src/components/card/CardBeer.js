@@ -7,8 +7,14 @@ import {
   Typography,
 } from "@material-ui/core";
 import "./CardStyle.css";
+import formatCurrency from "format-currency";
 
 export default function CardBeerComponent({id, name, description, image_url, volume, onItemClick}) {
+
+  let opts = { format: "%s%v", symbol: "$" };
+  const price = volume.value;
+  const unit = volume.unit;
+
   return (
     <Card className="card" key={id}>
       <CardContent>
@@ -19,7 +25,7 @@ export default function CardBeerComponent({id, name, description, image_url, vol
           {description}
         </Typography>
         <Typography color="textSecondary" gutterBottom>
-          {volume.value} {volume.unit}
+          {formatCurrency(`${price}`, opts)} {unit}
         </Typography>
         <Typography variant="body2" component="p">
           <br />
