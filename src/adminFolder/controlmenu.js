@@ -57,7 +57,7 @@ export default function Menucontrol() {
     return (
       <div>
         {elements}
-        <Menuitemscontrol data = {FOODS_DATA_FROM_LOCAL_STORAGE} data1 = "FOODS_DATA_LOCAL_STORAGE" />
+        <Menuitemscontrol data = {FOODS_DATA_FROM_LOCAL_STORAGE} data1= "FOODS_DATA_LOCAL_STORAGE" />
       </div>
     );
   } else if (!sweet && !foods && drink) {
