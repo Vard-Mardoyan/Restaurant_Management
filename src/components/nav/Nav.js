@@ -4,6 +4,7 @@ import "./Nav.css";
 import { useContext, useState, useEffect } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { useCartContext } from "../../context/cart/CartState";
+import { Singin } from "../../Login-logout/login"
 
 export default function Nav() {
 	const { cartItems, showHideCart } = useCartContext();
@@ -31,6 +32,7 @@ export default function Nav() {
 						{title}
 					</Link>
 				))}
+				   <Singin/>
 
 				<div className="nav__right">
 					<div className="cart__icon">
