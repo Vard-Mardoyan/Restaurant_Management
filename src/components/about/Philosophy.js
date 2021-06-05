@@ -5,11 +5,11 @@ export default function PhilosophyComponent() {
  const  title = 'The philosophy of cooking';
 
   return (
-    <div>
-      {PHILOSOPHY_OF_COOKING_DATA.map(({article, author, image, image_other}) => {
+    <>
+      {PHILOSOPHY_OF_COOKING_DATA.map(({article, author, image, image_other}, index) => {
 
         return (
-          <div className="container">
+          <div className="container" key={index}>
             <div className="text">
               <h3 className="title"> {`${title.toUpperCase()}`} </h3>
               <p>{article}</p>
@@ -24,7 +24,7 @@ export default function PhilosophyComponent() {
           </div>
         )
       })}
-    </div>
+    </>
   )
 }
 
