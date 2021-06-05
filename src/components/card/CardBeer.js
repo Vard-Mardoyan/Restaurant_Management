@@ -13,7 +13,6 @@ export default function CardBeerComponent({id, name, description, image_url, vol
 
   let opts = { format: "%s%v", symbol: "$" };
   const price = volume.value;
-  const unit = volume.unit;
 
   return (
     <Card className="card" key={id}>
@@ -25,7 +24,7 @@ export default function CardBeerComponent({id, name, description, image_url, vol
           {description}
         </Typography>
         <Typography color="textSecondary" gutterBottom>
-          {formatCurrency(`${price}`, opts)} {unit}
+          {formatCurrency(`${price}`, opts)} 
         </Typography>
         <Typography variant="body2" component="p">
           <br />
