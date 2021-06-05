@@ -38,7 +38,7 @@ export default function App() {
 							</Route>
 						</Switch>
 						<ShoppingCart />
-
+                       
 						<Footer />
 					</div>
 				</Router>
