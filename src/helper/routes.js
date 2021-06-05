@@ -4,10 +4,6 @@ import Contact from  "../pages/contact/Contact";
 import Food from "../pages/food/Food";
 import Sweets from "../pages/sweet/Sweets";
 import Drink from "../pages/drink/Drink";
-import StaffData from "../pages/Staff/Staff";
-
-
-
 
 export const Routes = [
 	{
@@ -42,9 +38,5 @@ export const Routes = [
 		component: Drink,
 		title: "Drink",
 	},
-	{
-		route: "/staffData",
-		component: StaffData,
-		title: "StaffData",
-	},
+
 ];

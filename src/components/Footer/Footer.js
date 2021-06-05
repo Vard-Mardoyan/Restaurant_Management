@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Component } from "react";
 import "./Footer.css";
-import logo from "./restaurant-logo.jpg";
+import logo from "../../assets/image/13.jpg";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import QueryBuilderIcon from "@material-ui/icons/QueryBuilder";
 import CallIcon from "@material-ui/icons/Call";

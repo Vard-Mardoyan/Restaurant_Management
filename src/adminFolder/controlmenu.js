@@ -1,12 +1,15 @@
 import { useState } from "react";
-import Menuitemscontrol from "./components";
-import { SWEETS_DATA_FROM_LOCAL_STORAGE, FOODS_DATA_FROM_LOCAL_STORAGE, DRINKS_DATA_FROM_LOCAL_STORAGE} from "../helper/local-storage";
+import MenuControlComponent from "./components";
 
 
 
 
 
 export default function Menucontrol() {
+  const SWEETS_DATA_FROM_LOCAL_STORAGE1 = JSON.parse(localStorage.getItem('SWEETS_DATA_loc'));
+  const FOODS_DATA_FROM_LOCAL_STORAGE1 = JSON.parse(localStorage.getItem('FOODS_DATA_loc'));
+  const DRINKS_DATA_FROM_LOCAL_STORAGE1 = JSON.parse(localStorage.getItem('DRINK_DATA_loc'));
+
   const [sweet, setSweet] = useState(false);
   const [foods, setFoods] = useState(false);
   const [drink, setDrink] = useState(false);
@@ -49,21 +52,21 @@ export default function Menucontrol() {
     return (
       <div>
         {elements}
-        <Menuitemscontrol data = {SWEETS_DATA_FROM_LOCAL_STORAGE} data1 = 'SWEETS_DATA_loc'/>
+        <MenuControlComponent data = {SWEETS_DATA_FROM_LOCAL_STORAGE1} localStorageData= 'SWEETS_DATA_loc'/>
       </div>
     );
   } else if (!sweet && foods && !drink) {
     return (
       <div>
         {elements}
-        <Menuitemscontrol data = {FOODS_DATA_FROM_LOCAL_STORAGE} data1 = 'FOODS_DATA_loc' />
+        <MenuControlComponent data = {FOODS_DATA_FROM_LOCAL_STORAGE1} localStorageData = 'FOODS_DATA_loc' />
       </div>
     );
   } else if (!sweet && !foods && drink) {
     return (
       <div>
         {elements}
-        <Menuitemscontrol data = {DRINKS_DATA_FROM_LOCAL_STORAGE} data1 = 'DRINK_DATA_loc' />
+        <MenuControlComponent data = {DRINKS_DATA_FROM_LOCAL_STORAGE1} localStorageData = 'DRINK_DATA_loc' />
       </div>
     );
   }

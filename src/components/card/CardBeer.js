@@ -8,6 +8,7 @@ import {
 } from "@material-ui/core";
 import "./CardStyle.css";
 import { useCartContext } from "../../context/cart/CartState";
+import formatCurrency from "format-currency";
 
 export default function CardBeerComponent({
 	id,
@@ -15,10 +16,10 @@ export default function CardBeerComponent({
 	description,
 	image_url,
 	volume,
-	hops,
-	addToItem,
 }) {
 	const { addToCart, cartItems, increase } = useCartContext();
+	let opts = { format: "%s%v", symbol: "$" };
+	const price = volume.value;
 
 	return (
 		<Card className="card" key={id}>
@@ -30,11 +31,8 @@ export default function CardBeerComponent({
 					{description}
 				</Typography>
 				<Typography color="textSecondary" gutterBottom>
-					{volume.value} {volume.unit}
+					{formatCurrency(`${price}`, opts)}
 				</Typography>
-				{/* <Typography color="textSecondary" gutterBottom>
-					{hops.amount.value}
-				</Typography> */}
 				<Typography variant="body2" component="p">
 					<br />
 					<img src={image_url} alt={name} width="70" />
@@ -48,7 +46,6 @@ export default function CardBeerComponent({
 						description,
 						image_url,
 						volume,
-						hops,
 					})}
 					variant="contained"
 					color="primary"

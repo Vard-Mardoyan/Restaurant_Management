@@ -19,10 +19,10 @@ export default function Story() {
 	};
 
 	return (
-		<div>
-			{STORY_DATA.map(({ image, image_main, text }) => {
+		<>
+			{STORY_DATA.map(({ image, image_main, text }, index) => {
 				return (
-					<div className="container">
+					<div className="container" key={index}>
 						<div className="text">
 							<h3 className="title">{`${title.toUpperCase()}`}</h3>
 							<p>
@@ -41,6 +41,7 @@ export default function Story() {
 					</div>
 				);
 			})}
-		</div>
+			<div className="wallpaper"></div>
+		</>
 	);
 }

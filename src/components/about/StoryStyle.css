@@ -1,12 +1,8 @@
-body {
-	/* background-color: red; */
-}
-
 .text {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	color: #6e4b4b;
+	color: rgb(235, 222, 222);
 }
 
 /* .main-photo {
@@ -18,16 +14,16 @@ body {
 
 } */
 .title {
-	color: #c48f8f;
+	color: #573232;
 }
 .container {
 	display: flex;
-	height: 1200px;
+	height: 1400px;
 	flex-direction: row;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
-	background-color: rgba(173, 216, 230, 0.493);
+	background-color: rgba(101, 112, 141, 0.445);
 }
 .image-card {
 	width: 500px;
@@ -53,4 +49,15 @@ body {
 
 	background-color: hsla(23, 40%, 50%, 0.1);
 	border-radius: 10px;
+}
+.wallpaper {
+	/* background-color: red; */
+	height: 400px;
+}
+
+@media screen and (max-width: 740px) {
+	.container {
+		flex-direction: column;
+		align-items: flex-start;
+	}
 }
