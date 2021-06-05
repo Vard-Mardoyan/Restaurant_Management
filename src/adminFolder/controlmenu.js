@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Menuitemscontrol from "./components";
+import MenuControlComponent from "./components";
 import { SWEETS_DATA_FROM_LOCAL_STORAGE, FOODS_DATA_FROM_LOCAL_STORAGE, DRINKS_DATA_FROM_LOCAL_STORAGE} from "../helper/local-storage";
 
 
@@ -49,21 +49,21 @@ export default function Menucontrol() {
     return (
       <div>
         {elements}
-        <Menuitemscontrol data = {SWEETS_DATA_FROM_LOCAL_STORAGE} data1 = 'SWEETS_DATA_loc'/>
+        <MenuControlComponent data = {SWEETS_DATA_FROM_LOCAL_STORAGE} localStorageData= 'SWEETS_DATA'/>
       </div>
     );
   } else if (!sweet && foods && !drink) {
     return (
       <div>
         {elements}
-        <Menuitemscontrol data = {FOODS_DATA_FROM_LOCAL_STORAGE} data1 = 'FOODS_DATA_loc' />
+        <MenuControlComponent data = {FOODS_DATA_FROM_LOCAL_STORAGE} localStorageData = 'FOODS_DATA' />
       </div>
     );
   } else if (!sweet && !foods && drink) {
     return (
       <div>
         {elements}
-        <Menuitemscontrol data = {DRINKS_DATA_FROM_LOCAL_STORAGE} data1 = 'DRINK_DATA_loc' />
+        <MenuControlComponent data = {DRINKS_DATA_FROM_LOCAL_STORAGE} localStorageData = 'DRINK_DATA' />
       </div>
     );
   }
