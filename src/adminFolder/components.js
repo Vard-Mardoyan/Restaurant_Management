@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { SWEETS_DATA_FROM_LOCAL_STORAGE, FOODS_DATA_FROM_LOCAL_STORAGE, DRINKS_DATA_FROM_LOCAL_STORAGE, DATA} from "../helper/local-storage";
+import { useEffect, useState } from "react";
+import { SWEETS_DATA_FROM_LOCAL_STORAGE, FOODS_DATA_FROM_LOCAL_STORAGE, DRINKS_DATA_FROM_LOCAL_STORAGE} from "../helper/local-storage";
+
 
 
 export default function Menuitemscontrol(props) {
@@ -78,6 +79,7 @@ export default function Menuitemscontrol(props) {
 
   return newsweet_data_loc;
 }
+
 
 
 
