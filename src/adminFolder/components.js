@@ -1,9 +1,4 @@
 import { useEffect, useState } from "react";
-import {
-  SWEETS_DATA_FROM_LOCAL_STORAGE,
-  FOODS_DATA_FROM_LOCAL_STORAGE,
-  DRINKS_DATA_FROM_LOCAL_STORAGE,
-} from "../helper/local-storage";
 
 export default function MenuControlComponent(props) {
   const [newName, setNewName] = useState("");
@@ -32,7 +27,6 @@ export default function MenuControlComponent(props) {
     props.data.map((el) => {
       console.log(el.id, "elem.id::::")
       console.log(id, "id:::");
-      //console.log(el.price, 'el.price:::');
 
       if (Number(id) === Number(el.id)) {
         el.name = newName;

@@ -23,7 +23,6 @@ console.log(SWEETS_DATA_FROM_LOCAL_STORAGE, "SWEETS_DATA_FROM_LOCAL_STORAGE:::")
 
 export const DATA = { SWEETS_DATA_FROM_LOCAL_STORAGE, FOODS_DATA_FROM_LOCAL_STORAGE, DRINKS_DATA_FROM_LOCAL_STORAGE};
 
-// the second version 
 export const DATA_FROM_LOCAL_STORAGE = (key) => {
   try {
     return JSON.parse(localStorage.getItem(key));
