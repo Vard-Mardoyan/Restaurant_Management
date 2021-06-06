@@ -4,6 +4,7 @@ import { Tablelist } from "../RezervFolder/tablelist";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import "./style.css";
+import CloseIcon from "@material-ui/icons/Close";
 
 export function Singin() {
   const [loginStatus, setLoginStatus] = useState(
@@ -86,18 +87,32 @@ export function Singin() {
   } else if (login === "toLogin") {
     return (
       <div className="logindiv">
+        <div className="closelink">
+          <Link
+            onClick={() => {
+              setLogin("");
+              localStorage.removeItem("logindUser");
+              localStorage.setItem("loginStatus", "tologin");
+              setLoginStatus(localStorage.getItem("loginStatus"));
+            }}
+            to="/"
+            className="link"
+          >
+            X
+          </Link>
+        </div>
         <div className="loginorcreate">
           <h2 className="logintitel">Login</h2>
           <div className="inpustform">
             <input
-              placeholder = 'Username'
+              placeholder="Username"
               className="input"
               onChange={onInputchange}
               name="name"
               value={user.name}
             ></input>
             <input
-              placeholder = 'Password'
+              placeholder="Password"
               className="input"
               onChange={onInputchange}
               name="password"
@@ -105,20 +120,22 @@ export function Singin() {
               type="password"
             ></input>
             <div>
-              <div className = 'loginlinkstyle'>
+              <div className="loginlinkstyle">
                 <Link onClick={loginnFunction} to="/" className="link">
                   Login
                 </Link>
               </div>
 
-              {generalError && <p>{generalError}</p>}
+              {generalError && (
+                <p className="errortext">Incorrect username or password</p>
+              )}
 
-              <div className = 'newaccbtn'> 
+              <div className="newaccbtn">
                 <Link
                   onClick={() => setLogin("createAccaunt")}
                   to="/"
                   className="link"
-                  >
+                >
                   Create accaunt
                 </Link>
               </div>
@@ -132,19 +149,30 @@ export function Singin() {
   } else if (loginStatus === "logind") {
     return (
       <div>
-        <h4>{JSON.parse(localStorage.getItem("logindUser")).name}</h4>
-        <button
-          onClick={() => {
-            setLogin("");
-            localStorage.removeItem("logindUser");
-            localStorage.setItem("loginStatus", "tologin");
-            setLoginStatus(localStorage.getItem("loginStatus"));
-          }}
-        >
-          Logout
-        </button>
-        <button onClick={() => setRezervepage(true)}>Rezerv Table</button>
-        <button onClick={pagecontrol}>Delete Accaunt</button>
+        <div className="usersname">
+          <h4>{JSON.parse(localStorage.getItem("logindUser")).name}</h4>
+        </div>
+        <div>
+          <Link
+            onClick={() => {
+              setLogin("");
+              localStorage.removeItem("logindUser");
+              localStorage.setItem("loginStatus", "tologin");
+              setLoginStatus(localStorage.getItem("loginStatus"));
+            }}
+            to="/"
+            className="link"
+          >
+            Logout
+          </Link>
+          <Link onClick={() => setRezervepage(true)} to="/" className="link">
+                  Rezetve table
+          </Link>
+          <Link onClick={pagecontrol} to="/" className="link">
+                  Delete accaunt
+          </Link>
+
+        </div>
         {rezervepage && <Tablelist />}
       </div>
     );

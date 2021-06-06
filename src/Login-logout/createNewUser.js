@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Singin } from "./login";
+import { Link } from "react-router-dom";
 
 export function CreatingNewUser() {
   const [isAdding, setIsAdding] = useState(false);
@@ -66,22 +67,30 @@ export function CreatingNewUser() {
 
   if (!isAdding) {
     return (
-      <div>
-        <label>
-          Username:
-          <input onChange={takeUserInfo} name="name" value={user.value}></input>
-        </label>
-        <br />
-        <label>
-          Password:
-          <input
-            onChange={takeUserInfo}
-            name="password"
-            value={user.password}
-          ></input>
-        </label>
-        <br />
-        <button onClick={addNewUser}>Create Accaunt</button>
+      <div className="logindiv">
+        <div className="loginorcreate">
+          <h2 className="logintitel">Creat personal accaunt</h2>
+          <div className="inpustform">
+            <input
+              className="input"
+              onChange={takeUserInfo}
+              name="name"
+              value={user.value}
+            ></input>
+            <input
+              className="input"
+              onChange={takeUserInfo}
+              name="password"
+              value={user.password}
+              type="password"
+            ></input>
+            <div className="loginlinkstyle">
+              <Link onClick={addNewUser} to="/" className="link">
+                Create accaunt
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     );
   } else {
