@@ -1,3 +1,14 @@
+.wrapper {
+	background-image: url("../../assets/image/5.jpg");
+	background-repeat: no-repeat;
+	/* object-fit:contain; */
+
+	background-position: center;
+	background-attachment: fixed;
+	height: 8000px;
+}
+
+
 @media screen and (max-width: 1060px) {
   .wrapper {
     width: 720px;

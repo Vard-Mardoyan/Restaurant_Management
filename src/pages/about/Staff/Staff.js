@@ -96,6 +96,7 @@ export default function StaffData() {
 	}, [activeIndex]);
 
 	return (
+		<div className="staffDataContainer">
 		<section className="section">
 			<div className="title">
 				<h2>Staff Info</h2>
@@ -132,5 +133,6 @@ export default function StaffData() {
 				</button>
 			</div>
 		</section>
+		</div>
 	);
 }

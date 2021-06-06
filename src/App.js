@@ -9,7 +9,8 @@ import AdminButton from "./adminFolder/admin";
 import ShoppingCart from "./components/ShoppingCart";
 import CartProvider from "./context/cart/CartState";
 import LocalStoragesDates from "./components/creatingLocalstoragesDate";
-
+import background from "./assets/image/2.jpg";
+import "./App.css";
 export default function App() {
 	const [adminStatus, setAdminstatus] = useState(true);
 
@@ -36,9 +37,12 @@ export default function App() {
 							<Route path="*">
 								<h2>Not Found</h2>
 							</Route>
+							<Route path="*">
+								<h2>Not Found</h2>
+							</Route>
 						</Switch>
 						<ShoppingCart />
-                       
+
 						<Footer />
 					</div>
 				</Router>

@@ -13,10 +13,10 @@ export default function Food() {
   }, []);
 
   return (
-    <>
+    <div className='food-container'>
       <h1 className="title">Main Dishes</h1>
       <CardList dataType='FOODS_DATA_FROM_LOCAL_STORAGE' />
-    </>
+    </div>
   );
 }
 

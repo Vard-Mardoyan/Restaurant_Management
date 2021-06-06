@@ -27,9 +27,13 @@ h3 {
 h4 {
 	font-size: 0.875rem;
 }
-
+/* .staffDataContainer{
+	background-color: lightgray;
+} */
 .section {
-	width: 90vw;
+	width: 62.5vw;
+	background-color: rgba(211, 211, 211, 0.746);
+
 	margin: 5rem auto;
 }
 

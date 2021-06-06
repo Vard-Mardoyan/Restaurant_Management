@@ -1,8 +1,7 @@
 .main-nav {
 	display: flex;
 	justify-content: space-around;
-	padding: 10px;
-	background-color: rgb(198, 209, 216);
+	background-color: rgba(198, 209, 216, 0.664);
 	align-items: center;
 	position: fixed;
 	color: #203758;
@@ -26,6 +25,7 @@
 	margin-left: 10px;
 	font-size: 15px;
 	text-decoration: none;
+
 	font-family: sans-serif;
 	color: #203758;
 	text-transform: uppercase;
@@ -34,7 +34,7 @@
 	transition: 200ms;
 }
 .link:hover {
-	text-decoration: underline;
+	color: rgb(160, 143, 224);
 }
 .cart__icon i {
 	cursor: pointer;

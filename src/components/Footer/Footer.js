@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Component } from "react";
-// import { Map, GoogleApiWrapper } from "google-maps-react";
 import "./Footer.css";
-import logo from "./restaurant-logo.jpg";
+import logo from "../../assets/image/13.jpg";
+import LocationOnIcon from "@material-ui/icons/LocationOn";
+import QueryBuilderIcon from "@material-ui/icons/QueryBuilder";
+import CallIcon from "@material-ui/icons/Call";
 
 import { FaTwitter } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
@@ -14,74 +16,51 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaPrint } from "react-icons/fa";
-// const mapStyles = {
-// 	width: "100%",
-// 	height: "100%",
-// };
+import GlobalMap from "../Map";
+
 export class Footer extends Component {
 	render() {
 		return (
 			<div className="App-footer">
-				{/* <div className="first-footer-container"> */}
-				{/* <img src={logo} alt="logo" /> */}
-				{/* <FaFacebook />
-				<FaInstagram />
-				<FaTwitter />
-				<FaYoutube />
-				<FaGooglePlusG /> */}
-				{/* </div> */}
 				<div className="footerInfo-container">
 					<ul className="footer-inner-container">
 						<img className="restaurant-logo" src={logo} alt="logo" />
 
 						<li className="location">
 							<Link to="/" className="footer-container-link">
-								Location
+								<LocationOnIcon />
+								<span> Location </span>
 							</Link>
 
-							<p>123 Willow Street</p>
-							<p>Austin, TX 78702</p>
+							<p>Via Bernardino Rota 34</p>
+							<p> Fontanelle, Cuneo</p>
 						</li>
 						<li className="hours">
 							<Link to="/#" className="footer-container-link">
-								Hours
+								<QueryBuilderIcon /> <span>Hours</span>
 							</Link>
-							<p>123 Willow Street</p>
-							<p>Austin, TX 78702</p>
+							<p>Open 8:30 a.m</p>
+							<p>Close 1:00 p.m</p>
 						</li>
 						<li className="contact">
 							<Link to="/#" className="footer-container-link">
-								Contact
+								<CallIcon />
+								<span> Contact</span>
 							</Link>
+
 							<p> 800-2345-6799 </p>
 						</li>
 
 						<li>
 							<Link to="/#" className="footer-container-link">
-								Make a Reservation -----
+								<span> Make a Reservation ----- </span>
 							</Link>
 						</li>
 					</ul>
 				</div>
 				<div className="map-container">
-				Map
+					<GlobalMap />
 				</div>
-				
-				{/* return (
-				<Map
-					google={this.props.google}
-					zoom={8}
-					style={mapStyles}
-					initialCenter={{ lat: 47.444, lng: -122.176 }}
-				/>
-				); */}
-				{/* <Marker onClick={this.onMarkerClick} name={"Current location"} />
-				<InfoWindow onClose={this.onInfoWindowClose}></InfoWindow> */}
-				{/* </Map> */}
-				{/* <FaMapMarkerAlt /> The Company Name Inc. 9870 St */}
-				{/* <FaPhoneAlt /> */}
-				{/* <FaPrint /> */}
-				{/* <FaEnvelope /> */}
 			</div>
 		);
 	}
