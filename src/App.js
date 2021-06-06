@@ -20,41 +20,33 @@ export default function App() {
 
 	if (adminStatus) {
 		return (
-			<div
-				// style={{
-				// 	backgroundImage: `url(${background})`,
-				// 	// backgroundSize: "cover",
-				// 	backgroundRepeat: "no-repeat",
-				// 	backgroundPosition: "center",
-				// 	backgroundAttachment: 'fixed',
-				// 	height: "8000px",
-				// }}
-			>
-				<CartProvider>
-					<Router>
-						<LocalStoragesDates />
-						<div>
-							<Header />
-							<Singin />
-							<Admin />
-							<Nav />
-							<Switch>
-								{Routes.map(({ route, component: Component }, index) => (
-									<Route exact path={route} key={index}>
-										<Component />
-									</Route>
-								))}
-								<Route path="*">
-									<h2>Not Found</h2>
+			<CartProvider>
+				<Router>
+					<LocalStoragesDates />
+					<div>
+						<Header />
+						<Singin />
+						<Admin />
+						<Nav />
+						<Switch>
+							{Routes.map(({ route, component: Component }, index) => (
+								<Route exact path={route} key={index}>
+									<Component />
 								</Route>
-							</Switch>
-							<ShoppingCart />
+							))}
+							<Route path="*">
+								<h2>Not Found</h2>
+							</Route>
+							<Route path="*">
+								<h2>Not Found</h2>
+							</Route>
+						</Switch>
+						<ShoppingCart />
 
-							<Footer />
-						</div>
-					</Router>
-				</CartProvider>
-			</div>
+						<Footer />
+					</div>
+				</Router>
+			</CartProvider>
 		);
 	}
 	return <AdminButton />;
