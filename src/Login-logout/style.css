@@ -14,10 +14,13 @@
 .link:hover {
 	text-decoration: underline;
 }
+.closelink{
+    margin-left: 265px;
+}
 
 .logindiv{
     width: 300px;
-    height: 300px;
+    height: 330px;
     background: rgba(0, 0, 0, 0.75);
     border-radius: 5px;
     box-shadow: 0 0 10px #000000, 0 0 0 1px rgb(47 47 47 / 50%) inset;
@@ -27,7 +30,7 @@
 
 
 .loginorcreate{
-    margin-top: 20%;
+    margin-top: 12%;
     padding: 0;
     
     overflow: hidden;
@@ -68,4 +71,13 @@
 
 .newaccbtn{
  text-align: center;
+}
+
+.errortext{
+    size: 20px;
+    color: #fff;
+}
+
+.usersname{
+    text-align: center;
 }

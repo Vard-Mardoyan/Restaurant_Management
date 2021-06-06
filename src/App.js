@@ -25,7 +25,6 @@ export default function App() {
 					<LocalStoragesDates />
 					<div>
 						<Header />
-						<Singin />
 						<Admin />
 						<Nav />
 						<Switch>
