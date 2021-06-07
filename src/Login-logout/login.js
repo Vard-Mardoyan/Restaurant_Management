@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import "./style.css";
 import CloseIcon from "@material-ui/icons/Close";
 
-export function Singin() {
+export function Singin( {changeRezerveagestat} ) {
   const [loginStatus, setLoginStatus] = useState(
     localStorage.getItem("loginStatus")
   );
@@ -18,7 +18,6 @@ export function Singin() {
     password: "",
   });
 
-  let a = false;
 
   const onInputchange = (event) => {
     setUser({
@@ -40,7 +39,7 @@ export function Singin() {
         user.name.trim().toLowerCase() === element.name &&
         user.password.trim().toLowerCase() === element.password
       ) {
-        {
+        { 
           localStorage.setItem("logindUser", JSON.stringify(element));
           localStorage.setItem("loginStatus", "logind");
           setLoginStatus(localStorage.getItem("loginStatus"));
@@ -49,6 +48,7 @@ export function Singin() {
             name: "",
             password: "",
           });
+          
         }
       }
     });
@@ -75,6 +75,7 @@ export function Singin() {
     setLoginStatus(localStorage.getItem("loginStatus"));
     return "";
   }
+
 
   if (!login && loginStatus === "tologin") {
     return (
@@ -165,7 +166,7 @@ export function Singin() {
           >
             Logout
           </Link>
-          <Link onClick={() => setRezervepage(true)} to="/" className="link">
+          <Link onClick={changeRezerveagestat} to="/" className="link">
                   Rezetve table
           </Link>
           <Link onClick={pagecontrol} to="/" className="link">

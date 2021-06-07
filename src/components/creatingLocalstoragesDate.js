@@ -6,6 +6,7 @@ import { DRINK_DATA } from "../service/data"
 
 
 export default function LocalStoragesDates() {
+
   if (localStorage.getItem('SWEETS_DATA_loc') === null) {
     localStorage.setItem('SWEETS_DATA_loc', JSON.stringify(SWEETS_DATA));
   }

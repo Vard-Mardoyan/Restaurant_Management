@@ -1,3 +1,4 @@
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Nav from "./components/nav/Nav";
 import { Footer } from "./components/Footer/Footer";
@@ -11,42 +12,44 @@ import CartProvider from "./context/cart/CartState";
 import LocalStoragesDates from "./components/creatingLocalstoragesDate";
 import background from "./assets/image/2.jpg";
 import "./App.css";
+import { Tablelist } from "./RezervFolder/tablelist"
+
+export const Rezervcontext = React.createContext()
+
 export default function App() {
-	const [adminStatus, setAdminstatus] = useState(true);
-
-	function Admin() {
-		return <button onClick={() => setAdminstatus(false)}>Admin</button>;
+	const [rezervePagestat, setRezzervpagestat] = useState(false)    
+	const changeRezerveagestatus = () => {
+		setRezzervpagestat(prev => !prev)
 	}
+	
 
-	if (adminStatus) {
-		return (
-			<CartProvider>
-				<Router>
-					<LocalStoragesDates />
-					<div>
-						<Header />
-						<Admin />
-						<Nav />
-						<Switch>
-							{Routes.map(({ route, component: Component }, index) => (
-								<Route exact path={route} key={index}>
-									<Component />
-								</Route>
-							))}
-							<Route path="*">
-								<h2>Not Found</h2>
+	return (
+		<Rezervcontext.Provider value = {rezervePagestat}>
+		<CartProvider>
+			<Router>
+				<LocalStoragesDates />
+				<div>
+					<Header />
+					<Nav changeRezerveagestat = {changeRezerveagestatus}/>
+					<Tablelist/>
+					<Switch>
+						{Routes.map(({ route, component: Component }, index) => (
+							<Route exact path={route} key={index}>
+								<Component />
 							</Route>
-							<Route path="*">
-								<h2>Not Found</h2>
-							</Route>
-						</Switch>
-						<ShoppingCart />
-
-						<Footer />
-					</div>
-				</Router>
-			</CartProvider>
-		);
-	}
-	return <AdminButton />;
+						))}
+						<Route path="*">
+							<h2>Not Found</h2>
+						</Route>
+						<Route path="*">
+							<h2>Not Found</h2>
+						</Route>
+					</Switch>
+					<ShoppingCart />
+					<Footer />
+				</div>
+			</Router>
+		</CartProvider>
+		</Rezervcontext.Provider>
+	);
 }
