@@ -6,7 +6,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { useCartContext } from "../../context/cart/CartState";
 import { Singin } from "../../Login-logout/login"
 
-export default function Nav() {
+export default function Nav( {changeRezerveagestat} ) {
 	const { cartItems, showHideCart } = useCartContext();
 	const [show, setShow] = useState(true);
 	const controlNavbar = () => {
@@ -23,6 +23,7 @@ export default function Nav() {
 			window.removeEventListener("scroll", controlNavbar);
 		};
 	}, []);
+    
 
 	return (
 		<div>
@@ -32,7 +33,7 @@ export default function Nav() {
 						{title}
 					</Link>
 				))}
-				   <Singin/>
+				   <Singin changeRezerveagestat = {changeRezerveagestat}/>
 
 				<div className="nav__right">
 					<div className="cart__icon">
