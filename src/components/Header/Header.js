@@ -14,7 +14,7 @@ import slide12 from "../../assets/image-header/52.jpg";
 import slide13 from "../../assets/image-header/53.jpg";
 import slide14 from "../../assets/image-header/54.jpg";
 import slide15 from "../../assets/image-header/55.jpg";
-import slide16 from "../../assets/image-header/6.jpg";
+// import slide16 from "../../assets/image-header/6.jpg";
 import slide17 from "../video/testvideo8.mp4";
 
 import "./Header.css";
