@@ -14,11 +14,11 @@ export default function CardList({ dataType }) {
 		return (
 			<div>
 				<ul className="list">
-					{DATA[dataType]?.map(({ id, name, image, kitchen, price }) => {
+					{DATA[dataType]?.map(({ id, name, image, kitchen, price, quantity }) => {
 						return (
 							<div key={id}>
 								<CardComponent
-									{...{ id, name, image, kitchen, price }}
+									{...{ id, name, image, kitchen, price, quantity }}
 									addToCart={addToCart}
 								/>
 							</div>

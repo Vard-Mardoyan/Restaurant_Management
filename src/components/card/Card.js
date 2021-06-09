@@ -17,15 +17,23 @@ export default function CardComponent({
 	image,
 	kitchen,
 	description,
+	quantity,
 	price,
-	// item,
 }) {
 	const { addToCart, cartItems, increase } = useCartContext();
 	let opts = { format: "%s%v", symbol: "$" };
 
-	// const isInCart = (item) => {
-	// 	return !!cartItems.find((product) => product.id === item.id);
-	// };
+	const isItemOnList = () => {
+		return cartItems.find((product) => product.id === id) !== undefined;
+	}
+
+	const handleClick = () => {
+		if(isItemOnList()) {
+			increase({ id });
+		} else {
+			addToCart({ id, name, image, kitchen, description, price })
+		}
+	};
 
 	return (
 		<Card className="card" key={id}>
@@ -60,14 +68,12 @@ export default function CardComponent({
 			<CardActions>
 				<Button
 					// onClick={() => addToCart({ item })}
-					onClick={() =>
-						addToCart({ id, name, image, kitchen, description, price })
-					}
+					onClick={handleClick}
 					variant="contained"
 					color="primary"
 					size="medium"
 				>
-					Add to Cart
+					{isItemOnList() ? `${quantity || 1}+` : 'Add to Cart'}
 				</Button>
 			</CardActions>
 			{/* )} */}
