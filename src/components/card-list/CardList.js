@@ -10,6 +10,7 @@ export default function CardList({ dataType }) {
 
 	console.log(dataType, "dataType");
 
+	
 	if (DATA[dataType] === "SWEETS_DATA_FROM_LOCAL_STORAGE" || DATA[dataType] === "FOODS_DATA_FROM_LOCAL_STORAGE") {
 		return (
 			<div>

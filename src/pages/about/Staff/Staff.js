@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 // import data from "./components/services/config.js";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
+import ArrowRightIcon from "@material-ui/icons/ArrowRight";
+import ArrowLeftIcon from "@material-ui/icons/ArrowLeft";
 import "./Staff.css";
 const data = [
 	{
@@ -15,7 +17,8 @@ const data = [
 	{
 		id: 2,
 		image:
-'https://cdn.charlieintel.com/wp-content/uploads/2021/04/29131955/Johanna-Faries-Call-of-Duty-General-Manager.jpg',		name: "Julia Bell",
+			"https://cdn.charlieintel.com/wp-content/uploads/2021/04/29131955/Johanna-Faries-Call-of-Duty-General-Manager.jpg",
+		name: "Julia Bell",
 		title: "General Manager",
 		quote:
 			"Teamwork is the ability to work together toward a common vision. The ability to direct individual accomplishment toward organizational objectives. It is the fuel that allows common people to attain uncommon results.",
@@ -97,42 +100,43 @@ export default function StaffData() {
 
 	return (
 		<div className="staffDataContainer">
-		<section className="section">
-			<div className="title">
-				<h2>Staff Info</h2>
-			</div>
-			<div className="section-center">
-				{people.map((person, personIndex) => {
-					const { id, image, name, title, quote } = person;
+			<section className="section">
+				<div className="title">
+					<h2>Staff Info</h2>
+				</div>
+				<div className="section-center">
+					{people.map((person, personIndex) => {
+						const { id, image, name, title, quote } = person;
 
-					let position = "nextSlide";
-					if (personIndex === activeIndex) {
-						position = "activeSlide";
-					}
-					if (
-						personIndex === activeIndex - 1 ||
-						(activeIndex === 0 && personIndex === people.length - 1)
-					) {
-						position = "lastSlide";
-					}
+						let position = "nextSlide";
+						if (personIndex === activeIndex) {
+							position = "activeSlide";
+						}
+						if (
+							personIndex === activeIndex - 1 ||
+							(activeIndex === 0 && personIndex === people.length - 1)
+						) {
+							position = "lastSlide";
+						}
 
-					return (
-						<article className={position} key={id}>
-							<img src={image} alt={name} className="person-img" />
-							<h4>{name}</h4>
-							<p className="title">{title}</p>
-							<p className="text">{quote}</p>
-						</article>
-					);
-				})}
-				<button className="prev" onClick={prevSlide}>
-					<FiChevronLeft />
-				</button>
-				<button className="next" onClick={nextSlide}>
-					<FiChevronRight />
-				</button>
-			</div>
-		</section>
+						return (
+							<article className={position} key={id}>
+								<img src={image} alt={name} className="person-img" />
+								<h4>{name}</h4>
+								<p className="title">{title}</p>
+								<p className="text">{quote}</p>
+							</article>
+						);
+					})}
+					<button className="prev" onClick={prevSlide}>
+					<ArrowLeftIcon />
+
+					</button>
+					<button className="next" onClick={nextSlide}>
+					<ArrowRightIcon />
+					</button>
+				</div>
+			</section>
 		</div>
 	);
 }

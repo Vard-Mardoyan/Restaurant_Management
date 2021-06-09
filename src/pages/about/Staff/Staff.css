@@ -33,7 +33,6 @@ h4 {
 .section {
 	width: 62.5vw;
 	background-color: rgba(211, 211, 211, 0.746);
-
 	margin: 5rem auto;
 }
 
@@ -98,18 +97,20 @@ article h4 {
 
 	width: 1.25rem;
 	height: 1.25rem;
-	display: grid;
-	place-items: center;
-	border-color: transparent;
+
 	font-size: 1rem;
 	cursor: pointer;
 }
 
 .prev {
 	left: 0;
+	background: none;
+	border: none;
 }
 .next {
 	right: 0;
+	background: none;
+	border: none;
 }
 
 article {
