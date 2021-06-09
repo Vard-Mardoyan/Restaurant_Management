@@ -1,0 +1,29 @@
+.food-container{
+	background-image: url("../../assets/image-header/24.jpg");
+	background-repeat: no-repeat;
+	/* object-fit:contain; */
+	background-position: center;
+	background-attachment: fixed;
+	height: 8000px;}
+.title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #c48f8f;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 320px;
+  margin: 20px;
+}
+
+.error {
+  color: #c51f1f;
+
+}

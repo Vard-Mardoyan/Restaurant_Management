@@ -44,6 +44,7 @@ export function Singin() {
             name: "",
             password: "",
           });
+
         }
       }
     });
@@ -103,7 +104,7 @@ export function Singin() {
             name="password"
             value={user.password}
             type="password"
-          ></input>
+          />
         </label>
         <br />
         {generalError && <p>{generalError}</p>}

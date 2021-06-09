@@ -1,0 +1,39 @@
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pagination span{
+
+  padding: 7px;
+  border: 2px solid #ca9db7; 
+  cursor: pointer;
+  color: #b15088;
+  justify-content: center;
+}
+
+.pagination span.active {
+  background-color: #ffffff;
+  color: #000;
+
+}
+.btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.prev-button {
+  color: #491143;
+  border-color: #ecc5db;
+  border-radius: 2px;
+  box-sizing: content-box;
+}
+
+.next-button {
+  color: #491143;
+  border-color: #ecc5db;
+  border-radius: 2px;
+  box-sizing: unset;
+}

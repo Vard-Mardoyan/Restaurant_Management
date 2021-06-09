@@ -1,6 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Component } from "react";
 import "./Footer.css";
+import logo from "../../assets/image/13.jpg";
+import LocationOnIcon from "@material-ui/icons/LocationOn";
+import QueryBuilderIcon from "@material-ui/icons/QueryBuilder";
+import CallIcon from "@material-ui/icons/Call";
+
 import { FaTwitter } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
@@ -10,143 +16,55 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaPrint } from "react-icons/fa";
-// import logo from "./restaurant-logo.jpg";
-export const Footer = () => {
-	return (
-		<div className="App-footer">
-			<div className="first-footer-container">
-				<h1>LOGO...</h1>
-				{/* <img src={logo} alt="logo" /> */}
-				<p className="footer-inner-text">
-					We are passionate about providing a unique dining experience that will
-					leave you feeling like we have put the extra sprinkles on your visit!
-					Our team is full of enthusiasm for you to fully indulge in our
-					delicious menu and will be happy to serve you.
-				</p>
-				<FaFacebook />
-				<FaInstagram />
-				<FaTwitter />
-				<FaYoutube />
-				<FaGooglePlusG />
+import GlobalMap from "../Map";
+
+export class Footer extends Component {
+	render() {
+		return (
+			<div className="App-footer">
+				<div className="footerInfo-container">
+					<ul className="footer-inner-container">
+						<img className="restaurant-logo" src={logo} alt="logo" />
+
+						<li className="location">
+							<Link to="/" className="footer-container-link">
+								<LocationOnIcon />
+								<span> Location </span>
+							</Link>
+
+							<p>Via Bernardino Rota 34</p>
+							<p> Fontanelle, Cuneo</p>
+						</li>
+						<li className="hours">
+							<Link to="/#" className="footer-container-link">
+								<QueryBuilderIcon /> <span>Hours</span>
+							</Link>
+							<p>Open 8:30 a.m</p>
+							<p>Close 1:00 p.m</p>
+						</li>
+						<li className="contact">
+							<Link to="/#" className="footer-container-link">
+								<CallIcon />
+								<span> Contact</span>
+							</Link>
+
+							<p> 800-2345-6799 </p>
+						</li>
+
+						<li>
+							<Link to="/#" className="footer-container-link">
+								<span> Make a Reservation ----- </span>
+							</Link>
+						</li>
+					</ul>
+				</div>
+				<div className="map-container">
+					<GlobalMap />
+				</div>
 			</div>
-			<div className="second-footer-container">
-				<ul className="footer-inner-container">
-					<li>
-						<Link to="/" className="footer-container-link">
-							DELIVERY
-						</Link>
-					</li>
-					<li>
-						<Link to="/#" className="footer-container-link">
-							ABOUT US
-						</Link>
-					</li>
-					<li>
-						<Link to="/#" className="footer-container-link">
-							SECURE PAYMENT
-						</Link>
-					</li>
-
-					<li>
-						<Link to="/#" className="footer-container-link">
-							FAQS
-						</Link>
-					</li>
-					<li>
-						<Link to="/#" className="footer-container-link">
-							SUPPORT 24/7
-						</Link>
-					</li>
-					<li>
-						<Link to="/#" className="footer-container-link">
-							PAGES CONFIGURATION
-						</Link>
-					</li>
-					<li>
-						<Link to="/#" className="footer-container-link">
-							PRICES DROP
-						</Link>
-					</li>
-
-					<li>
-						<Link to="/#" className="footer-container-link">
-							BEST SALES
-						</Link>
-					</li>
-					<li>
-						<Link to="/#" className="footer-container-link">
-							CONTACT US
-						</Link>
-					</li>
-					<li>
-						<Link to="/#" className="footer-container-link">
-							SITEMAP
-						</Link>
-					</li>
-
-					<li>
-						<Link to="/#" className="footer-container-link">
-							BLOG
-						</Link>
-					</li>
-				</ul>
-			</div>
-			<div className="third-footer-container">
-				<ul className="footer-inner-container">
-					<li>
-						<Link to="/" className="footer-container-link">
-							PERSONAL INFO
-						</Link>
-					</li>
-					<li>
-						<Link to="/#" className="footer-container-link">
-							ORDERS
-						</Link>
-					</li>
-					<li>
-						<Link to="/#" className="footer-container-link">
-							CREDIT SLIPS
-						</Link>
-					</li>
-
-					<li>
-						<Link to="/#" className="footer-container-link">
-							ADDRESSES
-						</Link>
-					</li>
-					<li>
-						<Link to="/#" className="footer-container-link">
-							MY WISHLISTS
-						</Link>
-					</li>
-				</ul>
-			</div>
-			<div className="fourth-footer-container">
-				<p>STORE INFORMATION</p>
-
-				<p>
-					<FaMapMarkerAlt /> The Company Name Inc. 9870 St
-					<br />
-					Vincent Place, Glasgow, DC 45
-				</p>
-
-				<p>
-					<FaPhoneAlt />
-					800-2345-6799
-				</p>
-				<br />
-
-				<p>
-					<FaPrint />
-					800-2345-6799
-				</p>
-				<br />
-
-				<p>
-					<FaEnvelope />
-					demo@demo.com
-				</p>
-			</div>
-		</div>
-	);
-};
+		);
+	}
+}
+// export default GoogleApiWrapper({
+// 	apiKey: "AIzaSyAQHn9zoOzPpAL_riGq-wiJgxMWoM__0o8",
+// })(Footer);
