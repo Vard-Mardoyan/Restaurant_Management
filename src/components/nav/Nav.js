@@ -4,9 +4,9 @@ import "./Nav.css";
 import { useContext, useState, useEffect } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { useCartContext } from "../../context/cart/CartState";
-import { Singin } from "../../Login-logout/login"
+import { Singin } from "../../Login-logout/login";
 
-export default function Nav( {changeRezerveagestat} ) {
+export default function Nav({ changeRezerveagestat }) {
 	const { cartItems, showHideCart } = useCartContext();
 	const [show, setShow] = useState(true);
 	const controlNavbar = () => {
@@ -23,7 +23,6 @@ export default function Nav( {changeRezerveagestat} ) {
 			window.removeEventListener("scroll", controlNavbar);
 		};
 	}, []);
-    
 
 	return (
 		<div>
@@ -33,7 +32,7 @@ export default function Nav( {changeRezerveagestat} ) {
 						{title}
 					</Link>
 				))}
-				   <Singin changeRezerveagestat = {changeRezerveagestat}/>
+				<Singin changeRezerveagestat={changeRezerveagestat} />
 
 				<div className="nav__right">
 					<div className="cart__icon">

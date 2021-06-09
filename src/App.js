@@ -13,6 +13,7 @@ import LocalStoragesDates from "./components/creatingLocalstoragesDate";
 import background from "./assets/image/2.jpg";
 import "./App.css";
 import { Tablelist } from "./RezervFolder/tablelist"
+import Scroll from "./components/ScrollToTop/ScrollToTop";
 
 export const Rezervcontext = React.createContext()
 
@@ -46,6 +47,7 @@ export default function App() {
 						</Route>
 					</Switch>
 					<ShoppingCart />
+					<Scroll showBellow={250} />
 					<Footer />
 				</div>
 			</Router>

@@ -15,7 +15,7 @@ import slide13 from "../../assets/image-header/53.jpg";
 import slide14 from "../../assets/image-header/54.jpg";
 import slide15 from "../../assets/image-header/55.jpg";
 import slide16 from "../../assets/image-header/6.jpg";
-import slide17 from "../video/testvideo.mp4";
+import slide17 from "../video/testvideo8.mp4";
 
 import "./Header.css";
 
@@ -36,7 +36,6 @@ const img = [
 	// <img key={slide14} src={slide14} alt="slide3" />,
 	// <img key={slide15} src={slide15} alt="slide3" />,
 	// <img key={slide16} src={slide16} alt="slide3" />,
-
 	// <img key={slide18} src={slide18} alt="slide3" />,
 	// <img key={slide19} src={slide19} alt="slide3" />,
 	// <img key={slide20} src={slide20} alt="slide3" />,
@@ -70,15 +69,20 @@ export const Header = () => {
 			<div className="slider-img slider-img-next" key={nextImgIndex}>
 				{img[nextImgIndex]} */}
 			{/* </div> */}
-			<video autoPlay loop muted 
-			style={{
-				position:'absolute',
-			width:'100%',
-		height:'600px',
-		objectFit:'cover',
-	}}>
-		<source key={slide17} src={slide17} type="video/mp4" />
-	</video>,
+			<video
+				autoPlay
+				loop
+				muted
+				style={{
+					position: "absolute",
+					width: "100%",
+					height: "355px",
+					objectFit: 'cover',
+				}}
+			>
+				<source key={slide17} src={slide17} type="video/mp4" />
+			</video>
+			,
 		</div>
 	);
 };
