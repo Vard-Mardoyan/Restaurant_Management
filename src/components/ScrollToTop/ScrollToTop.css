@@ -33,12 +33,3 @@
 		transform: translateY(-1px);
 	}
 }
-
-.custom-youtube-player {
-	position: fixed;
-	width: 450px;
-	height: 300px;
-	bottom: 40px;
-	right: 40px;
-	background: #000;
-}
