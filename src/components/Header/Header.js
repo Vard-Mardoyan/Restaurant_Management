@@ -14,7 +14,7 @@ import slide12 from "../../assets/image-header/52.jpg";
 import slide13 from "../../assets/image-header/53.jpg";
 import slide14 from "../../assets/image-header/54.jpg";
 import slide15 from "../../assets/image-header/55.jpg";
-import slide16 from "../../assets/image-header/6.jpg";
+// import slide16 from "../../assets/image-header/6.jpg";
 import slide17 from "../video/testvideo8.mp4";
 
 import "./Header.css";
@@ -61,7 +61,8 @@ export const Header = () => {
 	return (
 		<div className="slider">
 			{/* <div className="slider-img slider-img-prev" key={prevImgIndex}>
-				{img[prevImgIndex]}
+			{Math.floor(Math.random() * img[prevImgIndex])}	
+			////{img[prevImgIndex]}
 			</div>
 			<div className="slider-img" key={activeIndex}>
 				{img[activeIndex]}
@@ -77,7 +78,7 @@ export const Header = () => {
 					position: "absolute",
 					width: "100%",
 					height: "355px",
-					objectFit: 'cover',
+					objectFit: "cover",
 				}}
 			>
 				<source key={slide17} src={slide17} type="video/mp4" />

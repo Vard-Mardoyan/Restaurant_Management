@@ -10,15 +10,16 @@ export default function CardList({ dataType }) {
 
 	console.log(dataType, "dataType");
 
+	
 	if (DATA[dataType] === "SWEETS_DATA_FROM_LOCAL_STORAGE" || DATA[dataType] === "FOODS_DATA_FROM_LOCAL_STORAGE") {
 		return (
 			<div>
 				<ul className="list">
-					{DATA[dataType]?.map(({ id, name, image, kitchen, price }) => {
+					{DATA[dataType]?.map(({ id, name, image, kitchen, price, quantity }) => {
 						return (
 							<div key={id}>
 								<CardComponent
-									{...{ id, name, image, kitchen, price }}
+									{...{ id, name, image, kitchen, price, quantity }}
 									addToCart={addToCart}
 								/>
 							</div>

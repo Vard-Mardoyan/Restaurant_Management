@@ -1,0 +1,39 @@
+.App-header {
+	position: relative;
+	background-color: #f2f2f2;
+	width: 100%;
+	height: 400px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+.randomImages {
+	position: relative;
+	width: 400px;
+	height: 400px;
+	margin: auto;
+	box-sizing: border-box;
+	display: flex;
+	background-attachment: fixed;
+	background-position: center;
+	overflow: hidden;
+}
+
+.random-img > img {
+	position: absolute;
+	/* background-repeat: no-repeat; */
+	width: 400px;
+	/* overflow: hidden; */
+	object-fit:contain;
+	/* background-size: contain; */
+	height: 400px;
+	transition: all 0.2s;
+}
+
+.slider-img-prev {
+	transform: translateX(-100%);
+}
+
+.slider-img-next {
+	transform: translateX(100%);
+}
