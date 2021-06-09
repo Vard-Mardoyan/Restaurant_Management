@@ -1,9 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Rezervcontext } from "../App"
+import React, { useEffect, useState } from "react";
 
-export function Tablelist() {
-  const rezervPagestat = useContext(Rezervcontext)
-
+export function Tablelist(props) {
   const [tablestatus1, setTablestatus1] = useState(
     localStorage.getItem("rezervStatus1")
   );
@@ -11,7 +8,7 @@ export function Tablelist() {
     localStorage.getItem("rezervStatus2")
   );
   const [tablestatus3, setTablestatus3] = useState(
-    localStorage.getItem("rezervStatus4")
+    localStorage.getItem("rezervStatus3")
   );
   const [tablestatus4, setTablestatus4] = useState(
     localStorage.getItem("rezervStatus4")
@@ -156,9 +153,8 @@ export function Tablelist() {
     }
   }
 
-  if(rezervPagestat){
-    return (
-      <div>
+  return (
+    <div>
       <Tab1 />
 
       <div>
@@ -173,9 +169,5 @@ export function Tablelist() {
         <Tab4 />
       </div>
     </div>
-
-    )
-  }else{
-    return null
-  }
+  );
 }
