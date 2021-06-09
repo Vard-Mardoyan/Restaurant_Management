@@ -1,15 +1,3 @@
-// import { useEffect } from "react";
-// import { useLocation } from "react-router-dom";
-
-// export default function ScrollToTop() {
-// 	const { pathname } = useLocation();
-
-// 	useEffect(() => {
-// 		window.scrollTo(0, 0);
-// 	}, [pathname]);
-
-// 	return null;
-// }
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
@@ -42,8 +30,8 @@ const Scroll = ({ showBelow }) => {
 	const { pathname } = useLocation();
 	const classes = useStyles();
 	const [show, setShow] = useState(showBelow ? false : true);
-	
-  useEffect(() => {
+
+	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, [pathname]);
 
