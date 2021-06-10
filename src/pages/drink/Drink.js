@@ -4,12 +4,18 @@ import CardList from "../../components/card-list/CardList";
 import { getBeersData } from "../../service/data";
 import CardListBeer from "../../components/card-list/CardListBeer";
 import { DRINKS_DATA_FROM_LOCAL_STORAGE } from "../../helper/local-storage";
+import Pagination from "../../components/pagination/Pagination";
+import { getVisibleData } from "../../components/pagination/visible-data";
 import "./DrinkStyle.css";
 
 export default function Drink() {
 	const [data, setData] = useState([]);
 	const [isLoading, setLoading] = useState(false);
 	const [error, setError] = useState("");
+	const [currentPage, setCurrentPage] = useState(1);
+	const dataOfDrinks =  DRINKS_DATA_FROM_LOCAL_STORAGE;
+	const perPageData = 4;
+
 
 	useEffect(() => {
 		setLoading(true);
@@ -35,15 +41,63 @@ export default function Drink() {
 		return <p className="error">{error}</p>;
 	}
 
-	//console.log(data, "data");
 
-	//const handleOnItemClick = () => {};
+	const handlePageChange = (page, event) => {
+		event.preventDefault();
+		if(page !== currentPage)
+		setCurrentPage(page);
+	}
+
+
+	const getPageData = () => {
+
+		const paginationData = getVisibleData(data, currentPage, perPageData);
+
+		return {
+			totalData: data,
+			slicedData: paginationData
+		}
+	};
+
+	const getPageData2 = () => {
+
+		const paginationData = getVisibleData(dataOfDrinks, currentPage, perPageData);
+
+		return {
+			totalData2: data,
+			slicedData2: paginationData
+		}
+	};
+
+	const {totalData, slicedData} = getPageData();
+	const {totalData2, slicedData2} = getPageData2();
+
+	
+  const handleNextPage = () => {
+    setCurrentPage((next) =>  next + 1);
+  }
+
+
+	const handlePreviousPage = () => {
+
+    setCurrentPage((prev) => prev - 1 );
+
+  }
+
 
 	return (
 		<div className="drink-container">
 			<h1 className="title">Drinks</h1>
-			<CardList dataType="DRINKS_DATA_FROM_LOCAL_STORAGE" />
-			<CardListBeer items={data} />
+			<CardList data={slicedData2}/>
+			<CardListBeer items={slicedData} />
+			<Pagination
+				perPageData={perPageData} 
+				totalData={totalData} 
+				currentPage={currentPage}
+				handlePageChange={handlePageChange} 
+				handlePreviousPage={handlePreviousPage}
+				handleNextPage={handleNextPage}
+			/>
 		</div>
 	);
 }

@@ -10,6 +10,7 @@ import {
 import "./CardStyle.css";
 import formatCurrency from "format-currency";
 import { useCartContext } from "../../context/cart/CartState";
+import usePagination from "../../hooks/usePagination";
 
 export default function CardComponent({
 	id,
@@ -22,6 +23,7 @@ export default function CardComponent({
 }) {
 	const { addToCart, cartItems, increase } = useCartContext();
 	let opts = { format: "%s%v", symbol: "$" };
+
 
 	const isItemOnList = () => {
 		return cartItems.find((product) => product.id === id) !== undefined;
