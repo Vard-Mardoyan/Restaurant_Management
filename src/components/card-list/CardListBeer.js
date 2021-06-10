@@ -5,7 +5,7 @@ export default function CardListBeer({ addToCart, items }) {
 	return (
 		    <div>
 		      <ul className="list">
-		      {items.map(({ id, name, description, image_url, volume}) => {
+		      {items?.map(({ id, name, description, image_url, volume}) => {
 		        return (
 		
 		          <div key={id}>
