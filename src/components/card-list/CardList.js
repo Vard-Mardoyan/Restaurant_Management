@@ -1,22 +1,23 @@
 import { useCartContext } from "../../context/cart/CartState";
-import {DATA} from "../../helper/local-storage";
+import {DATA, SWEETS_DATA_FROM_LOCAL_STORAGE, FOODS_DATA_FROM_LOCAL_STORAGE} from "../../helper/local-storage";
+import usePagination from "../../hooks/usePagination";
 import CardComponent from "../card/Card";
 
 
 import "./CardListStyle.css";
 
-export default function CardList({ dataType, paginatedData }) {
+export default function CardList({ data}) {
 	const { addToCart } = useCartContext();
+	//const {slicedData, pagination, handleNextPage, handlePreviousPage, handlePageChange} = usePagination({perPageData, totalData});
 
-	console.log(dataType, "dataType");
-	console.log(paginatedData, "data");
+	//console.log(data, "data:::::");
 
 	
-	if (DATA[dataType] === "SWEETS_DATA_FROM_LOCAL_STORAGE" || DATA[dataType] === "FOODS_DATA_FROM_LOCAL_STORAGE") {
+	if (data === SWEETS_DATA_FROM_LOCAL_STORAGE || data === FOODS_DATA_FROM_LOCAL_STORAGE) {
 		return (
-			<div>
+			<>
 				<ul className="list">
-					{DATA[dataType]?.map(({ id, name, image, kitchen, price, quantity = 0 }) => {
+					{data ?.map(({ id, name, image, kitchen, price, quantity = 0 }) => {
 						return (
 							<div key={id}>
 								<CardComponent
@@ -27,19 +28,19 @@ export default function CardList({ dataType, paginatedData }) {
 						);
 					})}
 				</ul>
-			</div>
+			</>
 		);
 	}
 
 	return (
-		<div>
+		<>
 			<ul className="list">
-				{paginatedData?.map(
+				{data ?.map(
 					({ id, name, image, kitchen, description, price, quantity = 0 }) => {
 						return (
 							<div key={id}>
 								<CardComponent
-									{...{ id, name, image, kitchen, description, price }}
+									{...{ id, name, image, kitchen, description, price, quantity }}
 									addToCart={addToCart}
 								/>
 							</div>
@@ -47,12 +48,57 @@ export default function CardList({ dataType, paginatedData }) {
 					}
 				)}
 			</ul>
-		</div>
+		</>
 	);
 
 }
 
+// export default function CardList({ dataType, paginatedData }) {
+// 	const { addToCart } = useCartContext();
 
+// 	console.log(dataType, "dataType");
+// 	console.log(paginatedData, "data");
+
+	
+// 	if (DATA[dataType] === "SWEETS_DATA_FROM_LOCAL_STORAGE" || DATA[dataType] === "FOODS_DATA_FROM_LOCAL_STORAGE") {
+// 		return (
+// 			<div>
+// 				<ul className="list">
+// 					{DATA[dataType]?.map(({ id, name, image, kitchen, price, quantity = 0 }) => {
+// 						return (
+// 							<div key={id}>
+// 								<CardComponent
+// 									{...{ id, name, image, kitchen, price, quantity }}
+// 									addToCart={addToCart}
+// 								/>
+// 							</div>
+// 						);
+// 					})}
+// 				</ul>
+// 			</div>
+// 		);
+// 	}
+
+// 	return (
+// 		<div>
+// 			<ul className="list">
+// 				{paginatedData?.map(
+// 					({ id, name, image, kitchen, description, price, quantity = 0 }) => {
+// 						return (
+// 							<div key={id}>
+// 								<CardComponent
+// 									{...{ id, name, image, kitchen, description, price }}
+// 									addToCart={addToCart}
+// 								/>
+// 							</div>
+// 						);
+// 					}
+// 				)}
+// 			</ul>
+// 		</div>
+// 	);
+
+// }
 
 
 
