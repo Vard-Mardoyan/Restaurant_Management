@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import CardList from "../../components/card-list/CardList";
 import Pagination from "../../components/pagination/Pagination";
-import { SWEETS_DATA_FROM_LOCAL_STORAGE } from "../../helper/local-storage";
+import { DATA, SWEETS_DATA_FROM_LOCAL_STORAGE } from "../../helper/local-storage";
 
 import "./SweetsStyle.css";
 
@@ -12,7 +12,7 @@ export default function Sweets() {
 	//console.log(DATA['SWEETS_DATA_FROM_LOCAL_STORAGE'], 'typeData-----');
   
 	const [currentPage, setCurrentPage] = useState(1);
-  const [perPageData] = useState(8);
+  const [perPageData] = useState(4);
   const [isLoading, setIsLoading] = useState(false); 
 
 	// useEffect(() => {

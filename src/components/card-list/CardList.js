@@ -5,10 +5,11 @@ import CardComponent from "../card/Card";
 
 import "./CardListStyle.css";
 
-export default function CardList({ dataType }) {
+export default function CardList({ dataType, paginatedData }) {
 	const { addToCart } = useCartContext();
 
 	console.log(dataType, "dataType");
+	console.log(paginatedData, "data");
 
 	
 	if (DATA[dataType] === "SWEETS_DATA_FROM_LOCAL_STORAGE" || DATA[dataType] === "FOODS_DATA_FROM_LOCAL_STORAGE") {
@@ -33,8 +34,8 @@ export default function CardList({ dataType }) {
 	return (
 		<div>
 			<ul className="list">
-				{DATA[dataType]?.map(
-					({ id, name, image, kitchen, description, price }) => {
+				{paginatedData?.map(
+					({ id, name, image, kitchen, description, price, quantity = 0 }) => {
 						return (
 							<div key={id}>
 								<CardComponent
@@ -50,3 +51,8 @@ export default function CardList({ dataType }) {
 	);
 
 }
+
+
+
+
+
