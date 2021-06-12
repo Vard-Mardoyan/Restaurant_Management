@@ -13,9 +13,13 @@ export default function Drink() {
 	const [isLoading, setLoading] = useState(false);
 	const [error, setError] = useState("");
 	const [currentPage, setCurrentPage] = useState(1);
-	const dataOfDrinks =  DRINKS_DATA_FROM_LOCAL_STORAGE;
+	const [dataOfDrinks, setDataOfDrinks]  =  useState(DRINKS_DATA_FROM_LOCAL_STORAGE);
 	const perPageData = 4;
 
+
+	useEffect(() => {
+		setDataOfDrinks(dataOfDrinks);
+	}, [dataOfDrinks]);
 
 	useEffect(() => {
 		setLoading(true);
@@ -64,7 +68,7 @@ export default function Drink() {
 		const paginationData = getVisibleData(dataOfDrinks, currentPage, perPageData);
 
 		return {
-			totalData2: data,
+			totalData2: dataOfDrinks,
 			slicedData2: paginationData
 		}
 	};
