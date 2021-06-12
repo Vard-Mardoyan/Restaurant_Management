@@ -11,6 +11,8 @@ const Cart = () => {
 		useCartContext();
 	let opts = { format: "%s%v", symbol: "€" };
 
+	console.log(total, 'total::::');
+
 	return (
 		<>
 			{showCart && (
@@ -24,7 +26,7 @@ const Cart = () => {
 						/>
 					</div>
 					<div className="cart__innerWrapper">
-						{cartItems.length === 0 ? (
+						{cartItems.length === 0 ?  (
 							<h4>Cart is Empty</h4>
 						) : (
 							<ul>
