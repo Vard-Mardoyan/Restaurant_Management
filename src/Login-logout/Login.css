@@ -11,9 +11,6 @@
 	padding: 10px 1px;
 	transition: 200ms;
 }
-.link:hover {
-	text-decoration: underline;
-}
 .closelink{
     margin-left: 265px;
 }
@@ -44,10 +41,9 @@
     color: #fff;
     text-shadow: 0 0 10px rgb(0 0 0 / 30%);
 }
-.inpustform{
-    position: absolute;
-    
-    
+.inutsdiv{
+    margin-top: 25px;
+    text-align: center;
 }
 .input{
     width: 260px;
@@ -64,20 +60,45 @@
     box-shadow: inset 0 -5px 45px rgb(100 100 100 / 20%), 0 1px 1px rgb(255 255 255 / 20%);
     color: white;
 }
+.loginlink {
+    text-align: center;
+    margin-top: 15px;
+}
 
-.loginlinkstyle{
+.createAccauntlink{
     text-align: center;
 }
-
-.newaccbtn{
- text-align: center;
+.errorMessage{
+    text-align: center;
+    margin-top: 10px;
 }
-
-.errortext{
-    size: 20px;
-    color: #fff;
+.errorText{
+    color:red;
+}
+.clozeLink{
+    display: inline-block;
+	margin-left: 10px;
+	font-size: 15px;
+	text-decoration: none;
+	font-family: sans-serif;
+	color: white;
+	text-transform: uppercase;
+	border-bottom: 3px solid transparent;
+	padding: 10px 1px;
+	transition: 200ms;
+    margin-left: 275px;
 }
 
 .usersname{
     text-align: center;
 }
+.incUsname{
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
