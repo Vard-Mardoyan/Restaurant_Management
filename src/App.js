@@ -32,7 +32,6 @@ export default function App() {
 				<div>
 					<Header />
 					<Nav changeRezerveagestat = {changeRezerveagestatus}/>
-					<Tablelist/>
 					<Switch>
 						{Routes.map(({ route, component: Component }, index) => (
 							<Route exact path={route} key={index}>

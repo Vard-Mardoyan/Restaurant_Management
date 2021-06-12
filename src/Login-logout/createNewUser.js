@@ -3,31 +3,15 @@ import { Singin } from "./login";
 import { Link } from "react-router-dom";
 
 export function CreatingNewUser() {
+  const usersList = JSON.parse(localStorage.getItem("usersArray"));
+  const [usersStatus, setUserstatus] = useState("correct");
   const [isAdding, setIsAdding] = useState(false);
   const [user, setUser] = useState({
     name: "",
     password: "",
   });
-
-  const userNameControl = () => {
-    const name = user.name;
-    const correctName = name.toLowerCase().trim();
-    if (correctName.length > 4) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-
-  const userPasswordControl = () => {
-    const password = user.password;
-    const correctPassword = password.toLowerCase().trim();
-    if (correctPassword.length > 4) {
-      return true;
-    } else {
-      return false;
-    }
-  };
+  const correctUsername = user.name.toLocaleLowerCase().trim();
+  const correctPassword = user.password.toLocaleLowerCase().trim();
 
   const takeUserInfo = (event) => {
     setUser({
@@ -36,33 +20,52 @@ export function CreatingNewUser() {
     });
   };
 
-  const addNewUser = () => {
-    setIsAdding(true);
-    const usersList = JSON.parse(localStorage.getItem("usersArray"));
-    if (!userNameControl()) {
-      alert("This username is incorrect");
-      setIsAdding(false);
-      return "";
-    } else if (!userPasswordControl()) {
-      alert("This pssword is incorect");
-      setIsAdding(false);
-      return "";
-    } else {
-      usersList.forEach((elem) => {
-        if (elem.name === user.name) {
-          alert("This username is ....");
-          setIsAdding(false);
-          return "";
-        } else if (elem.password === user.password) {
-          alert("This password is ...");
-          setIsAdding(false);
-          return "";
-        }
-      });
-
-      let newUserList = [...usersList, user];
-      localStorage.setItem("usersArray", JSON.stringify(newUserList));
+  const nameControl = () => {
+    if (correctUsername.length < 4) {
+      return false;
     }
+    return true;
+  };
+
+  const namerepControl = () => {
+    let usernameCount = 0;
+
+    for (let key of usersList) {
+      if (key.name === correctUsername) {
+        usernameCount = usernameCount + 1;
+      }
+    }
+
+    if (usernameCount) {
+      return false;
+    }
+    return true;
+  };
+
+  const passwordControl = () => {
+    if (correctPassword.length < 5) {
+      return false;
+    }
+    return true;
+  };
+
+  const addNewuser = () => {
+    if (!nameControl()) {
+      setUserstatus("incorrect");
+      return "";
+    }
+    if (!passwordControl()) {
+      setUserstatus("incorrectpassword");
+      return "";
+    }
+    if (!namerepControl()) {
+      setUserstatus("busy");
+      return "";
+    }
+
+    let newUserList = [...usersList, user];
+    localStorage.setItem("usersArray", JSON.stringify(newUserList));
+    setIsAdding(true);
   };
 
   if (!isAdding) {
@@ -72,20 +75,38 @@ export function CreatingNewUser() {
           <h2 className="logintitel">Creat personal accaunt</h2>
           <div className="inpustform">
             <input
+              placeholder="Username"
               className="input"
               onChange={takeUserInfo}
               name="name"
               value={user.value}
             ></input>
+
+            <div className="incUsname">
+              {usersStatus === "incorrect" && (
+                <p className="errorText">Incorrect Username</p>
+              )}
+            </div>
+            <div>
+              {usersStatus === "busy" && (
+                <p className="errorText">This username is busy</p>
+              )}
+            </div>
             <input
+              placeholder="Password"
               className="input"
               onChange={takeUserInfo}
               name="password"
               value={user.password}
               type="password"
             ></input>
+            <div className="incUsname">
+              {usersStatus === "incorrectpassword" && (
+                <p className="errorText">Incorrect Password</p>
+              )}
+            </div>
             <div className="loginlinkstyle">
-              <Link onClick={addNewUser} to="/" className="link">
+              <Link to="/" onClick={addNewuser} className="link">
                 Create accaunt
               </Link>
             </div>
