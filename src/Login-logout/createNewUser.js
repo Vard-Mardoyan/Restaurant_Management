@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Singin } from "./login";
 import { Link } from "react-router-dom";
 
+
 export function CreatingNewUser() {
   const usersList = JSON.parse(localStorage.getItem("usersArray"));
   const [usersStatus, setUserstatus] = useState("correct");
@@ -41,7 +42,7 @@ export function CreatingNewUser() {
     }
     return true;
   };
-
+  
   const passwordControl = () => {
     if (correctPassword.length < 5) {
       return false;
@@ -68,6 +69,7 @@ export function CreatingNewUser() {
     setIsAdding(true);
   };
 
+
   if (!isAdding) {
     return (
       <div className="logindiv">
@@ -80,7 +82,7 @@ export function CreatingNewUser() {
               onChange={takeUserInfo}
               name="name"
               value={user.value}
-            ></input>
+            />
 
             <div className="incUsname">
               {usersStatus === "incorrect" && (
@@ -99,7 +101,7 @@ export function CreatingNewUser() {
               name="password"
               value={user.password}
               type="password"
-            ></input>
+            />
             <div className="incUsname">
               {usersStatus === "incorrectpassword" && (
                 <p className="errorText">Incorrect Password</p>

@@ -4,7 +4,6 @@ import Nav from "./components/nav/Nav";
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 import { Routes } from "./helper/routes";
-import { Singin } from "./Login-logout/login";
 import { useState } from "react";
 import AdminButton from "./adminFolder/admin";
 import ShoppingCart from "./components/ShoppingCart";
@@ -32,6 +31,7 @@ export default function App() {
 				<div>
 					<Header />
 					<Nav changeRezerveagestat = {changeRezerveagestatus}/>
+					<Tablelist changeRezerveagestat = {changeRezerveagestatus}/>
 					<Switch>
 						{Routes.map(({ route, component: Component }, index) => (
 							<Route exact path={route} key={index}>
