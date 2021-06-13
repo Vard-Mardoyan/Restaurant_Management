@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, {useEffect, useContext, useState } from "react";
 import { CreatingNewUser } from "./createNewUser";
 import { Link } from "react-router-dom";
 import "./Login.css";
+import { Rezervcontext } from "../App"
+import { Tablelist } from "../RezervFolder/tablelist"
 
-export function Singin() {
+
+
+export function Singin({ changeRezerveagestat }) {
+  const rezStast = useContext(Rezervcontext)
   const [loginStatus, setLoginStatus] = useState(
     localStorage.getItem("loginStatus")
   );
@@ -47,7 +52,7 @@ export function Singin() {
       }
     });
   };
-
+  
   function Pagecontrol() {
     const newUserlist = [];
     const usersList = JSON.parse(localStorage.getItem("usersArray"));
@@ -67,6 +72,9 @@ export function Singin() {
     localStorage.removeItem("logindUser");
     localStorage.setItem("loginStatus", "tologin");
     setLoginStatus(localStorage.getItem("loginStatus"));
+    if(rezStast){
+      changeRezerveagestat()
+    }
 
     return ''
   }
@@ -82,6 +90,10 @@ export function Singin() {
     localStorage.setItem("loginStatus", "tologin");
     setLoginStatus(localStorage.getItem("loginStatus"));
     setGeneralError('')
+    if(rezStast){
+      changeRezerveagestat()
+    }
+    
   }
 
   if (!login && loginStatus === "tologin") {
@@ -108,7 +120,7 @@ export function Singin() {
             onChange={onInputchange}
             name="name"
             value={user.name}
-          ></input>
+          />
 
           <input
             placeholder = 'Password'
@@ -140,7 +152,7 @@ export function Singin() {
       <div>
         <h4 className = 'usersname'>{JSON.parse(localStorage.getItem("logindUser")).name}</h4>
         <Link to="/" className = 'link' onClick = {logout}>Logout</Link>
-        <Link to="/" className = 'link'>Rezerve Table</Link>
+        <Link to="/" className = 'link'onClick ={changeRezerveagestat} >Rezerve Table</Link>
         <Link to="/" className = 'link' onClick = {Pagecontrol}>Delete Accaunt</Link>
       </div>
     );

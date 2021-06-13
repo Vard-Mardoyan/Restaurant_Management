@@ -46,6 +46,12 @@ export default function LocalStoragesDates() {
   if (localStorage.getItem('rezervStatus4') === null) {
     localStorage.setItem('rezervStatus4', 'notRezerved');
   }
+  if (localStorage.getItem('rezervStatus5') === null) {
+    localStorage.setItem('rezervStatus5', 'notRezerved');
+  }
+  if (localStorage.getItem('rezervStatus6') === null) {
+    localStorage.setItem('rezervStatus6', 'notRezerved');
+  }
 
   return '';
 }

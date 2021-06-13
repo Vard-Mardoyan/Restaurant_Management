@@ -1,6 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { tabledata } from "./data";
+import { Rezervcontext } from "../App";
+import "./Tables.css";
+import { Link } from "react-router-dom";
 
-export function Tablelist(props) {
+export function Tablelist( {changeRezerveagestat} ) {
   const [tablestatus1, setTablestatus1] = useState(
     localStorage.getItem("rezervStatus1")
   );
@@ -13,161 +17,132 @@ export function Tablelist(props) {
   const [tablestatus4, setTablestatus4] = useState(
     localStorage.getItem("rezervStatus4")
   );
-
-  const a = <h3>free</h3>;
-  const b = <h3>rezerved</h3>;
-
-  function Tab1() {
-    if (tablestatus1 === "notRezerved") {
-      return (
-        <div>
-          <h2>table1</h2>
-          {a}
-          <button
-            onClick={() => {
-              localStorage.setItem("rezervStatus1", "rezerved");
-              setTablestatus1(localStorage.getItem("rezervStatus1"));
-            }}
-          >
-            Rezerve
-          </button>
-        </div>
-      );
-    } else if (tablestatus1 === "rezerved") {
-      return (
-        <div>
-          <h2>table1</h2>
-          {b}
-          <button
-            onClick={() => {
-              localStorage.setItem("rezervStatus1", "notRezerved");
-              setTablestatus1(localStorage.getItem("rezervStatus1"));
-            }}
-          >
-            Onrezerv
-          </button>
-        </div>
-      );
-    }
-  }
-
-  function Tab2() {
-    if (tablestatus2 === "notRezerved") {
-      return (
-        <div>
-          <h2>table2</h2>
-          {a}
-          <button
-            onClick={() => {
-              localStorage.setItem("rezervStatus2", "rezerved");
-              setTablestatus2(localStorage.getItem("rezervStatus2"));
-            }}
-          >
-            Rezerve
-          </button>
-        </div>
-      );
-    } else if (tablestatus2 === "rezerved") {
-      return (
-        <div>
-          <h2>table2</h2>
-          {b}
-          <button
-            onClick={() => {
-              localStorage.setItem("rezervStatus2", "notRezerved");
-              setTablestatus2(localStorage.getItem("rezervStatus2"));
-            }}
-          >
-            Onrezerv
-          </button>
-        </div>
-      );
-    }
-  }
-
-  function Tab3() {
-    if (tablestatus3 === "notRezerved") {
-      return (
-        <div>
-          <h2>table3</h2>
-          {a}
-          <button
-            onClick={() => {
-              localStorage.setItem("rezervStatus3", "rezerved");
-              setTablestatus3(localStorage.getItem("rezervStatus3"));
-            }}
-          >
-            Rezerve
-          </button>
-        </div>
-      );
-    } else if (tablestatus3 === "rezerved") {
-      return (
-        <div>
-          <h2>table3</h2>
-          {b}
-          <button
-            onClick={() => {
-              localStorage.setItem("rezervStatus3", "notRezerved");
-              setTablestatus3(localStorage.getItem("rezervStatus3"));
-            }}
-          >
-            Onrezerv
-          </button>
-        </div>
-      );
-    }
-  }
-
-  function Tab4() {
-    if (tablestatus4 === "notRezerved") {
-      return (
-        <div>
-          <h2>table4</h2>
-          {a}
-          <button
-            onClick={() => {
-              localStorage.setItem("rezervStatus4", "rezerved");
-              setTablestatus4(localStorage.getItem("rezervStatus4"));
-            }}
-          >
-            Rezerve
-          </button>
-        </div>
-      );
-    } else if (tablestatus4 === "rezerved") {
-      return (
-        <div>
-          <h2>table4</h2>
-          {b}
-          <button
-            onClick={() => {
-              localStorage.setItem("rezervStatus4", "notRezerved");
-              setTablestatus4(localStorage.getItem("rezervStatus4"));
-            }}
-          >
-            Onrezerv
-          </button>
-        </div>
-      );
-    }
-  }
-
-  return (
-    <div>
-      <Tab1 />
-
-      <div>
-        <Tab2 />
-      </div>
-
-      <div>
-        <Tab3 />
-      </div>
-
-      <div>
-        <Tab4 />
-      </div>
-    </div>
+  const [tablestatus5, setTablestatus5] = useState(
+    localStorage.getItem("rezervStatus5")
   );
+  const [tablestatus6, setTablestatus6] = useState(
+    localStorage.getItem("rezervStatus6")
+  );
+
+  const rezStast = useContext(Rezervcontext);
+  const user = JSON.parse(localStorage.getItem("logindUser"));
+
+  const free = <h3>Free</h3>;
+  const rezerved = <h3>Rezerved</h3>;
+
+  function Tab1(props) {
+    const tablestate = JSON.parse(localStorage.getItem(props.data.name));
+    if (tablestate === null || tablestate.user === user.name) {
+      if (props.tablstatus === "notRezerved") {
+        return (
+          <div className="table">
+            <h2>{props.data.name}</h2>
+            <h4>Places {props.data.places}</h4>
+            {free}
+            <button
+              onClick={() => {
+                localStorage.setItem(
+                  props.data.name,
+                  JSON.stringify({ user: user.name, id: props.data.id })
+                );
+                localStorage.setItem(props.rezervstatus, "rezerved");
+                props.changestatus(localStorage.getItem(props.rezervstatus));
+              }}
+            >
+              Rezerve
+            </button>
+          </div>
+        );
+      } else if (props.tablstatus === "rezerved") {
+        return (
+          <div className="table">
+            <h2>{props.data.name}</h2>
+            <h4>Places {props.data.places}</h4>
+            {rezerved}
+            <button
+              onClick={() => {
+                localStorage.removeItem(props.data.name);
+                localStorage.setItem(props.rezervstatus, "notRezerved");
+                props.changestatus(localStorage.getItem(props.rezervstatus));
+              }}
+            >
+              Onrezerv
+            </button>
+          </div>
+        );
+      }
+    }else{
+      return (
+        <div className = 'table'>
+          <h2>{props.data.name}</h2>
+          <h4>Places {props.data.places}</h4>
+          {rezerved}
+        </div>
+      )
+    }
+  }
+  if (rezStast) {
+    return (
+      <div className="tablesConteiner">
+        <div className = 'cloze'>
+          <Link className = 'link' to = "/" onClick = {() => {
+            if(rezStast){
+              changeRezerveagestat()
+            }
+          }}>X</Link>
+        </div>
+        <div className="tablesDiv">
+          <div className="table">
+            <Tab1
+              tablstatus={tablestatus1}
+              rezervstatus="rezervStatus1"
+              changestatus={setTablestatus1}
+              data={tabledata[0]}
+            />
+          </div>
+          <div className="table">
+            <Tab1
+              tablstatus={tablestatus2}
+              rezervstatus="rezervStatus2"
+              changestatus={setTablestatus2}
+              data={tabledata[1]}
+            />
+          </div>
+          <div className="table">
+            <Tab1
+              tablstatus={tablestatus3}
+              rezervstatus="rezervStatus3"
+              changestatus={setTablestatus3}
+              data={tabledata[2]}
+            />
+          </div>
+          <div className="table">
+            <Tab1
+              tablstatus={tablestatus4}
+              rezervstatus="rezervStatus4"
+              changestatus={setTablestatus4}
+              data={tabledata[3]}
+            />
+          </div>
+          <div className="table">
+            <Tab1
+              tablstatus={tablestatus5}
+              rezervstatus="rezervStatus5"
+              changestatus={setTablestatus5}
+              data={tabledata[4]}
+            />
+          </div>
+          <div className="table">
+            <Tab1
+              tablstatus={tablestatus6}
+              rezervstatus="rezervStatus6"
+              changestatus={setTablestatus6}
+              data={tabledata[5]}
+            />
+          </div>
+        </div>
+      </div>
+    );
+  }
+  return "";
 }
