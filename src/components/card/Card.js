@@ -75,7 +75,7 @@ export default function CardComponent({
 					color="primary"
 					size="medium"
 				>
-					{isItemOnList() ? `${quantity || 1}+` : 'Add to Cart'}
+					{isItemOnList() ? `${quantity || 'ADD TO CART' }` : 'Add to Cart'}
 				</Button>
 			</CardActions>
 			{/* )} */}
