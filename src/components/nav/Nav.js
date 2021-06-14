@@ -5,6 +5,12 @@ import { useContext, useState, useEffect } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { useCartContext } from "../../context/cart/CartState";
 import { Singin } from "../../Login-logout/login";
+import Cart from '../ShoppingCart';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
+import Popover from '@material-ui/core/Popover';
+import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
 
 export default function Nav({ changeRezerveagestat }) {
 	const { cartItems, showHideCart } = useCartContext();
@@ -33,17 +39,8 @@ export default function Nav({ changeRezerveagestat }) {
 					</Link>
 				))}
 				<Singin changeRezerveagestat={changeRezerveagestat} />
-
-				<div className="nav__right">
-					<div className="cart__icon">
-						<FaShoppingCart onClick={showHideCart} />
-						{cartItems.length > 0 && (
-							<div className="item__count">
-								<span>{cartItems.length}</span>
-							</div>
-						)}
-					</div>
-				</div>
+<Cart />
+		
 			</nav>
 		</div>
 	);

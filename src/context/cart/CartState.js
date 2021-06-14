@@ -17,8 +17,8 @@ export const useCartContext = () => useContext(CartState);
 const CartProvider = ({ children }) => {
 	const [cartState, dispatch] = useReducer(cartReducer, initialState);
 
-	const addToCart = (item) => {
-		dispatch({ type: ADD_TO_CART, payload: item });
+	const addToCart = (payload) => {
+		dispatch({ type: ADD_TO_CART, payload });
 	};
 
 	const showHideCart = () => {
