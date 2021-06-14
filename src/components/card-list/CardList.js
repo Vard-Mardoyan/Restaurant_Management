@@ -1,6 +1,5 @@
 import { useCartContext } from "../../context/cart/CartState";
-import {DATA, SWEETS_DATA_FROM_LOCAL_STORAGE, FOODS_DATA_FROM_LOCAL_STORAGE} from "../../helper/local-storage";
-import usePagination from "../../hooks/usePagination";
+import {SWEETS_DATA_FROM_LOCAL_STORAGE, FOODS_DATA_FROM_LOCAL_STORAGE} from "../../helper/local-storage";
 import CardComponent from "../card/Card";
 
 
@@ -8,8 +7,6 @@ import "./CardListStyle.css";
 
 export default function CardList({ data}) {
 	const { addToCart } = useCartContext();
-	//const {slicedData, pagination, handleNextPage, handlePreviousPage, handlePageChange} = usePagination({perPageData, totalData});
-
 	//console.log(data, "data:::::");
 
 	
@@ -17,7 +14,7 @@ export default function CardList({ data}) {
 		return (
 			<>
 				<ul className="list">
-					{data ?.map(({ id, name, image, kitchen, price, quantity = 0 }) => {
+					{data?.map(({ id, name, image, kitchen, price, quantity = 0 }) => {
 						return (
 							<div key={id}>
 								<CardComponent
@@ -35,7 +32,7 @@ export default function CardList({ data}) {
 	return (
 		<>
 			<ul className="list">
-				{data ?.map(
+				{data?.map(
 					({ id, name, image, kitchen, description, price, quantity = 0 }) => {
 						return (
 							<div key={id}>

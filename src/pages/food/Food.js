@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CardList from "../../components/card-list/CardList";
 import Pagination from "../../components/pagination/Pagination";
 import { getVisibleData } from "../../components/pagination/visible-data";
@@ -8,8 +8,12 @@ import { PER_PAGE_DATA } from "../../service/config";
 import './FoodStyle.css';
 
 export default function Food() {
-  const data = FOODS_DATA_FROM_LOCAL_STORAGE
+  const [data, setData] = useState(FOODS_DATA_FROM_LOCAL_STORAGE);
   const [currentPage, setCurrentPage] = useState(1);
+
+	useEffect(() => {
+		setData(data);
+	}, [data]);
 
 	const handlePageChange = (page, event) => {
 		event.preventDefault();

@@ -18,6 +18,8 @@ export const Cart = () => {
 		useCartContext();
 		let opts = { format: "%s%v", symbol: "$" };
 
+	console.log(total, 'total::::');
+
 	return (
 		<>
     <PopupState variant="popover" popupId="demo-popup-popover">
@@ -130,7 +132,7 @@ export default Cart;
 						
 					</div>
 					<div className="cart__innerWrapper">
-						{cartItems.length === 0 ? (
+						{cartItems.length === 0 ?  (
 							<h4>Cart is Empty</h4>
 						) : (
 							<ul>

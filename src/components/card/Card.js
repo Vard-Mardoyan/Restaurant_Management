@@ -10,7 +10,7 @@ import {
 import "./CardStyle.css";
 import formatCurrency from "format-currency";
 import { useCartContext } from "../../context/cart/CartState";
-import usePagination from "../../hooks/usePagination";
+//import usePagination from "../../hooks/usePagination";
 
 export default function CardComponent({
 	id,
