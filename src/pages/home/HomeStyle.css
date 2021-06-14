@@ -1,0 +1,91 @@
+.home-wrapper {
+	margin: 0 auto;
+	width: 2000px;
+}
+
+.home-conatainer {
+	display: flex;
+	/* height: 1600px; */
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #fff;
+}
+.text-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+}
+
+.title-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	/* align-items: center; */
+	text-align: center;
+}
+.app-title {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	/* align-items: center; */
+	text-align: center;
+	color: #aa6d6d;
+
+}
+.date{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	text-align: center;
+	color: #aa6d6d;
+	right: 4px;
+}
+
+.title {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	text-align: center;
+	color: #aa6d6d;
+}
+.component-card {
+	width: 1500px;
+	padding: 10px;
+	margin: 10px;
+
+	background-color: #2e2020; /*hsla(23, 40%, 50%, 0.1); */
+	border-radius: 10px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+.component-container {
+	width: 400px;
+	padding: 10px;
+	margin: 10px;
+
+	background-color: hsla(23, 40%, 50%, 0.1);
+	border-radius: 10px;
+}
+
+
+@media screen and (max-width: 1060px) {
+  .home-wrapper {
+    width: 720px;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .home-wrapper {
+    width: 520px;
+  }
+}

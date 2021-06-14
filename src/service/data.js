@@ -3,6 +3,7 @@ import photo from "../assets/image/restaurant_interior_partly.jpg";
 import photo_interior from "../assets/image/restaurant_interior.jpg";
 import image_rice from "../assets/image/rice_art.jpg";
 import image_bread from "../assets/image/bread_style.jpg";
+
 export const SWEETS_DATA = [
 	{
 		id: "1",

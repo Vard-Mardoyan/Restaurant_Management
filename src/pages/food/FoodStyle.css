@@ -5,7 +5,8 @@
 	/* object-fit:contain; */
 	background-position: center;
 	background-attachment: fixed;
-	height: 8000px;
+	height: 1800px;
+  background-color: #3c3a53; /*#3f2e36;/*#000000bb;*/
 }
 .title {
   display: flex;

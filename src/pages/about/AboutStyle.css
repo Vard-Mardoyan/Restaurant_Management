@@ -2,10 +2,11 @@
 	background-image: url("../../assets/image/5.jpg");
 	background-repeat: no-repeat;
 	/* object-fit:contain; */
+  height: 4000px;
 
 	background-position: center;
 	background-attachment: fixed;
-	height: 8000px;
+  background-color: #e7e3e3; /*#3c3a53;*/
 }
 
 
