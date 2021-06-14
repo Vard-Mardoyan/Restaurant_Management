@@ -1,0 +1,23 @@
+
+.tablesConteiner{
+    max-width: 950px;
+    width: 90%;
+    margin: auto;
+    background-color: burlywood;
+}
+.tablesDiv{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+.table{
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 30px;
+}
+.cloze{
+    margin-left: 95%;
+}
