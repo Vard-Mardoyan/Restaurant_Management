@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-
-
 import "./RandomizedImages.css";
 import { FiArrowLeft, FiArrowRight} from "react-icons/fi";
 import { RANDOM_FOOD } from "../../service/random-food";
@@ -49,11 +47,11 @@ export const RandomizedImages = () => {
         }
         return activeIndex;
       });
-    }, 5000);
+    }, 7000);
     return () => {
       clearInterval(slider);
     };
-  }, [activeIndex]);
+  }, []);
 
   const slicedData = [];
   for (let i = 0; i < 3; i++) {
@@ -62,6 +60,7 @@ export const RandomizedImages = () => {
     data.slice(index, 1);
   }
   //console.log(slicedData, "slicedta:::");
+
 
   const renderData = slicedData.map(
     ({ id, name, image, kitchen, price }, index) => {
@@ -77,6 +76,8 @@ export const RandomizedImages = () => {
       ) {
         position = "lastSlide";
       }
+
+      console.log(slicedData, "slicedta:::");
 
       return (
 				<>

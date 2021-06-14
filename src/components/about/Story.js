@@ -41,7 +41,6 @@ export default function Story() {
 					</div>
 				);
 			})}
-			<div className="wallpaper"></div>
 		</>
 	);
 }
