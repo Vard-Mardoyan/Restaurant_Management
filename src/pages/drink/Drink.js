@@ -96,7 +96,7 @@ export default function Drink() {
 			<CardListBeer items={slicedData} />
 			<Pagination
 				perPageData={perPageData} 
-				totalData={totalData} 
+				totalData={totalData || totalData2} 
 				currentPage={currentPage}
 				handlePageChange={handlePageChange} 
 				handlePreviousPage={handlePreviousPage}
