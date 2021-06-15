@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import CardList from "../../components/card-list/CardList";
 import { getBeersData } from "../../service/data";
 import CardListBeer from "../../components/card-list/CardListBeer";
-import { DRINKS_DATA_FROM_LOCAL_STORAGE } from "../../helper/local-storage";
+import { DRINKS_DATA_FROM_LOCAL_STORAGE } from "../../helpers/local-storage";
 import Pagination from "../../components/pagination/Pagination";
 import { getVisibleData } from "../../components/pagination/visible-data";
 import "./DrinkStyle.css";

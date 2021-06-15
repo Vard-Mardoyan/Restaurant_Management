@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
-import { RandomComponent } from "../../components/RandomizedImages/Random";
+import { RandomComponent } from "../../components/random-list/Random";
 import {
   DRINKS_DATA_FROM_LOCAL_STORAGE,
   FOODS_DATA_FROM_LOCAL_STORAGE,
   SWEETS_DATA_FROM_LOCAL_STORAGE,
-} from "../../helper/local-storage";
+} from "../../helpers/local-storage";
 import Story from "../../components/about/Story";
 import "./HomeStyle.css";
 
 export default function Home() {
-  const title = "Welcome our restaurant";
+  const title = 'Welcome our restaurant';
+  const menuTitle = 'Amazing delicious dishes && drinks';
   const [sweetData, setSweetData] = useState(SWEETS_DATA_FROM_LOCAL_STORAGE);
   const [foodData, setFoodData] = useState(FOODS_DATA_FROM_LOCAL_STORAGE);
   const [drinkData, setDrinkData] = useState(DRINKS_DATA_FROM_LOCAL_STORAGE);
@@ -48,7 +49,7 @@ export default function Home() {
         <h2 className="app-title">{`${title.toUpperCase()}`}</h2>
       </div>
       <div className="title-container">
-        <h3 className="title">Daily Dishes && Drinks</h3>
+        <h3 className="title">{`${menuTitle.toUpperCase()}`}</h3>
         <h3 className="date">&nbsp;{date.toLocaleTimeString()}</h3>
       </div>
       <div className="home-conatainer">

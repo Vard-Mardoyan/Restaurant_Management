@@ -1,5 +1,5 @@
 import { useCartContext } from "../../context/cart/CartState";
-import {SWEETS_DATA_FROM_LOCAL_STORAGE, FOODS_DATA_FROM_LOCAL_STORAGE} from "../../helper/local-storage";
+import {SWEETS_DATA_FROM_LOCAL_STORAGE, FOODS_DATA_FROM_LOCAL_STORAGE} from "../../helpers/local-storage";
 import CardComponent from "../card/Card";
 
 
