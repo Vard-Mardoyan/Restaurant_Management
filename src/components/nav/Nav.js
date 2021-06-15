@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Routes } from "../../helper/routes";
+import { Routes } from "../../helpers/routes";
 import "./Nav.css";
 import { useContext, useState, useEffect } from "react";
 import { FaShoppingCart } from "react-icons/fa";

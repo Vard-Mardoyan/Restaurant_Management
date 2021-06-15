@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Nav from "./components/nav/Nav";
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
-import { Routes } from "./helper/routes";
+import { Routes } from "./helpers/routes";
 import { useState } from "react";
 import AdminButton from "./adminFolder/admin";
 import ShoppingCart from "./components/ShoppingCart";
