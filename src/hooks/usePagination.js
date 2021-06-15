@@ -7,7 +7,7 @@ const  usePagination = ({perPageData, totalData}) => {
   const pagination = [];
   
   const [currentPage, setCurrentPage] = useState(1);
-  const [slicedData, setSlicedData] = useState([...totalData].slice(currentPage - 1) * perPage, currentPage * perPage);
+  const [data, setData] = useState([...totalData].slice(currentPage - 1) * perPage, currentPage * perPage);
 
   let left = false;
   let right = false;
@@ -53,7 +53,7 @@ const  usePagination = ({perPageData, totalData}) => {
     if(page !== currentPage) {
       setCurrentPage(page);
 
-      setSlicedData([...totalData].slice(page - 1) * perPage, page * perPage );
+      setData([...totalData].slice(page - 1) * perPage, page * perPage );
     }
   };
 
@@ -62,7 +62,7 @@ const  usePagination = ({perPageData, totalData}) => {
 
     setCurrentPage((prev) => prev - 1 === 0 ? prev : prev - 1);
     if(currentPage !== 1) {
-      setSlicedData([...totalData].slice(currentPage - 2) * perPage, (currentPage - 1 ) * perPage)
+      setData([...totalData].slice(currentPage - 2) * perPage, (currentPage - 1 ) * perPage)
     }
   }
 
@@ -71,12 +71,12 @@ const  usePagination = ({perPageData, totalData}) => {
 
     setCurrentPage((next) => next ? next : next + 1);
 
-    setSlicedData([...totalData].slice(currentPage * perPage, (currentPage + 1) * perPage ));
+    setData([...totalData].slice(currentPage * perPage, (currentPage + 1) * perPage ));
   }
 
 
   return {
-    slicedData,
+    data,
     pagination,
     handlePreviousPage,
     handleNextPage,
