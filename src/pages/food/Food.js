@@ -28,11 +28,11 @@ export default function Food() {
 
 		return {
 			totalData: data,
-			slicedData: paginationData
+			pageData: paginationData
 		}
 	};
 
-	const {totalData, slicedData} = getPageData();
+	const {totalData, pageData} = getPageData();
 
 	
   const handleNextPage = () => {
@@ -51,7 +51,7 @@ export default function Food() {
   return (
     <div className='food-container'>
       <h1 className="title">Main Dishes</h1>
-      <CardList data={slicedData}/>
+      <CardList data={pageData}/>
       <Pagination 
 				perPageData={perPageData} 
 				totalData={totalData} 
