@@ -1,8 +1,5 @@
 import { useCartContext } from "../../context/cart/CartState";
-import {
-  SWEETS_DATA_FROM_LOCAL_STORAGE,
-  FOODS_DATA_FROM_LOCAL_STORAGE,
-} from "../../helpers/local-storage";
+import { loadState } from "../../helpers/local-storage";
 import CardComponent from "../card/Card";
 
 import "./CardListStyle.css";
@@ -12,8 +9,8 @@ export default function CardList({ data }) {
   //console.log(data, "data:::::");
 
   if (
-    data === SWEETS_DATA_FROM_LOCAL_STORAGE ||
-    data === FOODS_DATA_FROM_LOCAL_STORAGE
+    data === loadState('SWEETS_DATA_loc') ||
+    data === loadState('FOODS_DATA_loc')
   ) {
     return (
       <ul className="list">

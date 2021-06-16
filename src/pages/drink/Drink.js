@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import CardList from "../../components/card-list/CardList";
 import { getBeersData } from "../../service/data";
 import CardListBeer from "../../components/card-list/CardListBeer";
-import { DRINKS_DATA_FROM_LOCAL_STORAGE } from "../../helpers/local-storage";
+import {loadState } from "../../helpers/local-storage";
 import Pagination from "../../components/pagination/Pagination";
 import { getVisibleData } from "../../components/pagination/visible-data";
 import "./DrinkStyle.css";
@@ -13,7 +13,7 @@ export default function Drink() {
 	const [isLoading, setLoading] = useState(false);
 	const [error, setError] = useState("");
 	const [currentPage, setCurrentPage] = useState(1);
-	const [dataOfDrinks, setDataOfDrinks]  =  useState(DRINKS_DATA_FROM_LOCAL_STORAGE);
+	const [dataOfDrinks, setDataOfDrinks]  =  useState(loadState('DRINK_DATA_loc'));
 	const perPageData = 4;
 
 
