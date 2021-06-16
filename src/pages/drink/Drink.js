@@ -59,22 +59,22 @@ export default function Drink() {
 
 		return {
 			totalData: data,
-			slicedData: paginationData
+			pageData: paginationData
 		}
 	};
 
-	const getPageData2 = () => {
+	const getPageDataOtherDrinks = () => {
 
 		const paginationData = getVisibleData(dataOfDrinks, currentPage, perPageData);
 
 		return {
-			totalData2: dataOfDrinks,
-			slicedData2: paginationData
+			totalDataOtherDrinks: dataOfDrinks,
+			pageDataOtherDrinks: paginationData
 		}
 	};
 
-	const {totalData, slicedData} = getPageData();
-	const {totalData2, slicedData2} = getPageData2();
+	const {totalData, pageData} = getPageData();
+	const {totalDataOtherDrinks, pageDataOtherDrinks} = getPageDataOtherDrinks();
 
 	
   const handleNextPage = () => {
@@ -92,11 +92,11 @@ export default function Drink() {
 	return (
 		<div className="drink-container">
 			<h1 className="title">Drinks</h1>
-			<CardList data={slicedData2}/>
-			<CardListBeer items={slicedData} />
+			<CardList data={pageDataOtherDrinks}/>
+			<CardListBeer items={pageData} />
 			<Pagination
 				perPageData={perPageData} 
-				totalData={totalData || totalData2} 
+				totalData={totalData || totalDataOtherDrinks} 
 				currentPage={currentPage}
 				handlePageChange={handlePageChange} 
 				handlePreviousPage={handlePreviousPage}

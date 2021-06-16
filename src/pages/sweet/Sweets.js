@@ -28,11 +28,11 @@ export default function Sweets() {
 
 		return {
 			totalData: data,
-			slicedData: paginationData
+		  pageData: paginationData
 		}
 	};
 
-	const {totalData, slicedData} = getPageData();
+	const {totalData,pageData} = getPageData();
 
 	
   const handleNextPage = () => {
@@ -49,7 +49,7 @@ export default function Sweets() {
 	return (
 		<div className="sweet-container">
 			<h1 className="title">Sweets </h1>
-			<CardList data={slicedData}/>
+			<CardList data={pageData}/>
 			<Pagination 
 				perPageData={perPageData} 
 				totalData={totalData} 
