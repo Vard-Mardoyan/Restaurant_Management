@@ -1,19 +1,15 @@
 import { useEffect, useState } from "react";
 import { RandomComponent } from "../../components/random-list/Random";
-import {
-  DRINKS_DATA_FROM_LOCAL_STORAGE,
-  FOODS_DATA_FROM_LOCAL_STORAGE,
-  SWEETS_DATA_FROM_LOCAL_STORAGE,
-} from "../../helpers/local-storage";
+import { loadState } from "../../helpers/local-storage";
 import Story from "../../components/about/Story";
 import "./HomeStyle.css";
 
 export default function Home() {
   const title = 'Welcome our restaurant';
   const menuTitle = 'Amazing delicious dishes && drinks';
-  const [sweetData, setSweetData] = useState(SWEETS_DATA_FROM_LOCAL_STORAGE);
-  const [foodData, setFoodData] = useState(FOODS_DATA_FROM_LOCAL_STORAGE);
-  const [drinkData, setDrinkData] = useState(DRINKS_DATA_FROM_LOCAL_STORAGE);
+  const [sweetData, setSweetData] = useState(loadState('SWEETS_DATA_loc'));
+  const [foodData, setFoodData] = useState(loadState('FOODS_DATA_loc'));
+  const [drinkData, setDrinkData] = useState(loadState('DRINK_DATA_loc'));
   const [activeIndex, setActiveIndex] = useState(0);
   const [date, setDate] = useState(new Date());
 
@@ -63,12 +59,3 @@ export default function Home() {
     </div>
   );
 }
-
-// <div className="home-conatainer">
-// <div className="text-container">
-//   <h2 className="app-title">{`${title.toUpperCase()}`}</h2>
-// </div>
-// {/* <div className="title-container">
-//   <h3 className="title">Daily Dishes && Drinks</h3>
-//   <h3 className="date">&nbsp;{date.toLocaleTimeString()}</h3>
-// </div>; */}

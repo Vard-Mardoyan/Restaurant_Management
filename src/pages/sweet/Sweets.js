@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import CardList from "../../components/card-list/CardList";
 import { getVisibleData } from "../../components/pagination/visible-data";
 import Pagination from "../../components/pagination/Pagination";
-import { SWEETS_DATA_FROM_LOCAL_STORAGE } from "../../helpers/local-storage";
+import { loadState} from "../../helpers/local-storage";
 import "./SweetsStyle.css";
 
 export default function Sweets() {
-	const [data, setData] = useState(SWEETS_DATA_FROM_LOCAL_STORAGE);
+	const [data, setData] = useState(loadState('SWEETS_DATA_loc'));
 	const [currentPage, setCurrentPage] = useState(1);
 	const perPageData = 8;
+
 
 	useEffect(() => {
 		setData(data);
