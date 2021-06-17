@@ -4,6 +4,7 @@ import Contact from  "../pages/contact/Contact";
 import Food from "../pages/food/Food";
 import Sweets from "../pages/sweet/Sweets";
 import Drink from "../pages/drink/Drink";
+import SearchComponent from "../pages/search/Search";
 
 export const Routes = [
 	{
@@ -38,5 +39,11 @@ export const Routes = [
 		component: Drink,
 		title: "Drink",
 	},
+	{
+		route: "/search",
+		component: SearchComponent,
+		title: "Search",
+	},
+
 
 ];
