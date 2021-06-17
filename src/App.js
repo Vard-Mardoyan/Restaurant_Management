@@ -9,7 +9,7 @@ import AdminButton from "./adminFolder/admin";
 import ShoppingCart from "./components/ShoppingCart";
 import CartProvider from "./context/cart/CartState";
 import LocalStoragesDates from "./components/creatingLocalstoragesDate";
-import background from "./assets/image/2.jpg";
+//import background from "./assets/image/2.jpg";
 import "./App.css";
 import { Tablelist } from "./RezervFolder/tablelist"
 import Scroll from "./components/ScrollToTop/ScrollToTop";
