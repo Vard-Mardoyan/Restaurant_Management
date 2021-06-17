@@ -11,6 +11,7 @@ import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Popover from '@material-ui/core/Popover';
 import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
+// import SearchComponent from "../../pages/search/Search";
 
 
 export default function Nav({ changeRezerveagestat }) {
@@ -41,6 +42,7 @@ export default function Nav({ changeRezerveagestat }) {
 				))}
 				<Singin changeRezerveagestat={changeRezerveagestat}/>
 				<Cart />
+				{/* <SearchComponent /> */}
 			</nav>
 		</div>
 	);
