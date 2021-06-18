@@ -18,8 +18,8 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { FaPrint } from "react-icons/fa";
 import GlobalMap from "../Map";
 
-export class Footer extends Component {
-	render() {
+export const Footer = () => {
+
 		return (
 			<div className="App-footer">
 				<div className="footerInfo-container">
@@ -63,7 +63,7 @@ export class Footer extends Component {
 				</div>
 			</div>
 		);
-	}
+	
 }
 // export default GoogleApiWrapper({
 // 	apiKey: "AIzaSyAQHn9zoOzPpAL_riGq-wiJgxMWoM__0o8",
