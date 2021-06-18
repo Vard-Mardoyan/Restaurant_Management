@@ -1,10 +1,11 @@
 //import { List } from "@material-ui/core";
-import { CircularProgress } from "@material-ui/core";
+import {CircularProgress } from "@material-ui/core";
 import { useState } from "react";
 // import { getAllCountries } from "../../components/services/countries";
 // import { FetchActionTypes } from "../../helpers/action-types";
 import { loadState } from "../../helpers/local-storage";
 import { BASE_URL } from "../../service/config";
+import CardList from "../../components/card-list/CardList";
 
 export default function SearchComponent() {
   const [isLoading, setIsLoading] = useState(false);
@@ -14,6 +15,7 @@ export default function SearchComponent() {
   const [sweetsData, setSweetsData] = useState(loadState("SWEETS_DATA_loc"));
   const [foodData, setFoodData] = useState(loadState("FOODS_DATA_loc"));
   const [drinksData, setDrinkData] = useState(loadState("DRINK_DATA_loc"));
+  const [isSearchData, setIsSearchData] = useState(true);
 
   useState(() => {
     setIsLoading(true);
@@ -35,6 +37,7 @@ export default function SearchComponent() {
     setDrinkData(drinksData);
   }, [sweetsData, foodData, drinksData]);
 
+
   const handleSearchUpdate = (event) => {
     let value = event.target.value;
     setSearchValue(value);
@@ -44,6 +47,21 @@ export default function SearchComponent() {
 		let clear = '';
 		setSearchValue(clear);
 	};
+  const handleOnClick = () => setIsSearchData(false);
+
+  const filterNames = (arr) => {
+    return !searchValue
+      ? arr.map(({ name }) => name)
+      : arr.filter(({ name }) =>
+          name.toLowerCase().match(searchValue.toLowerCase())
+        );
+  };
+
+  const filteredDataNames = filterNames(data);
+  const filteredSweetsDataNames = filterNames(sweetsData);
+  const filteredFoodDataNames = filterNames(foodData);
+  const filteredDrinksDataNames = filterNames(drinksData);
+
 
 
   if (isLoading) {
@@ -58,50 +76,46 @@ export default function SearchComponent() {
     );
   }
 	
-  const filterNames = (arr) => {
-    return !searchValue
-      ? arr.map(({ name }) => name)
-      : arr.filter(({ name }) =>
-          name.toLowerCase().match(searchValue.toLowerCase())
-        );
-  };
 
-  const filteredDataNames = filterNames(data);
-  const filteredSweetsDataNames = filterNames(sweetsData);
-  const filteredFoodDataNames = filterNames(foodData);
-  const filteredDrinksDataNames = filterNames(drinksData);
-
-  const renderFilteredData = (arr) => {
-    return arr?.map(({ name, image, image_url }) => {
-      return (
-        <div key={name}>
-          <img
-            width={image ? "40" : "20"}
-            alt={name}
-            src={image || image_url}
-          />{" "}
-          {name}
-        </div>
-      );
-    });
-  };
+  // const renderFilteredData = (arr) => {
+  //   return arr?.map(({ name, image, image_url }) => {
+  //     return (
+  //       <div key={name}>
+  //         <img
+  //           width={image ? "50" : "20"}
+  //           alt={name}
+  //           src={image || image_url}
+  //         />{" "}
+  //         {name}
+  //       </div>
+  //     );
+  //   });
+  // };
 
   return (
     <form onReset={handleOnReset}>
-      <div className="search-container">
+      <div className="search-container" style={{display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center"}}>
         <input
-          value={searchValue || ""}
+          value={searchValue}
           onChange={(event) => {
             handleSearchUpdate(event);
           }}
+          onClick={handleOnClick}
           placeholder="Search"
         />
-        <ul className="search-data">
+        {/* <ul className="search-data">
           {renderFilteredData(filteredSweetsDataNames)}
           {renderFilteredData(filteredFoodDataNames)}
           {renderFilteredData(filteredDrinksDataNames)}
           {renderFilteredData(filteredDataNames)}
-        </ul>
+        </ul> */}
+        <div>
+          {!isSearchData ? <CardList data={filteredSweetsDataNames} /> : null}
+          {!isSearchData ? <CardList data={filteredFoodDataNames } /> : null}
+          {!isSearchData ? <CardList data={filteredDrinksDataNames } /> : null}
+          {!isSearchData ? <CardList data={filteredDataNames } />  : null}
+
+        </div>
       </div>
     </form>
   );
