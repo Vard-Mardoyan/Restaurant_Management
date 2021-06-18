@@ -36,9 +36,8 @@ export default function CardComponent({
 			addToCart({ id, name, image, kitchen, description, price })
 		}
 	};
-
 	return (
-		<Card className="card" key={id}>
+		<Card className={!id && !image && !name && !kitchen &&  !description && !price ? "empty" : "card" } key={id}>
 			<CardContent>
 				<Typography variant="h5" component="h2">
 					{name}
