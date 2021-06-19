@@ -1,20 +1,19 @@
 import { useEffect, useState } from "react"
 import Userscontrol from "./usercontrol"
-import { Tablelist } from "../RezervFolder/tablelist"
 import Menucontrol from "./controlmenu"
 
 
-export default function AdminButton(){
+export function Adminpage({ changeStat }){
     const [useerscontrol, setUserscontrol] = useState(false)
     const [tablecontrol, setTableControl] = useState(false)
     const [menucontrol, setMenucontrol] = useState(false)
     
     const buttonselement = <div>
+        <button onClick = {changeStat}>Logout</button>
         <button onClick = {() => {setUserscontrol(true); setTableControl(false); setMenucontrol(false)}}>Usercontrol</button>
         <button onClick = {() => {setTableControl(true); setUserscontrol(false); setMenucontrol(false)}}>Tablecontrol</button>
         <button onClick = {()=> {setMenucontrol(true); setUserscontrol(false); setTableControl(false)}}>Menucontrol</button>
     </div>
-
      
      
      if(!useerscontrol && !tablecontrol && !menucontrol){
@@ -34,7 +33,7 @@ export default function AdminButton(){
          return (
              <div>
                  {buttonselement}
-                <Tablelist/>
+                
              </div>
          )
      }else if(menucontrol && !useerscontrol && !tablecontrol){

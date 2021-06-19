@@ -3,9 +3,6 @@ import { useEffect, useState } from "react";
 
 
 
-
-
-
 export default function Userscontrol () {
     const userlist = JSON.parse(localStorage.getItem('usersArray'))
     const [count, setCount] = useState(1)
