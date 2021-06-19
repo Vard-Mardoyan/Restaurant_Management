@@ -10,6 +10,7 @@ import CartProvider from "./context/cart/CartState";
 import LocalStoragesDates from "./components/creatingLocalstoragesDate";
 import { Tablelist } from "./RezervFolder/tablelist"
 //import background from "./assets/image/2.jpg";
+import background from "./assets/image/2.jpg";
 import "./App.css";
 import Scroll from "./components/ScrollToTop/ScrollToTop";
 import { Adminpage } from "./adminFolder/admin"
