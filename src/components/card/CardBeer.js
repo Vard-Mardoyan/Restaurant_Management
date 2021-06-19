@@ -16,10 +16,29 @@ export default function CardBeerComponent({
 	description,
 	image_url,
 	volume,
+	quantity
 }) {
 	const { addToCart, cartItems, increase } = useCartContext();
 	let opts = { format: "%s%v", symbol: "$" };
 	const price = volume.value;
+
+	const isItemOnList = () => {
+		return cartItems.find((product) => product.id === id) !== undefined;
+	}
+
+	const handleClick = () => {
+		if(isItemOnList()) {
+			increase({ id });
+		} else {
+			addToCart({	id,
+				name,
+				description,
+				image_url,
+				volume,
+				quantity
+			 })
+		}
+	};
 
 	return (
 		<Card className="card" key={id}>
@@ -40,18 +59,12 @@ export default function CardBeerComponent({
 			</CardContent>
 			<CardActions>
 				<Button
-					addToItem={() => ({
-						id,
-						name,
-						description,
-						image_url,
-						volume,
-					})}
+					onClick={handleClick}
 					variant="contained"
 					color="primary"
 					size="medium"
 				>
-					Add to Cart
+					{isItemOnList() ? `${quantity || 'ADD TO CART' }` : 'Add to Cart'}
 				</Button>
 			</CardActions>
 		</Card>

@@ -31,7 +31,8 @@ export const Cart = () => {
 	
 						{cartItems.length > 0 && (
 								<div className="item__count">
-									<span>{cartItems.length}</span>
+									{/* <span>{cartItems.length}</span> */}
+                  <span>{itemCount}</span>
 								</div>
 							)} 
           </Button>
@@ -60,10 +61,6 @@ export const Cart = () => {
                                 Your cart is empty
                             </div>
                         }
-
-
-
-
 												</Typography>
             </Box>
           </Popover>

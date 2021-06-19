@@ -36,9 +36,8 @@ export default function CardComponent({
 			addToCart({ id, name, image, kitchen, description, price })
 		}
 	};
-
 	return (
-		<Card className="card" key={id}>
+		<Card className={!id && !image && !name && !kitchen &&  !description && !price ? "empty" : "card" } key={id}>
 			<CardContent>
 				<Typography variant="h5" component="h2">
 					{name}
@@ -57,16 +56,7 @@ export default function CardComponent({
 					<img width="300" src={image} alt={name} />
 				</Typography>
 			</CardContent>
-			{/* {isInCart(item) && (
-				<Button
-					onClick={() => increase(item)}
-					className="btn btn-outline-primary btn-sm"
-				>
-					Add more
-				</Button>
-			)
-			} */}
-			{/* {!isInCart(item) && ( */}
+
 			<CardActions>
 				<Button
 					// onClick={() => addToCart({ item })}
@@ -78,7 +68,6 @@ export default function CardComponent({
 					{isItemOnList() ? `${quantity || 'ADD TO CART' }` : 'Add to Cart'}
 				</Button>
 			</CardActions>
-			{/* )} */}
 		</Card>
 	);
 
