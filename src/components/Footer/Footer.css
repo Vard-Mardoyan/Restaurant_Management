@@ -61,3 +61,53 @@
 .map-container {
 	padding: 100px 100px;
 }
+
+.admin {
+	width: 255px;
+    height: 200px;
+    background: rgba(84, 76, 76, 0.75);
+    border-radius: 5px;
+    box-shadow: 0 0 10px #000000, 0 0 0 1px rgb(47 47 47 / 50%) inset;
+    position: absolute;
+    top: 100%;
+	text-align: center;
+}
+
+.admininput{
+	width: 200px;
+    margin-left: 10px;
+    margin-top: 15px;
+    background: rgba(63, 61, 61, 0.3);
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 13px;
+    text-shadow: 1px 1px 1px rgb(0 0 0 / 30%);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    box-shadow: inset 0 -5px 45px rgb(100 100 100 / 20%), 0 1px 1px rgb(255 255 255 / 20%);
+    color: white;
+}
+
+.textstyle{
+	display: block;
+    font-size: 25px;
+    text-align: center;
+    color: #fff;
+}
+.logdiv{
+	margin-top: 15px;
+}
+.adminclzlink{
+	display: inline-block;
+	margin-left: 10px;
+	font-size: 15px;
+	text-decoration: none;
+	font-family: sans-serif;
+	color: white;
+	text-transform: uppercase;
+	border-bottom: 3px solid transparent;
+	padding: 10px 1px;
+	transition: 200ms;
+	margin-left: 200px;
+}
