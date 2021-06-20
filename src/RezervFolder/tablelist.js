@@ -32,6 +32,15 @@ export function Tablelist( {changeRezerveagestat} ) {
 
   function Tab1(props) {
     const tablestate = JSON.parse(localStorage.getItem(props.data.name));
+    if(props.admin){
+      return(
+        <div className = 'table'>
+          <h2>{props.data.name}</h2>
+          <h4>Places {props.data.places}</h4>
+           {rezerved}
+        </div>
+      )
+    }
     if (tablestate === null || tablestate.user === user.name) {
       if (props.tablstatus === "notRezerved") {
         return (
@@ -94,6 +103,7 @@ export function Tablelist( {changeRezerveagestat} ) {
         <div className="tablesDiv">
           <div className="table">
             <Tab1
+              admin = {Number(localStorage.getItem('admintab1'))}
               tablstatus={tablestatus1}
               rezervstatus="rezervStatus1"
               changestatus={setTablestatus1}
@@ -102,6 +112,7 @@ export function Tablelist( {changeRezerveagestat} ) {
           </div>
           <div className="table">
             <Tab1
+              admin = {Number(localStorage.getItem('admintab2'))}
               tablstatus={tablestatus2}
               rezervstatus="rezervStatus2"
               changestatus={setTablestatus2}
@@ -110,6 +121,7 @@ export function Tablelist( {changeRezerveagestat} ) {
           </div>
           <div className="table">
             <Tab1
+              admin = {Number(localStorage.getItem('admintab3'))}
               tablstatus={tablestatus3}
               rezervstatus="rezervStatus3"
               changestatus={setTablestatus3}
@@ -118,6 +130,7 @@ export function Tablelist( {changeRezerveagestat} ) {
           </div>
           <div className="table">
             <Tab1
+              admin = {Number(localStorage.getItem('admintab4'))}
               tablstatus={tablestatus4}
               rezervstatus="rezervStatus4"
               changestatus={setTablestatus4}
@@ -126,6 +139,7 @@ export function Tablelist( {changeRezerveagestat} ) {
           </div>
           <div className="table">
             <Tab1
+              admin = {Number(localStorage.getItem('admintab5'))}
               tablstatus={tablestatus5}
               rezervstatus="rezervStatus5"
               changestatus={setTablestatus5}
@@ -134,6 +148,7 @@ export function Tablelist( {changeRezerveagestat} ) {
           </div>
           <div className="table">
             <Tab1
+              admin = {Number(localStorage.getItem('admintab6'))}
               tablstatus={tablestatus6}
               rezervstatus="rezervStatus6"
               changestatus={setTablestatus6}

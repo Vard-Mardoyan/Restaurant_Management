@@ -1,22 +1,27 @@
 import { useState } from "react";
 import MenuControlComponent from "./components";
-
-
-
-
+import "./admin.css";
+import Button from "@material-ui/core/Button";
 
 export default function Menucontrol() {
-  const SWEETS_DATA_FROM_LOCAL_STORAGE1 = JSON.parse(localStorage.getItem('SWEETS_DATA_loc'));
-  const FOODS_DATA_FROM_LOCAL_STORAGE1 = JSON.parse(localStorage.getItem('FOODS_DATA_loc'));
-  const DRINKS_DATA_FROM_LOCAL_STORAGE1 = JSON.parse(localStorage.getItem('DRINK_DATA_loc'));
+  const SWEETS_DATA_FROM_LOCAL_STORAGE1 = JSON.parse(
+    localStorage.getItem("SWEETS_DATA_loc")
+  );
+  const FOODS_DATA_FROM_LOCAL_STORAGE1 = JSON.parse(
+    localStorage.getItem("FOODS_DATA_loc")
+  );
+  const DRINKS_DATA_FROM_LOCAL_STORAGE1 = JSON.parse(
+    localStorage.getItem("DRINK_DATA_loc")
+  );
 
   const [sweet, setSweet] = useState(false);
   const [foods, setFoods] = useState(false);
   const [drink, setDrink] = useState(false);
 
   const elements = (
-    <div>
+    <div className="menuconteiner">
       <button
+        className="menubutton"
         onClick={() => {
           setSweet(true);
           setFoods(false);
@@ -26,6 +31,7 @@ export default function Menucontrol() {
         SWEETS
       </button>
       <button
+        className="menubutton"
         onClick={() => {
           setSweet(false);
           setFoods(true);
@@ -35,6 +41,7 @@ export default function Menucontrol() {
         FOODS
       </button>
       <button
+        className="menubutton"
         onClick={() => {
           setSweet(false);
           setFoods(false);
@@ -52,21 +59,30 @@ export default function Menucontrol() {
     return (
       <div>
         {elements}
-        <MenuControlComponent data = {SWEETS_DATA_FROM_LOCAL_STORAGE1} localStorageData = 'SWEETS_DATA_loc'/>
+        <MenuControlComponent
+          data={SWEETS_DATA_FROM_LOCAL_STORAGE1}
+          localStorageData="SWEETS_DATA_loc"
+        />
       </div>
     );
   } else if (!sweet && foods && !drink) {
     return (
       <div>
         {elements}
-        <MenuControlComponent data = {FOODS_DATA_FROM_LOCAL_STORAGE1} localStorageData = 'FOODS_DATA_loc'/>
+        <MenuControlComponent
+          data={FOODS_DATA_FROM_LOCAL_STORAGE1}
+          localStorageData="FOODS_DATA_loc"
+        />
       </div>
     );
   } else if (!sweet && !foods && drink) {
     return (
       <div>
         {elements}
-        <MenuControlComponent data = {DRINKS_DATA_FROM_LOCAL_STORAGE1} localStorageData = 'DRINK_DATA_loc' />
+        <MenuControlComponent
+          data={DRINKS_DATA_FROM_LOCAL_STORAGE1}
+          localStorageData="DRINK_DATA_loc"
+        />
       </div>
     );
   }
