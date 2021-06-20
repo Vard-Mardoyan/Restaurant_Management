@@ -1,5 +1,5 @@
 //import { List } from "@material-ui/core";
-import {CircularProgress } from "@material-ui/core";
+import { CircularProgress} from "@material-ui/core";
 import { useState } from "react";
 // import { getAllCountries } from "../../components/services/countries";
 // import { FetchActionTypes } from "../../helpers/action-types";
@@ -7,7 +7,7 @@ import { loadState } from "../../helpers/local-storage";
 import { BASE_URL } from "../../service/config";
 import CardList from "../../components/card-list/CardList";
 
-export default function SearchComponent() {
+export default function SearchContainer() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const [data, setData] = useState([]);
@@ -37,16 +37,15 @@ export default function SearchComponent() {
     setDrinkData(drinksData);
   }, [sweetsData, foodData, drinksData]);
 
-
   const handleSearchUpdate = (event) => {
     let value = event.target.value;
     setSearchValue(value);
   };
 
-	const handleOnReset = () => {
-		let clear = '';
-		setSearchValue(clear);
-	};
+  const handleOnReset = () => {
+    let clear = "";
+    setSearchValue(clear);
+  };
   const handleOnClick = () => setIsSearchData(false);
 
   const filterNames = (arr) => {
@@ -62,8 +61,6 @@ export default function SearchComponent() {
   const filteredFoodDataNames = filterNames(foodData);
   const filteredDrinksDataNames = filterNames(drinksData);
 
-
-
   if (isLoading) {
     return <CircularProgress />;
   }
@@ -75,40 +72,23 @@ export default function SearchComponent() {
       </div>
     );
   }
-	
 
-  // const renderFilteredData = (arr) => {
-  //   return arr?.map(({ name, image, image_url }) => {
-  //     return (
-  //       <div key={name}>
-  //         <img
-  //           width={image ? "50" : "20"}
-  //           alt={name}
-  //           src={image || image_url}
-  //         />{" "}
-  //         {name}
-  //       </div>
-  //     );
-  //   });
-  // };
+  //style={{display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center"}}
 
   return (
     <form onReset={handleOnReset}>
-      <div className="search-container" style={{display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center"}}>
+      <div className="search-container">
         <input
+          type="text"
           value={searchValue}
           onChange={(event) => {
             handleSearchUpdate(event);
           }}
           onClick={handleOnClick}
           placeholder="Search"
+          className="search-input"
+          name="search"
         />
-        {/* <ul className="search-data">
-          {renderFilteredData(filteredSweetsDataNames)}
-          {renderFilteredData(filteredFoodDataNames)}
-          {renderFilteredData(filteredDrinksDataNames)}
-          {renderFilteredData(filteredDataNames)}
-        </ul> */}
         <div>
           {!isSearchData ? <CardList data={filteredSweetsDataNames} /> : null}
           {!isSearchData ? <CardList data={filteredFoodDataNames } /> : null}

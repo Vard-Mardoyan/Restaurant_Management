@@ -1,6 +1,6 @@
 .home-wrapper {
 	margin: 0 auto;
-	width: 2000px;
+	/* width: 4000px; */
 }
 
 .home-conatainer {
@@ -10,7 +10,8 @@
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
-	background-color: #fff;
+	/* background-color: #20232a;
+	opacity: 0.9;  */
 }
 .text-container {
 	display: flex;
@@ -59,8 +60,8 @@
 	width: 1500px;
 	padding: 10px;
 	margin: 10px;
-
-	background-color: #2e2020; /*hsla(23, 40%, 50%, 0.1); */
+	/* background-color: #20232a;
+	opacity: 0.9;  */
 	border-radius: 10px;
 	display: flex;
 	flex-direction: row;
