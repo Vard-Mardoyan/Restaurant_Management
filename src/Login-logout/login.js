@@ -1,10 +1,8 @@
-import React, {useEffect, useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { CreatingNewUser } from "./createNewUser";
 import { Link } from "react-router-dom";
 import "./Login.css";
 import { Rezervcontext } from "../App"
-import { Tablelist } from "../RezervFolder/tablelist"
-
 
 
 export function Singin({ changeRezerveagestat }) {
