@@ -77,7 +77,7 @@ export default function SearchContainer() {
 
   return (
     <form onReset={handleOnReset}>
-      <div className="search-container">
+      <div className="search-container" key="searchInput">
         <input
           type="text"
           value={searchValue}
@@ -89,11 +89,11 @@ export default function SearchContainer() {
           className="search-input"
           name="search"
         />
-        <div>
-          {!isSearchData ? <CardList data={filteredSweetsDataNames} /> : null}
-          {!isSearchData ? <CardList data={filteredFoodDataNames } /> : null}
-          {!isSearchData ? <CardList data={filteredDrinksDataNames } /> : null}
-          {!isSearchData ? <CardList data={filteredDataNames } />  : null}
+        <div key="search">
+          {!isSearchData ? <CardList data={filteredSweetsDataNames} key="sweetsData" /> : null}
+          {!isSearchData ? <CardList data={filteredFoodDataNames } key="foodData"/> : null}
+          {!isSearchData ? <CardList data={filteredDrinksDataNames } key="drinksData" /> : null}
+          {!isSearchData ? <CardList data={filteredDataNames } key="beerApi"/>  : null}
 
         </div>
       </div>
