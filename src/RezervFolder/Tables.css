@@ -1,9 +1,11 @@
 
 .tablesConteiner{
-    max-width: 950px;
     width: 90%;
+    max-width: 1000px;
+    width: 1000px;
+    height: 667px;
     margin: auto;
-    background-color: burlywood;
+    background-image: url('image2.jpeg');
 }
 .tablesDiv{
     display: flex;
@@ -17,8 +19,23 @@
     margin-left: 40px;
     margin-right: 40px;
     margin-top: 30px;
+    margin-bottom: 20px;
 }
 .cloze{
     margin-left: 95%;
+}
+
+.table1{
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    border: solid 2px aliceblue;
+    border-radius: 50%;
+}
+
+.tablename{
+   color: blanchedalmond;
 }
 
