@@ -20,26 +20,27 @@ export default function CardBeerComponent({
 	const { addToCart, cartItems, increase } = useCartContext();
 	let opts = { format: "%s%v", symbol: "$" };
 	const price = volume.value;
+	const maxLength = 37;
 
 	return (
 		<Card className={!id && !image_url && !name &&  !description && !price? "empty" : "card" } key={id}>
-			<CardContent>
-				<Typography variant="h5" component="h2">
+			<CardContent className="card-component">
+			<Typography variant="body2" component="p">
+					<br />
+					<img src={image_url} alt={name} className="beer-image" />
+				</Typography>
+				<Typography variant="h5" component="h2" className="item-decoration">
 					{name}
 				</Typography>
-				<Typography color="textSecondary" gutterBottom>
-					{description}
+				<Typography color="textSecondary" gutterBottom className="item-decoration">
+					{`${description.substring(0, maxLength)}`}
 				</Typography>
-				<Typography color="textSecondary" gutterBottom>
+				<Typography color="textSecondary" gutterBottom className="item-decoration">
 					{formatCurrency(`${price}`, opts)}
 				</Typography>
-				<Typography variant="body2" component="p">
-					<br />
-					<img src={image_url} alt={name} width="70" />
-				</Typography>
 			</CardContent>
-			<CardActions>
-				<Button
+			{/* <CardActions>
+			<Button
 					addToItem={() => ({
 						id,
 						name,
@@ -51,9 +52,22 @@ export default function CardBeerComponent({
 					color="primary"
 					size="medium"
 				>
-					Add to Cart
+					ADD TO CART
 				</Button>
-			</CardActions>
+			</CardActions> */}
+
+			<button
+        className="add-button"
+				// addToItem={() => ({
+				// 	id,
+				// 	name,
+				// 	description,
+				// 	image_url,
+				// 	volume,
+				// })}
+			 >
+        ADD TO CART
+			</button>
 		</Card>
 	);
 }

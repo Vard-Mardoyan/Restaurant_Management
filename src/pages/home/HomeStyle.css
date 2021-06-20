@@ -35,7 +35,7 @@
 	flex-wrap: wrap;
 	/* align-items: center; */
 	text-align: center;
-	color: #aa6d6d;
+	color: #d1cece;
 
 }
 .date{
@@ -44,17 +44,17 @@
 	flex-wrap: wrap;
 	align-items: center;
 	text-align: center;
-	color: #aa6d6d;
+	color: #d1cece;
 	right: 4px;
 }
 
-.title {
+.title-random {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	align-items: center;
 	text-align: center;
-	color: #aa6d6d;
+	color:#d1cece;
 }
 .component-card {
 	width: 1500px;

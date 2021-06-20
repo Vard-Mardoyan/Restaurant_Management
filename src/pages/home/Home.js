@@ -45,7 +45,7 @@ export default function Home() {
         <h2 className="app-title">{`${title.toUpperCase()}`}</h2>
       </div>
       <div className="title-container">
-        <h3 className="title">{`${menuTitle.toUpperCase()}`}</h3>
+        <h3 className="title-random">{`${menuTitle.toUpperCase()}`}</h3>
         <h3 className="date">&nbsp;{date.toLocaleTimeString()}</h3>
       </div>
       <div className="home-conatainer">
