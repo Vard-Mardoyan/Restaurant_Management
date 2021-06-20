@@ -1,8 +1,64 @@
 .card {
-  width: 320px;
-  margin: 20px;
+  /* width: 320px;
+  margin: 20px; */
+  width: 360px;
+	padding: 10px; 
+	margin: 1px;
+
+	/*background-color: #ffffff; rgba(31, 14, 3, 0.1);*/
+	border-radius: 15px;
+  justify-content: center;
 }
 
 .empty {
   display: none;
+}
+
+.all-image {
+  width: 260px;
+	padding: 10px;
+	margin: 10px;
+
+	background-color: hsla(20, 15%, 23%, 0.1);
+	border-radius: 15px;
+}
+.beer-image {
+  width: 70px;
+	/* padding: 10px;
+	margin: 10px;
+
+	background-color: hsla(20, 15%, 23%, 0.1); */
+	border-radius: 15px;
+
+}
+
+.card-component {
+  width: 340px;
+	padding: 10px;
+	margin: 10px;
+
+	background-color: hsla(26, 11%, 87%, 0.1);
+	border-radius: 10px;
+  justify-content: center;
+}
+
+.item-decoration {
+  color:  #2f1a38;
+  border-color: #2f1a38;
+  font-size: 12px;
+  align-items: flex-start;
+}
+.add-button {
+  border-color: #ecc5db;
+  border-radius: 10px;
+ 	background-color: #5f234a;/*#20232a; /* #0c3f37;/*#1d325f;*/
+
+	opacity: 0.9; 
+  border: none;
+  color:  #e4dcdc;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }

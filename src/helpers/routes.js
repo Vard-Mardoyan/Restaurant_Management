@@ -1,10 +1,9 @@
 import About from "../pages/about/About";
 import Home from "../pages/home/Home";
-import Contact from  "../pages/contact/Contact";
 import Food from "../pages/food/Food";
 import Sweets from "../pages/sweet/Sweets";
 import Drink from "../pages/drink/Drink";
-import SearchComponent from "../container/search/Search";
+//import SearchComponent from "../container/search/Search";
 
 export const Routes = [
 	{
@@ -16,12 +15,6 @@ export const Routes = [
 		route: "/about",
 		component: About,
 		title: "About",
-	},
-	
-	{
-		route: "/contact",
-		component: Contact,
-		title: "Contact Us",
 	},
 
 	{
@@ -39,11 +32,11 @@ export const Routes = [
 		component: Drink,
 		title: "Drink",
 	},
-	{
-		route: "/search",
-		component: SearchComponent,
-		title: "Search",
-	},
+	// {
+	// 	route: "/search",
+	// 	component: SearchComponent,
+	// 	title: "Search",
+	// },
 
 
 ];

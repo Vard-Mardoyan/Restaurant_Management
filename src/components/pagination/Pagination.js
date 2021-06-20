@@ -17,25 +17,23 @@ export default function Pagination({
 
   const renderPageNumber = pages.map((page) => {
     return (
-      <>
-        <span
-          key={page}
-          id={page}
-          onClick={(event) => handlePageChange(page, event)}
-          className={currentPage === page ? "active" : null}
-        >
-          {page}
-        </span>
-      </>
+      <span
+        key={page.toString()}
+        id={page}
+        onClick={(event) => handlePageChange(page, event)}
+        className={currentPage === page ? "active" : null}
+      >
+        {page}
+      </span>
     );
   });
 
   return (
     <div className="pagianation-container">
-      <button onClick={handlePreviousPage} 
+      <button
+        onClick={handlePreviousPage}
         className="prev-button"
         disabled={currentPage === 1}
-
       >
         Prev
       </button>

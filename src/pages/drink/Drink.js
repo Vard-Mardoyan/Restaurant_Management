@@ -91,7 +91,7 @@ export default function Drink() {
 
 	return (
 		<div className="drink-container">
-			<h1 className="title">Drinks</h1>
+			{/* <h1 className="title">Drinks</h1> */}
 			<CardList data={pageDataOtherDrinks}/>
 			<CardListBeer items={pageData} />
 			<Pagination

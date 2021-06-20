@@ -28,7 +28,8 @@
   border-color: #ecc5db;
   border-radius: 10px;
 
-  background-color: #3f2e36;
+  background-color: #20232a;
+	opacity: 0.9;
   border: none;
   color: #e4dcdc;
   padding: 15px 32px;
@@ -41,9 +42,10 @@
 .next-button {
   border-color: #ecc5db;
   border-radius: 10px;
-  background-color: #3f2e36;
+  background-color: #20232a;
+	opacity: 0.9;
   border: none;
-  color: #e4dcdc;
+  color:  #e4dcdc;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;

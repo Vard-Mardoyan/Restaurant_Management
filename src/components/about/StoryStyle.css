@@ -24,13 +24,15 @@
 	align-items: center;
 	justify-content: space-between;
 	background-color: rgb(155 155 155 / 58%);
+	/* background-color: #20232a;
+	opacity: 0.9; */
 }
 .image-card {
 	width: 500px;
 	padding: 10px;
 	margin: 10px;
-
-	background-color: hsla(23, 40%, 50%, 0.1);
+	background-color: #92959c;
+	opacity: 0.9;
 	border-radius: 10px;
 }
 .main-photo {
@@ -38,8 +40,10 @@
 	padding: 10px;
 	margin: 10px;
 
-	background-color: hsla(23, 40%, 50%, 0.1);
-	border-radius: 10px;
+	background-color: #92959c;
+	opacity: 0.9;
+	/*background-color: hsla(21, 26%, 15%, 0.1);*/
+	border-radius: 15px;
 }
 
 .photo-second {
@@ -47,8 +51,10 @@
 	padding: 10px;
 	margin: 10px;
 
-	background-color: hsla(23, 40%, 50%, 0.1);
-	border-radius: 10px;
+	background-color: #92959c;
+	opacity: 0.9;
+	/* background-color: hsla(21, 26%, 15%, 0.1); */
+	border-radius: 15px;
 }
 
 

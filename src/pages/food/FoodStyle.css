@@ -6,13 +6,15 @@
 	background-position: center;
 	background-attachment: fixed;
 	height: 1800px;
-  background-color: #3c3a53; /*#3f2e36;/*#000000bb;*/
+  /*background-color: #3c3a53; /*#3f2e36;/*#000000bb;*/
+  /* background-color: #20232a;
+	opacity: 0.9; */
 }
 .title {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  color: #c48f8f;
+  color: #d1cece;
 }
 
 .list {
