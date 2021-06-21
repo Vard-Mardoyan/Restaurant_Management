@@ -32,7 +32,7 @@ h4 {
 } */
 .section {
 	width: 62.5vw;
-	background-color: rgba(211, 211, 211, 0.746);
+	background-color: rgb(155 155 155 / 58%);
 
 	margin: 5rem auto;
 }
@@ -75,7 +75,7 @@ article h4 {
 	color: rgb(214, 184, 162);
 	margin-bottom: 0.25rem;
 }
-.title {
+.staff-title {
 	text-transform: capitalize;
 	margin-bottom: 0.75rem;
 	color: rgb(122, 100, 71);

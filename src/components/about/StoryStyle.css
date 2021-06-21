@@ -2,7 +2,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	color: rgb(235, 222, 222);
+	color: #d1cece;
 }
 
 /* .main-photo {
@@ -14,7 +14,7 @@
 
 } */
 .title {
-	color: #573232;
+	color:#d1cece;
 }
 .container {
 	display: flex;
