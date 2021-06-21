@@ -145,7 +145,7 @@ export const CartItem = ({ item }) => {
 											<span className="mb-1">Total Payment <PaymentTwoToneIcon/> {formatCurrency(`${total}`, opts)}</span>
 
 											<Typography className="text-center">
-													<button type="button" className="btn btn-outlineprimary btn-sm" onClick={clearCart}>Clear All</button>
+													<ButtonBase type="button" className="btn btn-outlineprimary btn-sm" onClick={clearCart}>Clear All</ButtonBase>
 											</Typography>
 
 									</Typography>

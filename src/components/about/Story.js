@@ -1,13 +1,11 @@
 import { useState } from "react";
-import { STORY_DATA } from "../../service/data";
+import { STORY_DATA } from "../../data/data";
 import "./StoryStyle.css";
 
 export default function Story() {
 	const [showLess, setShowLess] = useState(true);
 	let maxLength = 220;
 	const title = "Our story";
-
-	//console.log(STORY_DATA[0].text, "text:::");
 
 	if (STORY_DATA[0].text.length <= maxLength) {
 		return <p className="text">{STORY_DATA[0].text} </p>;

@@ -1,4 +1,5 @@
-import { PHILOSOPHY_OF_COOKING_DATA } from "../../service/data";
+
+import { PHILOSOPHY_OF_COOKING_DATA } from "../../data/data";
 import "./StoryStyle.css";
 
 export default function PhilosophyComponent() {

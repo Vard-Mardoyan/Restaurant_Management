@@ -2,9 +2,9 @@ import React from "react";
 import {
 	Button,
 	Card,
-	CardActions,
 	CardContent,
 	Typography,
+	CardActions
 } from "@material-ui/core";
 import "./CardStyle.css";
 import { useCartContext } from "../../context/cart/CartState";
@@ -16,57 +16,58 @@ export default function CardBeerComponent({
 	description,
 	image_url,
 	volume,
-	quantity
 }) {
 	const { addToCart, cartItems, increase } = useCartContext();
 	let opts = { format: "%s%v", symbol: "$" };
 	const price = volume.value;
-
-	const isItemOnList = () => {
-		return cartItems.find((product) => product.id === id) !== undefined;
-	}
-
-	const handleClick = () => {
-		if(isItemOnList()) {
-			increase({ id });
-		} else {
-			addToCart({	id,
-				name,
-				description,
-				image_url,
-				volume,
-				quantity
-			 })
-		}
-	};
+	const maxLength = 37;
 
 	return (
-		<Card className="card" key={id}>
-			<CardContent>
-				<Typography variant="h5" component="h2">
+		<Card className={!id && !image_url && !name &&  !description && !price? "empty" : "card" } key={id}>
+			<CardContent className="card-component">
+			<Typography variant="body2" component="p">
+					<br />
+					<img src={image_url} alt={name} className="beer-image" />
+				</Typography>
+				<Typography variant="h6" component="h6" className="item-decoration">
 					{name}
 				</Typography>
-				<Typography color="textSecondary" gutterBottom>
-					{description}
+				<Typography color="textSecondary" gutterBottom className="item-decoration">
+					{`${description.substring(0, maxLength)}`}
 				</Typography>
-				<Typography color="textSecondary" gutterBottom>
+				<Typography color="textSecondary" gutterBottom className="item-decoration">
 					{formatCurrency(`${price}`, opts)}
-				</Typography>
-				<Typography variant="body2" component="p">
-					<br />
-					<img src={image_url} alt={name} width="70" />
 				</Typography>
 			</CardContent>
 			<CardActions>
-				<Button
-					onClick={handleClick}
+			<Button
+					addToItem={() => ({
+						id,
+						name,
+						description,
+						image_url,
+						volume,
+					})}
 					variant="contained"
 					color="primary"
 					size="medium"
 				>
-					{isItemOnList() ? `${quantity || 'ADD TO CART' }` : 'Add to Cart'}
+					ADD TO CART
 				</Button>
 			</CardActions>
+
+			{/* <button
+        className="add-button"
+				// addToItem={() => ({
+				// 	id,
+				// 	name,
+				// 	description,
+				// 	image_url,
+				// 	volume,
+				// })}
+			 >
+        ADD TO CART
+			</button> */}
 		</Card>
 	);
 }
