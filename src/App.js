@@ -8,7 +8,7 @@ import { useState } from "react";
 import ShoppingCart from "./components/ShoppingCart";
 import CartProvider from "./context/cart/CartState";
 import LocalStoragesDates from "./components/creatingLocalstoragesDate";
-import { Tablelist } from "./RezervFolder/tablelist";
+import { Tablelist } from "./Tablerezervation/tablelist";
 //import background from "./assets/image/2.jpg";
 import background from "./assets/image/2.jpg";
 import "./App.css";
