@@ -1,8 +1,6 @@
 import React from "react";
 import {
-	Button,
 	Card,
-	CardActions,
 	CardContent,
 	Typography,
 } from "@material-ui/core";
@@ -29,7 +27,7 @@ export default function CardBeerComponent({
 					<br />
 					<img src={image_url} alt={name} className="beer-image" />
 				</Typography>
-				<Typography variant="h5" component="h2" className="item-decoration">
+				<Typography variant="h6" component="h6" className="item-decoration">
 					{name}
 				</Typography>
 				<Typography color="textSecondary" gutterBottom className="item-decoration">

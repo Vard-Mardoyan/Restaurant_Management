@@ -1,7 +1,7 @@
 import CardBeerComponent from "../card/CardBeer";
 import "./CardListStyle.css";
 
-export default function CardListBeer({ addToCart, items }) {
+export default function CardListBeer({ addToCart, items}) {
   return (
     <div>
       <ul className="list">

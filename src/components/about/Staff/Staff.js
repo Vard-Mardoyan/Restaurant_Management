@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
-import { STAFF_DATA } from "../../../service/staff-data";
+import { STAFF_DATA } from "../../../data/staff-data";
 import "./Staff.css";
 
 export default function StaffData() {

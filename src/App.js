@@ -5,16 +5,13 @@ import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 import { Routes } from "./helpers/routes";
 import { useState } from "react";
-import ShoppingCart from "./components/ShoppingCart";
 import CartProvider from "./context/cart/CartState";
-import LocalStoragesDates from "./components/creatingLocalstoragesDate";
+import LocalStoragesDates from "./helpers/creatingLocalstoragesDate";
 import { Tablelist } from "./Tablerezervation/tablelist";
-//import background from "./assets/image/2.jpg";
-import background from "./assets/image/2.jpg";
 import "./App.css";
 import Scroll from "./components/ScrollToTop/ScrollToTop";
 import { Adminpage } from "./adminFolder/admin";
-import SearchContainer from "./container/search/Search";
+import SearchComponent from "./containers/search/Search";
 
 export const Rezervcontext = React.createContext();
 
@@ -39,7 +36,7 @@ export default function App() {
               <main>
 								<div className="container-info">
 									<Nav changeRezerveagestat={changeRezerveagestatus} />
-									<SearchContainer />
+									<SearchComponent />
 								</div>
                 <Tablelist changeRezerveagestat={changeRezerveagestatus} />
                 <Switch>
@@ -52,7 +49,6 @@ export default function App() {
                     <h2>Not Found</h2>
                   </Route>
                 </Switch>
-                {/* <ShoppingCart /> */}
                 <Scroll showBellow={250} />
               </main>
               <Footer changeStat={changeAdminpagestat} />

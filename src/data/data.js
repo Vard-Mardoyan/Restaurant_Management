@@ -1,4 +1,3 @@
-import { BASE_URL } from "./config";
 import photo from "../assets/image/restaurant_interior_partly.jpg";
 import photo_interior from "../assets/image/restaurant_interior.jpg";
 import image_rice from "../assets/image/rice_art.jpg";
@@ -729,9 +728,7 @@ export const LANGUAGE = [
 	},
 ];
 
-export const getBeersData = () => {
-	return fetch(BASE_URL).then((response) => response.json());
-};
+
 
 
 // export const DATA = { SWEETS_DATA, FOODS_DATA, DRINK_DATA };

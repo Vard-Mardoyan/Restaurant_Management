@@ -1,12 +1,12 @@
 import { CircularProgress } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import CardList from "../../components/card-list/CardList";
-import { getBeersData } from "../../service/data";
 import CardListBeer from "../../components/card-list/CardListBeer";
 import {loadState } from "../../helpers/local-storage";
 import Pagination from "../../components/pagination/Pagination";
 import { getVisibleData } from "../../components/pagination/visible-data";
 import "./DrinkStyle.css";
+import { getBeersData } from "../../data/service/beers";
 
 export default function Drink() {
 	const [data, setData] = useState([]);
@@ -16,17 +16,14 @@ export default function Drink() {
 	const [dataOfDrinks, setDataOfDrinks]  =  useState(loadState('DRINK_DATA_loc'));
 	const perPageData = 4;
 
-
 	useEffect(() => {
 		setDataOfDrinks(dataOfDrinks);
 	}, [dataOfDrinks]);
 
 	useEffect(() => {
 		setLoading(true);
-
 		getBeersData()
 			.then((info) => {
-				//console.log(info, "infoDrink:::");
 
 				setData(info);
 				setLoading(false);
@@ -81,17 +78,12 @@ export default function Drink() {
     setCurrentPage((next) =>  next + 1);
   }
 
-
 	const handlePreviousPage = () => {
-
     setCurrentPage((prev) => prev - 1 );
-
   }
-
 
 	return (
 		<div className="drink-container">
-			{/* <h1 className="title">Drinks</h1> */}
 			<CardList data={pageDataOtherDrinks}/>
 			<CardListBeer items={pageData} />
 			<Pagination

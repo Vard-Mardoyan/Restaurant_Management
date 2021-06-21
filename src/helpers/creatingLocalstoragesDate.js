@@ -1,7 +1,5 @@
+import { DRINK_DATA, FOODS_DATA, SWEETS_DATA } from "../data/data";
 
-import { SWEETS_DATA } from "../service/data"
-import { FOODS_DATA } from "../service/data"
-import { DRINK_DATA } from "../service/data"
 
 
 
