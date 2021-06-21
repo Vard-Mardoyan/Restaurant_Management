@@ -16,6 +16,7 @@ export default function CardBeerComponent({
 	description,
 	image_url,
 	volume,
+	onItemClick,
 }) {
 	const { addToCart, cartItems, increase } = useCartContext();
 	let opts = { format: "%s%v", symbol: "$" };
@@ -29,7 +30,7 @@ export default function CardBeerComponent({
 					<br />
 					<img src={image_url} alt={name} className="beer-image" />
 				</Typography>
-				<Typography variant="h5" component="h2" className="item-decoration">
+				<Typography variant="h6" component="h6" className="item-decoration">
 					{name}
 				</Typography>
 				<Typography color="textSecondary" gutterBottom className="item-decoration">
@@ -67,6 +68,11 @@ export default function CardBeerComponent({
 				// })}
 			 >
         ADD TO CART
+			</button>
+			<button
+        className="add-button"
+        onClick={() => onItemClick(name)} >
+        Learn More
 			</button>
 		</Card>
 	);

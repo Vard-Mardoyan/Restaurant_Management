@@ -733,6 +733,18 @@ export const getBeersData = () => {
 	return fetch(BASE_URL).then((response) => response.json());
 };
 
+export const  searchByDataName = (name) => {
+	return fetch(`${BASE_URL}${name}`).then((response) => response.json());
+  
+}
+// https://restcountries.eu/rest/v2/all
+
+// https://restcountries.eu/rest/v2/name/{name}
+
+// return fetch(`${BASE_URL}/all`).then((response) => response.json());
+// export const BASE_URL = 'https://api.punkapi.com/v2/beers';
+// export const BASE_URL = 'https://restcountries.eu/rest/v2';
+
 
 // export const DATA = { SWEETS_DATA, FOODS_DATA, DRINK_DATA };
 

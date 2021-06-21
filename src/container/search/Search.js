@@ -76,7 +76,7 @@ export default function SearchContainer() {
   //style={{display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "center"}}
 
   return (
-    <form onReset={handleOnReset}>
+    <form onReset={handleOnReset} >
       <div className="search-container" key="searchInput">
         <input
           type="text"

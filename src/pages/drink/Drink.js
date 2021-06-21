@@ -7,6 +7,7 @@ import {loadState } from "../../helpers/local-storage";
 import Pagination from "../../components/pagination/Pagination";
 import { getVisibleData } from "../../components/pagination/visible-data";
 import "./DrinkStyle.css";
+import { useHistory } from "react-router-dom";
 
 export default function Drink() {
 	const [data, setData] = useState([]);
@@ -15,6 +16,7 @@ export default function Drink() {
 	const [currentPage, setCurrentPage] = useState(1);
 	const [dataOfDrinks, setDataOfDrinks]  =  useState(loadState('DRINK_DATA_loc'));
 	const perPageData = 4;
+	const history = useHistory();
 
 
 	useEffect(() => {
@@ -26,7 +28,7 @@ export default function Drink() {
 
 		getBeersData()
 			.then((info) => {
-				//console.log(info, "infoDrink:::");
+				//console.log(info, "infoDrink:::description");
 
 				setData(info);
 				setLoading(false);
@@ -81,19 +83,20 @@ export default function Drink() {
     setCurrentPage((next) =>  next + 1);
   }
 
-
 	const handlePreviousPage = () => {
-
     setCurrentPage((prev) => prev - 1 );
-
   }
+
+	const handleDataDetailedDescription = (drinkName) => {// for every country click
+    history.push(`/drinks/${drinkName}`);
+  };
 
 
 	return (
 		<div className="drink-container">
 			{/* <h1 className="title">Drinks</h1> */}
 			<CardList data={pageDataOtherDrinks}/>
-			<CardListBeer items={pageData} />
+			<CardListBeer items={pageData} onItemClick={handleDataDetailedDescription} />
 			<Pagination
 				perPageData={perPageData} 
 				totalData={totalData || totalDataOtherDrinks} 

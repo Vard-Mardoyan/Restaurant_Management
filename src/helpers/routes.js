@@ -28,7 +28,7 @@ export const Routes = [
 		title: "Sweets",
 	},
 	{
-		route: "/drink",
+		route: "/drinks",
 		component: Drink,
 		title: "Drink",
 	},

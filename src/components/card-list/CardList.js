@@ -4,7 +4,7 @@ import CardComponent from "../card/Card";
 
 import "./CardListStyle.css";
 
-export default function CardList({ data }) {
+export default function CardList({ data}) {
   const { addToCart } = useCartContext();
   //console.log(data, "data:::::");
 
