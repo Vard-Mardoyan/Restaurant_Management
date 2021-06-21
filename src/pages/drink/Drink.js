@@ -1,13 +1,12 @@
 import { CircularProgress } from "@material-ui/core";
 import { useEffect, useState } from "react";
 import CardList from "../../components/card-list/CardList";
-import { getBeersData } from "../../service/data";
 import CardListBeer from "../../components/card-list/CardListBeer";
 import {loadState } from "../../helpers/local-storage";
 import Pagination from "../../components/pagination/Pagination";
 import { getVisibleData } from "../../components/pagination/visible-data";
 import "./DrinkStyle.css";
-import { useHistory } from "react-router-dom";
+import { getBeersData } from "../../service/beers";
 
 export default function Drink() {
 	const [data, setData] = useState([]);
@@ -16,8 +15,6 @@ export default function Drink() {
 	const [currentPage, setCurrentPage] = useState(1);
 	const [dataOfDrinks, setDataOfDrinks]  =  useState(loadState('DRINK_DATA_loc'));
 	const perPageData = 4;
-	const history = useHistory();
-
 
 	useEffect(() => {
 		setDataOfDrinks(dataOfDrinks);
@@ -25,10 +22,8 @@ export default function Drink() {
 
 	useEffect(() => {
 		setLoading(true);
-
 		getBeersData()
 			.then((info) => {
-				//console.log(info, "infoDrink:::description");
 
 				setData(info);
 				setLoading(false);
@@ -37,7 +32,7 @@ export default function Drink() {
 				setError(err.message);
 				setLoading(false);
 			});
-	}, []);
+	}, [data]);
 
 	if (isLoading) {
 		return <CircularProgress />;
@@ -87,16 +82,10 @@ export default function Drink() {
     setCurrentPage((prev) => prev - 1 );
   }
 
-	const handleDataDetailedDescription = (drinkName) => {// for every country click
-    history.push(`/drinks/${drinkName}`);
-  };
-
-
 	return (
 		<div className="drink-container">
-			{/* <h1 className="title">Drinks</h1> */}
 			<CardList data={pageDataOtherDrinks}/>
-			<CardListBeer items={pageData} onItemClick={handleDataDetailedDescription} />
+			<CardListBeer items={pageData} />
 			<Pagination
 				perPageData={perPageData} 
 				totalData={totalData || totalDataOtherDrinks} 

@@ -3,7 +3,6 @@ import Home from "../pages/home/Home";
 import Food from "../pages/food/Food";
 import Sweets from "../pages/sweet/Sweets";
 import Drink from "../pages/drink/Drink";
-//import SearchComponent from "../container/search/Search";
 
 export const Routes = [
 	{

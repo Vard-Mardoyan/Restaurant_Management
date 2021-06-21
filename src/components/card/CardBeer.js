@@ -16,7 +16,6 @@ export default function CardBeerComponent({
 	description,
 	image_url,
 	volume,
-	onItemClick,
 }) {
 	const { addToCart, cartItems, increase } = useCartContext();
 	let opts = { format: "%s%v", symbol: "$" };
@@ -68,11 +67,6 @@ export default function CardBeerComponent({
 				// })}
 			 >
         ADD TO CART
-			</button>
-			<button
-        className="add-button"
-        onClick={() => onItemClick(name)} >
-        Learn More
 			</button>
 		</Card>
 	);

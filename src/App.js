@@ -14,7 +14,7 @@ import background from "./assets/image/2.jpg";
 import "./App.css";
 import Scroll from "./components/ScrollToTop/ScrollToTop";
 import { Adminpage } from "./adminFolder/admin";
-import SearchContainer from "./container/search/Search";
+import SearchComponent from "./containers/search/Search";
 
 export const Rezervcontext = React.createContext();
 
@@ -39,7 +39,7 @@ export default function App() {
               <main>
 								<div className="container-info">
 									<Nav changeRezerveagestat={changeRezerveagestatus} />
-									<SearchContainer />
+									<SearchComponent />
 								</div>
                 <Tablelist changeRezerveagestat={changeRezerveagestatus} />
                 <Switch>
