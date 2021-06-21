@@ -48,7 +48,6 @@ export default function Sweets() {
 
 	return (
 		<div className="sweet-container">
-			{/* <h1 className="title">Sweets </h1> */}
 			<CardList data={pageData}/>
 			<Pagination 
 				perPageData={perPageData} 
