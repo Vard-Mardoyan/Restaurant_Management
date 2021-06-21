@@ -6,7 +6,7 @@ import {loadState } from "../../helpers/local-storage";
 import Pagination from "../../components/pagination/Pagination";
 import { getVisibleData } from "../../components/pagination/visible-data";
 import "./DrinkStyle.css";
-import { getBeersData } from "../../service/beers";
+import { getBeersData } from "../../data/service/beers";
 
 export default function Drink() {
 	const [data, setData] = useState([]);

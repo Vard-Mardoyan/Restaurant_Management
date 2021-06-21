@@ -1,7 +1,7 @@
 import { CircularProgress} from "@material-ui/core";
 import { useState } from "react";
 import { loadState } from "../../helpers/local-storage";
-import { BASE_URL } from "../../service/config";
+import { BASE_URL } from "../../data/service/config";
 import CardList from "../../components/card-list/CardList";
 
 export default function SearchContainer() {
