@@ -7,15 +7,15 @@ import LocationOnIcon from "@material-ui/icons/LocationOn";
 import QueryBuilderIcon from "@material-ui/icons/QueryBuilder";
 import CallIcon from "@material-ui/icons/Call";
 
-import { FaTwitter } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa";
-import { FaGooglePlusG } from "react-icons/fa";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { FaEnvelope } from "react-icons/fa";
-import { FaPhoneAlt } from "react-icons/fa";
-import { FaPrint } from "react-icons/fa";
+// import { FaTwitter } from "react-icons/fa";
+// import { FaFacebook } from "react-icons/fa";
+// import { FaInstagram } from "react-icons/fa";
+// import { FaYoutube } from "react-icons/fa";
+// import { FaGooglePlusG } from "react-icons/fa";
+// import { FaMapMarkerAlt } from "react-icons/fa";
+// import { FaEnvelope } from "react-icons/fa";
+// import { FaPhoneAlt } from "react-icons/fa";
+// import { FaPrint } from "react-icons/fa";
 import GlobalMap from "../Map";
 
 
