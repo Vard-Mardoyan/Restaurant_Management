@@ -1,16 +1,12 @@
 import React from "react";
-// import { useContext } from "react";
 import {
-	Button,
   Card,
-  CardActions,
   CardContent,
   Typography,
 } from "@material-ui/core";
 import "./CardStyle.css";
 import formatCurrency from "format-currency";
 import { useCartContext } from "../../context/cart/CartState";
-//import usePagination from "../../hooks/usePagination";
 
 export default function CardComponent({
   id,
@@ -104,11 +100,3 @@ export default function CardComponent({
     </Card>
   );
 }
-
-
-//				<button
-// className="add-button"
-// onClick={handleClick}
-// >
-// {isItemOnList() ? `${quantity || "ADDED"}` : "ADD TO CART"}
-// </button>

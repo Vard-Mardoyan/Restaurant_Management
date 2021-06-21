@@ -32,7 +32,7 @@ export default function Drink() {
 				setError(err.message);
 				setLoading(false);
 			});
-	}, [data]);
+	}, []);
 
 	if (isLoading) {
 		return <CircularProgress />;
