@@ -141,11 +141,11 @@ export const CartItem = ({ item }) => {
 							cartItems.length > 0 && 
 							<Typography className="Cart__cartTotal">
 									<Typography>
-									<p className="mb-1">Total Items <ShoppingCartIcon/>{itemCount} </p>
+									{/* <p className="mb-1">Total Items <ShoppingCartIcon/>{itemCount} </p> */}
 											<span className="mb-1">Total Payment <PaymentTwoToneIcon/> {formatCurrency(`${total}`, opts)}</span>
 
 											<Typography className="text-center">
-													<button type="button" className="btn btn-outlineprimary btn-sm" onClick={clearCart}>Clear All</button>
+													<ButtonBase type="button" className="btn btn-outlineprimary btn-sm" onClick={clearCart}>Clear All</ButtonBase>
 											</Typography>
 
 									</Typography>
@@ -167,7 +167,7 @@ export default CartItem;
 
 
 
-
+// testing
 	// 		<div className='cart__wrapper'>
                 
 	// 		<div className="row no-gutters justify-content-center">

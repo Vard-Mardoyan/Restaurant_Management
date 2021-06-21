@@ -18,6 +18,16 @@ import CallIcon from "@material-ui/icons/Call";
 // import { FaPrint } from "react-icons/fa";
 import GlobalMap from "../Map";
 
+// <<<<<<< HEAD
+// export const Footer = () => {
+
+// 		return (
+// 			<div className="App-footer">
+// 				<div className="footerInfo-container">
+// 					<ul className="footer-inner-container">
+// 						<img className="restaurant-logo" src={logo} alt="logo" />
+// =======
+// >>>>>>> bfc1252a0d5e27e1878bd748780bf70854b067b3
 
 
 export function Footer({ changeStat }) {
@@ -55,6 +65,15 @@ export function Footer({ changeStat }) {
 						}}>Login</Link>
 					</div>
 				</div>
+// <<<<<<< HEAD
+// 			</div>
+// 		);
+	
+// }
+// // export default GoogleApiWrapper({
+// // 	apiKey: "AIzaSyAQHn9zoOzPpAL_riGq-wiJgxMWoM__0o8",
+// // })(Footer);
+// =======
 			)
 		}
       return '';
@@ -111,3 +130,4 @@ export function Footer({ changeStat }) {
 		</div>
 	);
 }
+// >>>>>>> bfc1252a0d5e27e1878bd748780bf70854b067b3

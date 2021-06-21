@@ -1,8 +1,10 @@
 import React from "react";
 import {
+	Button,
 	Card,
 	CardContent,
 	Typography,
+	CardActions
 } from "@material-ui/core";
 import "./CardStyle.css";
 import { useCartContext } from "../../context/cart/CartState";
@@ -37,7 +39,7 @@ export default function CardBeerComponent({
 					{formatCurrency(`${price}`, opts)}
 				</Typography>
 			</CardContent>
-			{/* <CardActions>
+			<CardActions>
 			<Button
 					addToItem={() => ({
 						id,
@@ -52,9 +54,9 @@ export default function CardBeerComponent({
 				>
 					ADD TO CART
 				</Button>
-			</CardActions> */}
+			</CardActions>
 
-			<button
+			{/* <button
         className="add-button"
 				// addToItem={() => ({
 				// 	id,
@@ -65,7 +67,7 @@ export default function CardBeerComponent({
 				// })}
 			 >
         ADD TO CART
-			</button>
+			</button> */}
 		</Card>
 	);
 }
