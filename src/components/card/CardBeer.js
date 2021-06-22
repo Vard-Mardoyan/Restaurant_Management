@@ -11,7 +11,7 @@ import formatCurrency from "format-currency";
 
 export default function CardBeerComponent({
 	id,
-	name,
+  name,
 	description,
 	image_url,
 	volume,
