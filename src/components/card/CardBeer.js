@@ -4,7 +4,6 @@ import {
 	Card,
 	CardContent,
 	Typography,
-	CardActions
 } from "@material-ui/core";
 import "./CardStyle.css";
 import { useCartContext } from "../../context/cart/CartState";
@@ -16,12 +15,24 @@ export default function CardBeerComponent({
 	description,
 	image_url,
 	volume,
+	quantity,
+
 }) {
 	const { addToCart, cartItems, increase } = useCartContext();
 	let opts = { format: "%s%v", symbol: "$" };
 	const price = volume.value;
 	const maxLength = 37;
+  const isItemOnList = () => {
+    return cartItems.find((product) => product.id === id) !== undefined;
+  };
 
+  const handleClick = () => {
+    if (isItemOnList()) {
+      increase({ id });
+    } else {
+      addToCart({ id,	name, description, image_url, volume 	});
+    }
+  };
 	return (
 		<Card className={!id && !image_url && !name &&  !description && !price? "empty" : "card" } key={id}>
 			<CardContent className="card-component">
@@ -39,35 +50,9 @@ export default function CardBeerComponent({
 					{formatCurrency(`${price}`, opts)}
 				</Typography>
 			</CardContent>
-			<CardActions>
-			<Button
-					addToItem={() => ({
-						id,
-						name,
-						description,
-						image_url,
-						volume,
-					})}
-					variant="contained"
-					color="primary"
-					size="medium"
-				>
-					ADD TO CART
-				</Button>
-			</CardActions>
-
-			{/* <button
-        className="add-button"
-				// addToItem={() => ({
-				// 	id,
-				// 	name,
-				// 	description,
-				// 	image_url,
-				// 	volume,
-				// })}
-			 >
-        ADD TO CART
-			</button> */}
+<button variant="contained" className="add-button" onClick={handleClick} >
+   {isItemOnList() ? `${quantity || "ADDED"}` : "ADD TO CART"}
+</button>
 		</Card>
 	);
 }

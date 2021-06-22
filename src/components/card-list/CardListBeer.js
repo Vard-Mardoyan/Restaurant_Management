@@ -4,14 +4,10 @@ import { loadState } from "../../helpers/local-storage";
 import CardBeerComponent from "../card/CardBeer";
 import "./CardListStyle.css";
 
-// <<<<<<< HEAD
 export default function CardListBeer({ items }) {
   const { addToCart } = useCartContext();
 
-  if (loadState('DRINK_DATA_loc') || loadState(getBeersData())) {
-// =======
-// export default function CardListBeer({ addToCart, items}) {
-// >>>>>>> 176a1e18471d68fcd14c803cd2650794a37523c7
+  if (loadState('DRINK_DATA_loc')) {
   return (
     <div>
       <ul className="list">

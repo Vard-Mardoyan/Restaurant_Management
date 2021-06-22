@@ -31,8 +31,8 @@ export const Cart = () => {
 	
 						{cartItems.length > 0 && (
 								<div className="item__count">
-									{/* <span>{cartItems.length}</span> */}
-                  <span>{itemCount}</span>
+									<span>{cartItems.length}</span>
+                  {/* <span>{itemCount}</span> */}
 								</div>
 							)} 
           </Button>
