@@ -49,6 +49,7 @@
   align-items: flex-start;
 }
 .add-button {
+  cursor: pointer;
   border-color: #ecc5db;
   border-radius: 10px;
  	background-color: #5f234a;/*#20232a; /* #0c3f37;/*#1d325f;*/

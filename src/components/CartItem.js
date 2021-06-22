@@ -86,7 +86,7 @@ export const CartItem = ({ item }) => {
 					{item.name}
 				</Typography>
 				<Typography variant="body2" color="textSecondary" component="p">
-				<LocalOfferTwoToneIcon />	{formatCurrency(`${item.price}`, opts)}
+				<LocalOfferTwoToneIcon />	{formatCurrency(`${item.price || item.volume}`, opts)}
 				</Typography>
 			</CardContent>
 
