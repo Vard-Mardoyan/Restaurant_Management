@@ -1,8 +1,6 @@
 import { DRINK_DATA, FOODS_DATA, SWEETS_DATA } from "../data/data";
 
 
-
-
 export default function LocalStoragesDates() {
 
   if (localStorage.getItem('SWEETS_DATA_loc') === null) {

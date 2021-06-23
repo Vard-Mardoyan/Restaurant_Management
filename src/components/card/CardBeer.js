@@ -21,6 +21,7 @@ export default function CardBeerComponent({
 	const { addToCart, cartItems, increase } = useCartContext();
 	let opts = { format: "%s%v", symbol: "$" };
 	const price = volume.value;
+	console.log(price);
 	const maxLength = 37;
   const isItemOnList = () => {
     return cartItems.find((product) => product.id === id) !== undefined;
@@ -30,7 +31,7 @@ export default function CardBeerComponent({
     if (isItemOnList()) {
       increase({ id });
     } else {
-      addToCart({ id,	name, description, image_url, volume 	});
+      addToCart({ id,	name, description, image_url, price 	});
     }
   };
 	return (
@@ -47,7 +48,7 @@ export default function CardBeerComponent({
 					{`${description.substring(0, maxLength)}`}
 				</Typography>
 				<Typography color="textSecondary" gutterBottom className="item-decoration">
-					{formatCurrency(`${price}`, opts)}
+					{formatCurrency(`${+price}`, opts)}
 				</Typography>
 			</CardContent>
 <button variant="contained" className="add-button" onClick={handleClick} >
