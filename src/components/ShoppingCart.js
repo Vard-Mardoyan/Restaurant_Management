@@ -1,30 +1,28 @@
-import { useContext } from "react";
 import "./ShoppingCart.css";
-// import CartContext from "../context/cart/CartContext";
 import CartItem from "./CartItem";
 import { FaShoppingCart } from "react-icons/fa";
-import { FaRegTimesCircle } from "react-icons/fa";
 import formatCurrency from "format-currency";
 import { useCartContext } from "../context/cart/CartState";
 import React from "react";
 import Typography from "@material-ui/core/Typography";
+import LocalMallTwoToneIcon from "@material-ui/icons/LocalMallTwoTone";
+
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import Popover from "@material-ui/core/Popover";
 import PopupState, { bindPopover, bindTrigger } from "material-ui-popup-state";
 
 export const Cart = () => {
-  const { showCart, itemCount, cartItems, showHideCart, total, clearCart } =
+  const { cartItems, showHideCart, total, clearCart } =
     useCartContext();
   let opts = { format: "%s%v", symbol: "€" };
-
   console.log(total, "total::::");
 
   return (
     <>
-      <PopupState variant="popover" popupId="demo-popup-popover">
+      <PopupState variant="popover" popupId="demo-popup-popover" >
         {(popupState) => (
-          <div>
+          <div className='shop'>
             <Button
               variant="contained"
               color="primary"
@@ -57,7 +55,7 @@ export const Cart = () => {
               <Box p={2}>
                 <Typography>
                   {cartItems.length > 0 ? (
-                    <ul>
+                    <ul> 
                       {cartItems.map((item) => (
                         <CartItem key={item.id} item={item} />
                       ))}
@@ -69,15 +67,21 @@ export const Cart = () => {
               </Box>
 
               <Typography>
-                Total:{" "}
-                {/* {formatCurrency(`${item.price || item.volume.value}`, opts)} */}
-
-                {formatCurrency (`${cartItems.reduce((acc, item) => {
-                  console.log(item);
-                  return (item.price || item.volume.value) * item.quantity + acc;
-                }, 0).toFixed(2)}`, opts)}
+                <LocalMallTwoToneIcon />
+                {formatCurrency(
+                  `${cartItems
+                    .reduce((acc, item) => {
+                      return (
+                        (item.price || item.volume.value) * item.quantity + acc
+                      );
+                    }, 0)
+                    .toFixed(2)}`,
+                  opts
+                )}
               </Typography>
-              <Button onClick={clearCart}>Clear all</Button>
+              <Button variant="outlined" color="secondary" onClick={clearCart}>
+                Clear all
+              </Button>
             </Popover>
           </div>
         )}

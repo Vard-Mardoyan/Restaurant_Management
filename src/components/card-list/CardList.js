@@ -4,13 +4,13 @@ import CardComponent from "../card/Card";
 
 import "./CardListStyle.css";
 
-export default function CardList({ data}) {
+export default function CardList({ data }) {
   const { addToCart } = useCartContext();
   //console.log(data, "data:::::");
 
   if (
-    data === loadState('SWEETS_DATA_loc') ||
-    data === loadState('FOODS_DATA_loc')
+    data === loadState("SWEETS_DATA_loc") ||
+    data === loadState("FOODS_DATA_loc")
   ) {
     return (
       <ul className="list">
@@ -45,4 +45,3 @@ export default function CardList({ data}) {
     </ul>
   );
 }
-

@@ -8,20 +8,18 @@
 	padding: 10px;
 	z-index: 10;
 }
-
 .cart__innerWrapper {
 	height: max-content;
 	max-height: 50vh;
 	overflow-y: auto;
+	
 }
-
 .Cart__cartTotal {
 	margin-top: 10px;
 	display: flex;
 	justify-content: space-between;
 }
 .item__count{
-	position: fixed;
 	background-color: red;
 	z-index: 100;
 	border-radius: 20px;
@@ -35,7 +33,6 @@
 	color: gray;
 	transition: transform 0.2s linear;
 }
-
 .fa-times-circle:hover {
 	transform: rotate(90deg);
 }
