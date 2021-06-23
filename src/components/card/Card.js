@@ -1,10 +1,5 @@
 import React from "react";
-import {
-	Button,
-  Card,
-  CardContent,
-  Typography,
-} from "@material-ui/core";
+import { Button, Card, CardContent, Typography } from "@material-ui/core";
 import "./CardStyle.css";
 import formatCurrency from "format-currency";
 import { useCartContext } from "../../context/cart/CartState";
@@ -34,7 +29,10 @@ export default function CardComponent({
   };
   return (
     <Card
-      className={ !id && !image && !name && !kitchen && !description && !price? "empty" : "card"
+      className={
+        !id && !image && !name && !kitchen && !description && !price
+          ? "empty"
+          : "card"
       }
       key={id}
     >
@@ -67,12 +65,10 @@ export default function CardComponent({
           {formatCurrency(`${price}`, opts)}
         </Typography>
       </CardContent>
-    		
-      <button
-        className="add-button"
-        onClick={handleClick} >
-       {isItemOnList() ? `${quantity || "ADDED"}` : "ADD TO CART"}
-			</button>
+
+      <button className="add-button" onClick={handleClick}>
+        {isItemOnList() ? `${quantity || "ADDED"}` : "ADD TO CART"}
+      </button>
     </Card>
   );
 }

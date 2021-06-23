@@ -1,6 +1,3 @@
-
-// import React, { useState, useEffect } from "react";
-
 // import {REACT_APP_GOOGLE_KEY} from '../service/config';
 import { withGoogleMap, withScriptjs, GoogleMap } from "react-google-maps";
 

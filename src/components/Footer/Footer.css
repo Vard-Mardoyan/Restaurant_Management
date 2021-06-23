@@ -1,8 +1,5 @@
 .App-footer {
 	position: absolute;
-	/* top: 13000px; */
-	/* background-color: #20232a;
-	opacity: 0.9; */
 	background: linear-gradient(
     to top,
     rgba(	32, 35, 42, 0.9),
@@ -17,46 +14,32 @@
 	font-size: calc(10px + 2vmin);
 }
 .footerInfo-container {
-	/* width: 100%; */
 	padding: 100px;
 	line-height: 2;
 	font-size: 17px;
 	font-family: Montserrat, sans-serif;
-	/* color: #6d6d6d; */
 }
-.second-footer-container {
-	width: 200px;
-	line-height: 2;
-	padding-left: 50px;
-	font-size: 17px;
-	font-family: Montserrat, sans-serif;
-	/* color: #6d6d6d; */
-}
+
 
 .footer-inner-container > li {
 	list-style: none;
 	line-height: 2;
 	font-size: 15px;
 	font-family: Montserrat, sans-serif;
-	/* color: #6d6d6d; */
 	margin-top: 80px;
 }
 .footer-inner-text {
 	padding-top: 25px;
-	/* color: #6d6d6d; */
 	font-size: 19px;
 	font-family: Josefin Sans, sans-serif;
 }
 .footer-container-link {
-	/* color: #6d6d6d; */
 	text-decoration: none;
 }
 .footer-container-link:hover {
 	color: black;
 }
-.fourth-footer-container > p:hover {
-	color: black;
-}
+
 .location .hours .contact {
 	margin-top: 25px;
 }
