@@ -12,14 +12,13 @@
 	height: max-content;
 	max-height: 50vh;
 	overflow-y: auto;
-	
 }
 .Cart__cartTotal {
 	margin-top: 10px;
 	display: flex;
 	justify-content: space-between;
 }
-.item__count{
+.item__count {
 	background-color: red;
 	z-index: 100;
 	border-radius: 20px;
@@ -35,4 +34,7 @@
 }
 .fa-times-circle:hover {
 	transform: rotate(90deg);
+}
+.cart-modal {
+	margin-top: 13px;
 }
