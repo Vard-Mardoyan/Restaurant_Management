@@ -138,7 +138,7 @@ export function Singin({ changeRezerveagestat }) {
 
         <div className = 'createAccauntlink'>
           <Link to="/" className="link" onClick={() => setLogin("createAccaunt")}>
-            Create new accaunt
+            Create a new account
           </Link>
         </div>
       </div>
@@ -150,7 +150,7 @@ export function Singin({ changeRezerveagestat }) {
       <div>
         <h4 className = 'usersname'>{JSON.parse(localStorage.getItem("logindUser")).name}</h4>
         <Link to="/" className = 'link' onClick = {logout}>Logout</Link>
-        <Link to="/" className = 'link'onClick ={changeRezerveagestat} >Rezerve Table</Link>
+        <Link to="/" className = 'link'onClick ={changeRezerveagestat} >Reserve a Table</Link>
         <Link to="/" className = 'link' onClick = {Pagecontrol}>Delete Accaunt</Link>
       </div>
     );

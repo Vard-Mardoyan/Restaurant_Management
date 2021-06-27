@@ -28,7 +28,7 @@ export function Tablelist({ changeRezerveagestat }) {
   const user = JSON.parse(localStorage.getItem("logindUser"));
 
   const free = <h3 className="tablename">Free</h3>;
-  const rezerved = <h3 className="tablename">Rezerved</h3>;
+  const rezerved = <h3 className="tablename">Reserved</h3>;
 
   function Tab1(props) {
     const tablestate = JSON.parse(localStorage.getItem(props.data.name));
@@ -64,7 +64,7 @@ export function Tablelist({ changeRezerveagestat }) {
             <h4 className="tablename">Places {props.data.places}</h4>
             {free}
             <Link to="/" className="link" onClick={rezerv}>
-              Rezerv
+              Reserve
             </Link>
           </div>
         );
@@ -75,7 +75,7 @@ export function Tablelist({ changeRezerveagestat }) {
             <h4 className="tablename">Places {props.data.places}</h4>
             {rezerved}
             <Link to="/" className="link" onClick={onrezerv}>
-              Onrezerv
+              Cancel
             </Link>
           </div>
         );

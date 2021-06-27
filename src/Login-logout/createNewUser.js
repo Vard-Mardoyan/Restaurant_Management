@@ -74,7 +74,7 @@ export function CreatingNewUser() {
     return (
       <div className="logindiv">
         <div className="loginorcreate">
-          <h2 className="logintitel">Creat personal accaunt</h2>
+          <h2 className="logintitel">Create your account</h2>
           <div className="inpustform">
             <input
               placeholder="Username"
@@ -86,12 +86,12 @@ export function CreatingNewUser() {
 
             <div className="incUsname">
               {usersStatus === "incorrect" && (
-                <p className="errorText">Incorrect Username</p>
+                <p className="errorText">The username must be at least 4 charachters</p>
               )}
             </div>
             <div>
               {usersStatus === "busy" && (
-                <p className="errorText">This username is busy</p>
+                <p className="errorText">This username is already taken</p>
               )}
             </div>
             <input
@@ -104,7 +104,7 @@ export function CreatingNewUser() {
             />
             <div className="incUsname">
               {usersStatus === "incorrectpassword" && (
-                <p className="errorText">Incorrect Password</p>
+                <p className="errorText">The password must be at least 4 charachters</p>
               )}
             </div>
             <div className="loginlinkstyle">
