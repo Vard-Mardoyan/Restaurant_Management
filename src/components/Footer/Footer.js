@@ -88,7 +88,7 @@ export function Footer({ changeStat }) {
               <span> Contact</span>
             </Link>
 
-            <p> 800-2345-6799 </p>
+            <p> 800-888-9999 </p>
           </li>
 
           <li>
